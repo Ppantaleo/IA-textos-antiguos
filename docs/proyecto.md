@@ -1,0 +1,566 @@
+# Proyecto de TFM
+
+## Título 
+
+**Relevamiento de aplicaciones con inteligencia artificial en la
+restauración e interpretación de textos antiguos: hacia un marco de metadatos y
+preservación digital de sus resultados**
+
+## 1. Problema
+
+Los sistemas de inteligencia artificial aplicados a textos antiguos producen
+aserciones sobre objetos del patrimonio documental: restauran lagunas, atribuyen
+origen geográfico, datan, transcriben, leen soportes físicamente inaccesibles.
+Esas aserciones mayoritariamente son probabilísticas —el modelo no devuelve *un* resultado sino
+una distribución sobre resultados posibles— y son revisadas, corregidas o
+adoptadas por especialistas humanos.
+
+El resultado de ese proceso es un activo digital que circula: se cita, se
+reutiliza, se incorpora a ediciones y a bases de datos. Pero se desconoce en qué
+medida ese activo viaja acompañado de la documentación que permitiría, más
+adelante, saber qué lo produjo, con qué versión de qué modelo, con cuánta
+certeza, y quién lo validó.
+
+Ese desconocimiento —y no su respuesta presupuesta— es el punto de partida.
+
+## 2. Pregunta de investigación
+
+**RQ.** ¿Qué metadatos de proveniencia y preservación se registran actualmente
+en las aplicaciones de inteligencia artificial a la restauración e
+interpretación de textos antiguos?
+
+Subpreguntas:
+
+- **SQ1.** ¿Qué registra efectivamente cada proyecto, sin categorías previas?
+- **SQ2.** ¿Cómo se mapea lo registrado sobre PREMIS, METS e ISO 23081?
+- **SQ3.** ¿Qué exigen esos estándares que los proyectos no tengan, y qué tienen
+  los proyectos que esos estándares no puedan alojar?
+- **SQ4** *(condicional al hallazgo)*. Si se confirma una carencia, ¿qué
+  extensión mínima la cubriría?
+
+**Naturaleza del diseño.** Es un estudio diagnóstico. Si los proyectos documentan, se releva y se contrasta; si no
+documentan, se releva igual y además se esboza una propuesta. La consecuencia
+metodológica es que **la defensa del trabajo no descansa en el resultado sino en
+el protocolo**: sus puntos vulnerables son la cadena de búsqueda, los criterios
+de inclusión y la rejilla de análisis, no las conclusiones.
+
+## 3. Objetivos
+
+**General.** Relevar qué metadatos de proveniencia y preservación se registran
+en las aplicaciones de IA a textos antiguos, y contrastar lo relevado con los
+estándares archivísticos de preservación digital.
+
+**Específicos.**
+
+1. Construir, mediante protocolo reproducible, el corpus de proyectos que
+   cumplen los criterios de inclusión.
+2. Caracterizar inductivamente qué metadatos genera, usa y persiste cada
+   proyecto, distinguiendo los de entrada y entrenamiento de los de salida.
+3. Mapear lo relevado sobre PREMIS, METS e ISO 23081, y analizar el desajuste en
+   ambas direcciones.
+4. *(Condicional)* Si el relevamiento confirma carencias, esbozar una extensión
+   de metadatos que las cubra, en anexo o corolario, validada conceptualmente
+   sobre uno o dos casos.
+
+## 4. Marco teórico
+
+El objetivo general excede el alcance de un solo estándar. Pone en relación tres
+cuerpos de literatura que hoy apenas se citan entre sí: el campo que aplica
+inteligencia artificial a textos antiguos, el problema general de la
+proveniencia de lo generado por máquinas y la normativa de preservación digital.
+El marco se organiza en esos tres ejes y en su punto de cruce, que es donde se
+sitúa la pregunta.
+
+### 4.1 La IA aplicada a textos antiguos
+
+El campo tiene ya un mapa propio: el *survey* de Sommerschield et al. (2023)
+ordena las tareas —restauración de lagunas, atribución geográfica y temporal,
+transcripción y HTR, traducción automática, desciframiento, búsqueda y
+alineamiento de paralelos— y fija la delimitación del objeto que este trabajo
+adopta en §7.1.
+
+Lo que ese campo documenta de sí mismo está bien establecido: arquitectura del
+modelo, composición del corpus de entrenamiento, procedimiento de evaluación y
+métricas de rendimiento (exactitud *top-k*, tasa de error por carácter,
+*perplexity*). Esa documentación responde a la pregunta de la comunidad de
+aprendizaje automático —si el modelo funciona y es comparable con otros— y no a
+la de la comunidad archivística —qué es, de dónde viene y qué garantías tiene
+cada resultado concreto que el modelo produjo—. La distancia entre ambas
+preguntas es el espacio del trabajo.
+
+El rasgo que vuelve el problema específico es el estatuto de la salida. Un
+modelo de restauración no devuelve una lectura sino un conjunto ordenado de
+lecturas posibles con sus probabilidades. Lo que se publica después suele ser
+una de ellas, elegida por un especialista: la aserción que circula es el
+producto conjunto de un modelo y de un juicio humano, y ninguno de los dos
+queda necesariamente inscrito en ella.
+
+### 4.2 La proveniencia de lo generado por máquinas
+
+Fuera del patrimonio documental el problema tiene instrumentos en circulación,
+que se reseñan como estado del arte y no como base del marco:
+
+- Las **fichas de modelo** y las **hojas de datos** (*model cards*,
+  *datasheets for datasets*) documentan el modelo y el conjunto de
+  entrenamiento, no cada salida producida con ellos.
+- **PROV-O** (W3C) modela de forma genérica entidad, actividad y agente; es el
+  vocabulario de procedencia más extendido en la web de datos, pero no define
+  obligaciones de preservación ni se integra en los paquetes de información de
+  los repositorios.
+- **C2PA** adhiere credenciales de contenido al archivo e identifica
+  intervención algorítmica; está pensado para fotografía y medios, con
+  infraestructura de firma propia.
+- **CIDOC-CRM** y su extensión **CRMdig** modelan el proceso de digitalización
+  y la cadena de derivación en el ámbito museístico.
+- El proyecto europeo **ECCCH / EDEN-FIDELIS** se cita como evidencia de que el
+  problema está en la agenda institucional (referencia pendiente de
+  verificación).
+
+Ninguno de estos instrumentos pertenece al contenido curricular del máster ni
+es el vehículo habitual de la preservación en archivos y bibliotecas. Su
+función en el trabajo es doble: situar el problema en un debate más amplio y
+comprobar si alguna pieza ya resuelta en ellos puede reutilizarse antes de
+proponer nada nuevo.
+
+### 4.3 La preservación digital como eje normativo
+
+| Estándar | Qué aporta al análisis |
+|---|---|
+| **PREMIS** | Modela `Object`, `Event`, `Agent` y `Rights`. Contempla que un *software* sea agente, con versión, ejecutando un evento fechado con un resultado sobre un objeto. Es el molde más directo para "qué modelo produjo esta salida" |
+| **METS** | Empaquetado y estructura. Pregunta algo que PREMIS no: si existe siquiera un objeto digital con envoltorio, o si el resultado circula como dato suelto sin metadatos adheridos |
+| **ISO 23081** | Modelo entidad-relación (documentos, agentes, actividades, reglas). Puente conceptual con el contenido ya cursado; da la estructura de nivel superior de la rejilla |
+
+La elección no es neutral y conviene declararla: estos tres estándares son los
+que efectivamente gobiernan la conservación a largo plazo en las instituciones
+de memoria, que son el destinatario del trabajo. Que una salida de IA sea
+preservable significa, en términos prácticos, que una institución pueda
+ingestarla, describirla y conservarla con los instrumentos que ya usa.
+
+### 4.4 Punto de cruce: la salida como objeto a preservar
+
+Los tres ejes se cruzan en una pregunta que ninguno responde solo: qué hace
+falta que acompañe a una lectura restaurada por un modelo para que, dentro de
+veinte años, siga siendo interpretable como lo que es —una propuesta con un
+grado de certeza, producida por un sistema concreto y aceptada por alguien—, y
+no un dato más dentro de una edición.
+
+Tres tensiones conceptuales organizan ese cruce y guían la capa normativa de la
+rejilla (§5.4):
+
+1. **Determinismo frente a distribución.** PREMIS fue diseñado para eventos
+   deterministas: una migración de formato se completa o falla. Un modelo emite
+   un resultado probabilístico, y las alternativas descartadas también son
+   información. No se ha identificado en PREMIS una unidad semántica que aloje
+   el grado de confianza sin recurrir a texto libre en
+   `eventOutcomeDetailNote`. **Antes de afirmar la carencia hay que verificar si
+   ya existe una extensión propuesta** (V2 del protocolo de trabajo).
+2. **Entidad intelectual frente a objeto.** PREMIS distingue la entidad
+   intelectual del objeto digital que la representa. Una restauración obliga a
+   decidir si la salida es una representación nueva del testimonio o una
+   aserción sobre él; la respuesta cambia dónde se ancla la proveniencia.
+3. **Evento de preservación frente a evento de interpretación.** El vocabulario
+   de eventos de PREMIS está poblado de operaciones técnicas. Una inferencia que
+   propone texto no es una operación técnica sobre el objeto, sino un acto
+   interpretativo que produce conocimiento nuevo. Si entra en el mismo
+   vocabulario, hay que justificarlo; si no entra, el desajuste es un hallazgo.
+
+Estas tensiones son hipótesis de trabajo, no premisas: el relevamiento puede
+confirmarlas, matizarlas o refutarlas.
+
+## 5. Metodología
+
+**Diseño: scoping review conforme a PRISMA-ScR, con análisis de artefacto
+embebido sobre el subconjunto inspeccionable.**
+
+No es una revisión sistemática: no responde una pregunta de efectividad ni
+practica valoración de calidad de evidencia. Es un mapeo de la extensión, el
+rango y la naturaleza de una práctica. Su paso de *data charting* produce la
+matriz comparativa, que es a la vez instrumento y producto.
+
+### 5.1 Criterios de inclusión
+
+Un proyecto entra si cumple **todas** estas condiciones (en §5.6 se
+operacionalizan como C1–C4):
+
+1. Existe un proceso de IA en la lectura o interpretación del material —
+   incluido el análisis de **materialidad** del soporte, no solo del contenido.
+2. Existe un producto digital resultante de esa acción sobre el cual evaluar
+   metadatos. No es necesario que sea una imagen: puede ser texto, dato
+   estructurado o modelo.
+3. El material son **textos antiguos** según la definición de §7.1.
+4. Si el corpus mezcla épocas, trabaja **principalmente** con textos anteriores
+   al corte (§7.1).
+
+**Exclusiones que estos criterios producen:** el Khipu Database Project de Urton
+y el Proyecto Digital de Manuscritos del Mar Muerto (digitalización y
+catalogación sin IA).
+
+**Lengua y escritura no son criterio de selección.** Entra una aplicación a
+cualquier lengua o sistema de escritura antiguo (griego, latín, hebreo, acadio,
+chino clásico, tamil, maya, etc.) si cumple las condiciones anteriores. Lo que
+se evalúa es la aplicación de IA, no la tradición textual. La lengua y la
+escritura se registran como variables descriptivas (§5.4).
+
+### 5.2 Ventana temporal
+
+**Corte: 2022**, con capítulo de antecedentes.
+
+*Fundamento:* el corte no marca la aparición de la IA aplicada a textos antiguos
+—que es anterior— sino el momento en que el problema de proveniencia se vuelve
+efectivo. Pythia (2019) restauraba y nada más; Ithaca (2022) restaura, atribuye
+geográficamente y data, con interfaz pública. Es el punto en que estos sistemas
+pasan a emitir múltiples clases de aserción, cada una con su incertidumbre, y a
+circular fuera del laboratorio.
+
+*Regla complementaria:* los proyectos activos de larga data entran por sus
+publicaciones desde 2022, sin que su fecha de inicio los excluya. Así el DRI
+—fundacional en 2016— permanece en el corpus.
+
+### 5.3 Jerarquía de fuentes de evidencia
+
+De mayor a menor peso probatorio:
+
+1. **Salida del modelo tal como circula** (interfaz pública o resultado incorporado en publicaciones y bases; evidencia primaria)
+2. Documentación del software y repositorio
+3. Material suplementario
+4. Artículo científico (declaración de los autores)
+
+**Objeto de evaluación: la salida que circula y se cita**, no la
+que puede reproducirse en local. El nivel 1 corresponde a la salida tal como la
+entrega la interfaz pública del proyecto (p. ej., predictingthepast.com para
+Ithaca y Aeneas) o tal como aparece incorporada en publicaciones y bases de
+datos. La ejecución local y la lectura del código quedan como evidencia de
+contraste (nivel 2).
+
+> **Advertencia de interpretación.** Que un proyecto no sea auditable
+> públicamente no prueba que no documente. La afirmación defendible es "no es
+> verificable públicamente que documente", no "no documenta". Esa opacidad es en
+> sí misma un hallazgo, y se lee en clave de prácticas FAIR.
+
+### 5.4 Rejilla de análisis: dos capas
+
+| Capa | Qué hace | Por qué |
+|---|---|---|
+| **A — Inductiva** | Registra qué documenta cada proyecto sin categorías previas | Una rejilla derivada solo de PREMIS sería ciega a lo que los proyectos sí registran —corpus de entrenamiento, arquitectura, hiperparámetros, procedencia del material— que PREMIS no contempla |
+| **B — Normativa** | Ubica lo relevado en PREMIS / METS / ISO 23081 | Deriva las categorías del estándar y no de la intuición del autor |
+
+El análisis del vacío se lee **en las dos direcciones**: lo que el estándar exige
+y no está, y lo que está y el estándar no puede alojar. La segunda dirección es
+la más original: no dice que los proyectos estén mal, dice que el instrumento no
+fue diseñado para esto.
+
+**Variables descriptivas del *data charting*** (caracterizan cada caso; no
+sirven para seleccionar):
+
+- Lengua y sistema de escritura
+- Soporte (piedra, bronce, arcilla, papiro, pergamino, bambú, hoja de palma…)
+
+La unidad sobre la que se aplica la rejilla se define en §5.7 y el formulario
+completo de preguntas, en §5.8.
+
+### 5.5 Fuentes y estrategia de búsqueda
+
+| Fuente | Función | Justificación |
+|---|---|---|
+| **OpenAlex** | Base principal | Cobertura amplia y abierta, que incluye preprints (arXiv) y actas de ACL. Admite búsqueda booleana en título y resumen con filtro temporal. La consulta por API es reproducible y deja registro automático. |
+| **Scopus** (acceso institucional UC3M) | Base complementaria | Cubre el punto débil de OpenAlex: en el piloto, el 16 % de los registros no tenía resumen, sobre todo de editoriales como Elsevier. Busca también en palabras clave de autor e indexadas (`TITLE-ABS-KEY`). |
+| ***Snowballing*** | Complemento | Hacia atrás (referencias) y hacia adelante (citas) desde el seed set y los estudios incluidos, con `referenced_works` y `cited_by` de OpenAlex. Recupera casos que la cadena no capta, sea por falta de términos generales de IA (Lacuna) o por términos quitados para reducir ruido (D16). Los registros encontrados así se cuentan aparte en el diagrama PRISMA ("otros métodos"). |
+
+**Cadena.** Dos bloques unidos por AND: (1) términos generales de IA y (2)
+términos de textos antiguos, soportes y escrituras. **No se incluyen nombres de
+técnicas o arquitecturas** (CNN, RNN, transformer…), porque suben la cobertura a
+costa de mucho ruido (decisión D11). Cada versión de la cadena se guarda en
+`busqueda/consultas/` y no se sobrescribe. La sintaxis de OpenAlex y la de
+Scopus no son idénticas; su equivalencia se documenta en el registro de cada
+corrida.
+
+**Registro para PRISMA-ScR.** Para cada fuente: fecha de ejecución, cadena
+literal, registros recuperados, duplicados eliminados (por DOI y, si falta,
+por título normalizado) y registros que pasan al cribado. OpenAlex se consulta
+con `busqueda/buscar_openalex.py`. Scopus se consulta a mano en *Advanced
+document search*, se exporta en CSV con resumen y se fusiona con OpenAlex por
+DOI. **Crossref** no es fuente de búsqueda —no admite operadores
+booleanos— y se usa solo como servicio de metadatos: completa los registros y
+genera el BibTeX a partir del DOI.
+
+### 5.6 Cribado por título y resumen
+
+**Hoja de criterios.** Cada registro se evalúa con cuatro preguntas derivadas
+de §5.1, §7.1 y D14:
+
+| # | Pregunta | Si la respuesta es "no" |
+|---|---|---|
+| C1 | ¿Hay un proceso de IA (aprendizaje automático, redes neuronales, visión por computador, modelos de lenguaje) aplicado a la lectura o interpretación del material, incluida su materialidad? | Excluir, E1 |
+| C2 | ¿Hay un producto digital resultante (texto restaurado, transcripción, atribución, modelo, dataset, imagen procesada…)? | Excluir, E2 |
+| C3 | ¿El material son textos antiguos según §7.1 (obra compuesta antes de finales del primer milenio d. C., en cualquier lengua, escritura o soporte)? | Excluir, E3 |
+| C4 | Si el corpus mezcla épocas, ¿trabaja principalmente con textos anteriores al corte? | Excluir, E4 |
+
+Códigos de exclusión adicionales:
+
+- **E5:** tipo documental sin estudio primario (editorial, fe de erratas,
+  retractación, presentación de volumen de actas, índice).
+- **E6:** tema ajeno, cuando el registro entró por coincidencia léxica.
+- **R:** revisión o *survey* pertinente. No entra en el corpus, pero se usa
+  como fuente de *snowballing*.
+
+**Regla de duda.** En esta fase, ante información insuficiente se marca
+**dudoso** y el registro pasa a lectura de texto completo. Solo se excluye
+cuando el título y el resumen permiten afirmarlo.
+
+**Cribado asistido por IA (declaración de uso).** Claude (Anthropic, modelo
+Opus 5) propone para cada registro una decisión (incluir, excluir, dudoso o R),
+un código y un motivo breve, siguiendo las instrucciones de
+`busqueda/cribado/instrucciones-cribado-ia.md`. La propuesta se guarda sin
+modificar (`busqueda/cribado/propuesta-ia-v1.csv`). **El autor revisa todas las
+inclusiones, los dudosos y los R, y una muestra aleatoria de las exclusiones
+para estimar el acuerdo.** Solo las decisiones revisadas pasan a
+`busqueda/cribado/decisiones.csv`.
+
+**Fuera de esta búsqueda:** la literatura archivística sobre PREMIS y
+proveniencia (V2) no forma parte del corpus de proyectos y necesita su propia
+búsqueda dirigida.
+
+### 5.7 Unidad de análisis: el proyecto
+
+El trabajo usa dos unidades distintas y no intercambiables:
+
+- **Unidad de recuperación y cribado: la referencia bibliográfica.** Es la que
+  cuenta el diagrama PRISMA-ScR, porque lo que se busca, se deduplica y se
+  criba son publicaciones.
+- **Unidad de análisis y de *charting*: el proyecto.** Es la que ocupa una fila
+  de la matriz comparativa, porque los metadatos de proveniencia no los
+  documenta un artículo, los documenta —o no— el sistema que produce las
+  salidas.
+
+Esta distinción es necesaria: un mismo proyecto puede tener cuatro
+publicaciones y una sola política de documentación, y contarlo cuatro veces
+sobrerrepresentaría a los equipos que más publican, que son también los que más
+recursos tienen. Contar proyectos, y no artículos, es lo que hace que la matriz
+describa prácticas y no volumen editorial.
+
+**Definición.** Un **proyecto** es un sistema o aplicación identificable que
+produce salidas sobre un corpus de textos antiguos. Se considera una sola
+unidad cuando coinciden los cuatro rasgos siguientes:
+
+1. un modelo o sistema identificable (nombre propio, repositorio de código o
+   interfaz pública);
+2. un equipo o institución responsable con continuidad;
+3. una tarea y un corpus sustancialmente estables;
+4. una salida que circula bajo una identidad reconocible.
+
+**Reglas de agrupación y separación.**
+
+- Varias publicaciones del mismo sistema —artículo original, versión ampliada,
+  evaluación posterior, descripción del conjunto de datos— forman **una**
+  unidad. Las publicaciones posteriores aportan datos a la misma fila.
+- Un **modelo nuevo con salida propia** es unidad propia aunque lo firme el
+  mismo equipo y herede del anterior. Pythia, Ithaca y Aeneas son tres
+  unidades, no una. Se registra el linaje en un campo de la matriz, de modo que
+  la familia siga siendo visible.
+- Un ajuste de hiperparámetros, una reimplementación, una traducción a otro
+  marco de trabajo o una evaluación añadida **no** crean unidad.
+- Dos sistemas con el mismo nombre y equipos distintos son dos unidades.
+
+**Estudios sin sistema identificable.** Buena parte de la literatura recuperada
+son experimentos puntuales, sin nombre propio, sin código publicado y sin
+interfaz. Excluirlos sesgaría el relevamiento hacia los proyectos de alta
+visibilidad, que es justamente la práctica que se quiere describir sin
+idealizar. Entran como unidad, con la publicación como identificador, y la
+matriz distingue el tipo de unidad en un campo explícito:
+
+| Tipo de unidad | Qué es | Qué se espera del *charting* |
+|---|---|---|
+| **Sistema** | Tiene nombre, interfaz o repositorio; la salida circula de forma identificable | Se puede evaluar hasta el nivel 1 de evidencia (§5.3) |
+| **Estudio** | Experimento publicado sin sistema identificable ni salida circulante | El análisis suele detenerse en los niveles 2 a 4; la ausencia de salida auditable se registra como dato, no como carencia del estudio |
+
+**Trazabilidad del paso de una unidad a otra.** La correspondencia entre
+referencias y proyectos se publica como tabla (`busqueda/proyectos.csv`), con
+una fila por referencia incluida y la clave del proyecto al que se asigna. El
+informe final declara ambas cifras: estudios incluidos tras la lectura de texto
+completo y proyectos resultantes. La agrupación es una decisión del autor, no
+un cálculo: por eso se publica, para que sea discutible.
+
+### 5.8 Formulario de *charting*
+
+La rejilla de §5.4 se operacionaliza como una guía de preguntas aplicada a cada
+proyecto. **Cada celda registra, además del hallazgo, el nivel de evidencia con
+que se obtuvo** (§5.3), de modo que la asimetría entre proyectos auditables y
+opacos quede visible en los datos.
+
+| Bloque | Preguntas | Parámetros registrados |
+|---|---|---|
+| **1. Identificación** | ¿Qué sistema es, quién lo sostiene, desde cuándo? | Nombre, equipo, institución, años de actividad, referencias asociadas, tipo de unidad, linaje |
+| **2. Material de entrada** | ¿Sobre qué trabaja y de dónde viene? | Lengua, escritura, soporte, época del texto, corpus de origen, licencia, identificador de los testimonios procesados |
+| **3. Proceso** | ¿Qué hace y con qué? | Tarea (restauración, atribución, datación, transcripción, traducción…), familia de modelo, versión, datos de entrenamiento, dependencia de servicios externos |
+| **4. Salida** | ¿Qué produce y dónde circula? | Forma del resultado, canal (interfaz, repositorio, publicación, base de datos), formato, licencia, identificador persistente |
+| **5. Enlace entrada–salida** | ¿La salida permite volver al testimonio del que procede? | Presencia de identificador del material de origen en la salida; granularidad del enlace |
+| **6. Incertidumbre** | ¿Se expresa el grado de certeza y las alternativas? | Forma (probabilidad, *top-k*, intervalo, ninguna), persistencia de las alternativas descartadas |
+| **7. Intervención humana** | ¿Consta que alguien revisó y aceptó el resultado? | Existencia de revisión, identificación del revisor, fecha, efecto sobre la salida |
+| **8. Identidad del productor** | ¿La salida dice qué la produjo? | Versión del modelo, fecha de la inferencia, versión del software, parámetros |
+| **9. Empaquetado y preservación** | ¿Hay un objeto digital con metadatos adheridos y un plan? | Esquema declarado, repositorio de depósito, política de preservación, versionado |
+| **10. Capa normativa** | ¿Dónde se aloja cada hallazgo en PREMIS, METS e ISO 23081, y qué no tiene alojamiento? | Entidad y elemento del estándar, o anotación de desajuste en una u otra dirección |
+
+Los bloques 1 a 9 forman la capa inductiva y el bloque 10, la normativa. Los
+bloques 5 a 8 concentran el núcleo de la pregunta de investigación: son los que
+distinguen una salida que puede preservarse con sentido de una que solo puede
+archivarse como cadena de texto.
+
+El formulario se aplica primero a dos proyectos de prueba —uno con interfaz
+pública y otro sin ella— y se ajusta antes de aplicarlo al resto. Esa versión
+de prueba y la definitiva se conservan ambas en el repositorio de materiales
+(§9).
+
+## 6. Corpus semilla
+
+Los proyectos del documento inicial **no son la muestra**: son el conjunto
+semilla con el que se valida la estrategia de búsqueda. El corpus final lo
+determina el protocolo, y puede resultar mayor o menor.
+
+**Seed set operativo** (10 trabajos con publicación desde 2022, en
+`busqueda/consultas/v1.json`): Ithaca, Aeneas, Enoch, BiNet, DR-LIFT, lineal B
+(Papavassileiou et al.), acadio NMT (Gutherz et al.), Lacuna, glifos mayas
+(Pinilla-Buitrago et al.) y el *survey* de Sommerschield et al.
+
+**Regla de validación.** El seed set valida la **estrategia completa**
+(bases de datos más *snowballing*), no solo la cadena. Se informan por
+separado los trabajos recuperados por la cadena en cada base y los que se
+recuperan por *snowballing*. Un trabajo semilla que no aparezca por ninguna vía
+indica un fallo de la estrategia. Resultado de la cadena v1: 8/10 (faltan
+Lacuna y Pinilla-Buitrago, que deben aparecer por *snowballing*; ver V8).
+
+
+## 7. Objeto de estudio
+
+**"Textos antiguos"**, no "manuscritos". Es el término que cubre a la vez la
+inscripción epigráfica (Ithaca, Aeneas: piedra y bronce; DR-LIFT: inscripciones
+tamiles en piedra), el rollo y el papiro (DRI, Enoch), la tablilla (acadio,
+lineal B) y el manuscrito (Lacuna). Las particularidades de cada soporte se
+detallan dentro del trabajo.
+
+### 7.1 Definición operativa de "texto antiguo" (D13)
+
+Se adopta la delimitación de Sommerschield et al. (2023, p. 705), por ser la
+referencia de autoridad del campo:
+
+> "ancient texts written in ancient languages [...] all languages in use across
+> the world, written on any medium and in any script, between the birth of
+> writing systems in ancient Mesopotamia (3400 BCE) up until the conventional
+> end of 'ancient history' in the late first millennium CE."
+
+**Qué se fecha: el texto (la obra), no el soporte conservado.** Consecuencias
+para el cribado:
+
+- **Entran** las copias posteriores de obras antiguas. Por ejemplo, una
+  aplicación sobre manuscritos medievales de la *Ilíada*.
+- **No entran** las obras compuestas después del corte, aunque retomen textos
+  antiguos (adaptaciones, paráfrasis) o usen una lengua de origen antiguo que
+  siguió escribiéndose (latín medieval, chino literario tardío).
+- La lengua y la escritura siguen sin ser criterio (D12). El criterio es la
+  época del texto.
+
+**Corpus mixtos** (modelos entrenados con textos anteriores y posteriores al
+corte): entran **solo si trabajan principalmente con textos anteriores al
+corte**. Criterio provisional (D14), a revisar con los casos reales del cribado.
+
+**Quipu:** queda fuera del TFM (D15). Sus registros conservados son incaicos
+(siglos XV–XVI). Solo se conserva esta nota por si se retoma en el doctorado.
+
+## 8. Declaración de uso de inteligencia artificial
+
+El trabajo usa un asistente de IA (Claude, de Anthropic, modelo Opus 5, a
+través de Claude Code) como herramienta instrumental. Se declara aquí el
+alcance exacto de ese uso, por coherencia con el objeto del propio trabajo —la
+proveniencia de lo producido con ayuda de máquinas— y con la Guía de buenas
+prácticas de la Universidad Carlos III de Madrid (2012, apartado 2.H).
+
+**En qué se usa.**
+
+| Tarea | Uso | Rastro que queda |
+|---|---|---|
+| Consulta de APIs | Construcción y ejecución de las consultas a OpenAlex y de la recuperación de metadatos por DOI en Crossref | Scripts y registro de cada corrida |
+| Programación | Escritura de los *scripts* de búsqueda, fusión, deduplicación y preparación del cribado, en Python | Código completo en el repositorio público (§9) |
+| Cribado por título y resumen | Propuesta de decisión, código y motivo para cada registro, según una hoja de instrucciones fija | Instrucciones literales, propuesta sin modificar y revisión del autor |
+| Verificación | Detección de inconsistencias internas del protocolo y de los criterios aplicados | Registro de decisiones y de enmiendas |
+| Redacción | Formulación y pulido de secciones a partir de decisiones tomadas por el autor en diálogo | El autor revisa, corrige y asume cada párrafo |
+
+**En qué no se usa.** No se delegan las decisiones metodológicas, la definición
+del objeto y de los criterios, la lectura de los textos completos, la
+cumplimentación del formulario de *charting*, la interpretación de los
+resultados ni las conclusiones. La IA no es fuente: nada se afirma en el
+trabajo porque un modelo lo haya dicho, y las referencias se verifican una a
+una contra Crossref o contra la publicación.
+
+**Condición del cribado asistido.** La propuesta de la IA no es una decisión.
+Es una capa previa, equivalente a la de un segundo cribador, sobre la que el
+autor decide: revisa todas las inclusiones, los dudosos y los *surveys*, y una
+muestra aleatoria estratificada de las exclusiones, con la que se estima el
+acuerdo. La cifra de acuerdo se informa en la memoria. Las propuestas sin
+revisar no entran en el corpus.
+
+**Trazabilidad.** Las instrucciones que recibió el modelo, su propuesta sin
+modificar y las decisiones del autor se conservan por separado y se publican en
+el repositorio (§9). El criterio es el mismo que el trabajo exige a los
+proyectos que estudia: que la salida de un modelo viaje acompañada de qué la
+produjo, con qué instrucciones y quién la validó.
+
+## 9. Repositorio de materiales
+
+Los materiales que permiten auditar y reproducir el relevamiento se publican en
+un repositorio de código abierto, al que la memoria remite desde la
+metodología. Contiene:
+
+- los *scripts* de búsqueda en OpenAlex, de fusión con la exportación de Scopus
+  y de deduplicación;
+- las cadenas de búsqueda de cada versión, en su formato literal para cada
+  fuente;
+- el registro de cada corrida, con fecha, cifras y cómputo de duplicados;
+- las instrucciones del cribado asistido y la propuesta de la IA sin modificar;
+- las decisiones del autor y la tabla de correspondencia entre referencias y
+  proyectos (§5.7);
+- el formulario de *charting* y la matriz resultante.
+
+El código se publica bajo licencia MIT y los datos y documentos bajo CC BY 4.0.
+**No se redistribuye la exportación en bruto de Scopus**, por las condiciones
+de uso de la base; de ella se publican la cadena, la fecha, las cifras y los
+identificadores (DOI) necesarios para reconstruirla con acceso institucional.
+
+La memoria no incluye como anexo impreso lo que el repositorio ya contiene: los
+anexos del documento se limitan a la matriz comparativa y al diagrama
+PRISMA-ScR, y el resto se cita por referencia al repositorio.
+
+## 10. Plan de la memoria
+
+**Estructura.** La exigida por la memoria de verificación del máster para el
+TFM: diseño de la investigación (objeto, objetivos, hipótesis, metodología,
+fuentes), resultados, discusión, conclusiones y referencias.
+
+**Extensión: 50 a 60 páginas**, incluidas portada, índice y bibliografía. Los
+anexos pueden excederla; los materiales extensos van al repositorio (§9).
+
+| Parte | Páginas |
+|---|---|
+| Portada, índice, resúmenes (ES/EN) | 4 |
+| 1. Introducción y problema | 5 |
+| 2. Marco teórico | 10 |
+| 3. Metodología | 8 |
+| 4. Resultados del relevamiento | 15 |
+| 5. Discusión y análisis del desajuste | 6 |
+| 6. Conclusiones y líneas abiertas | 3 |
+| Referencias | 5 |
+| **Total** | **56** |
+
+**Referencias: entre 50 y 60**, conforme a la orientación del director. Reparto
+previsto: estándares y normativa (8), campo de la IA aplicada a textos antiguos
+(25), proveniencia y documentación de modelos (8), metodología de revisión (5)
+y preservación digital y archivística (8).
+
+> **Cómo se concilia ese límite con una revisión de alcance.** El corpus
+> analizado puede superar las sesenta referencias. Para que no infle la
+> bibliografía, **el corpus se presenta como tabla en anexo** —con autor, año,
+> proyecto y DOI— y **en la lista de referencias solo entran los trabajos
+> citados en el cuerpo del texto**. Es la práctica habitual en revisiones de
+> alcance y mantiene legible la bibliografía sin ocultar el corpus.
+
+**Calendario.** Pendiente de acordar con el director: fecha de entrega del
+proyecto, fecha de cierre del cribado y lectura de textos completos, fecha de
+entrega del borrador completo y convocatoria de defensa.

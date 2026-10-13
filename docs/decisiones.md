@@ -1,0 +1,43 @@
+# Etapa 1 — Registro de decisiones
+
+Actualizado: 2026-10-13. Las decisiones revertidas se conservan, no se borran.
+
+| # | Decisión | Estado |
+|---|---|---|
+| D1 | Tipo de contribución | **(a) Diagnóstico.** El relevamiento es la contribución fuerte; el marco de metadatos queda como *esbozo condicionado al hallazgo*, en anexo o corolario; el desarrollo pleno se difiere al doctorado. ⚠️ Revierte una elección previa de (b), hecha y deshecha por el autor en la Capa 1-2. Razón del cambio: "no me parece presentar un proyecto a medias" |
+| D2 | Eje geopolítico norte/sur | Descartado como variable analítica. Registrado por si reaparece como motivación en la discusión |
+| D3 | Componente empírico | El TFM incluye inspección directa de modelos instalables (Ithaca, Aeneas), no solo literatura |
+| D4 | Pregunta de investigación | **v2:** "¿Qué metadatos de proveniencia y preservación se registran hoy en las aplicaciones de IA a textos antiguos?" (pendiente solo de pulido de registro) |
+| D5 | Objeto de estudio | **"Textos antiguos"**, no "manuscritos" — único término que cubre inscripción epigráfica, rollo, papiro y quipu. Las particularidades de cada soporte se detallan dentro del TFM |
+| D6 | Metodología | **Scoping review con PRISMA-ScR**, cuyo paso de *data charting* produce la matriz comparativa, más **análisis de artefacto embebido** sobre el subconjunto inspeccionable |
+| D7 | Corpus | Tentativo por diseño. Los once casos del documento inicial pasan a ser *seed set* de validación de la cadena de búsqueda, no la muestra. El corpus final lo define el protocolo |
+| D8 | Criterios de inclusión | (i) que exista un proceso de IA en la lectura/interpretación del material; (ii) que exista un producto digital resultante de esa acción — no necesariamente imagen — sobre el cual evaluar metadatos. **Pendiente:** resolver si "material" abarca el análisis de materialidad (caso BiNet) |
+| D9 | Fuentes de búsqueda (2026-09-14) | **OpenAlex** como base principal (API reproducible), **Scopus** como complementaria (acceso UC3M; cubre los registros sin resumen en OpenAlex), **Crossref** solo para metadatos y BibTeX, más *snowballing*. Descartada la lista anterior de candidatas (WoS, ACM, IEEE, DBLP, etc.) |
+| D10 | Objeto de evaluación (2026-09-14) | La salida **que circula y se cita** (interfaz pública, resultados incorporados en publicaciones y bases), no la reproducible en local. La ejecución local pasa a evidencia de contraste |
+| D11 | Cadena de búsqueda (2026-09-14) | Sin nombres de técnicas o arquitecturas (CNN, RNN, transformer). Consecuencia abierta: V8 |
+| D12 | Lengua y escritura (2026-09-14) | **No son criterio de selección**: se evalúan las aplicaciones de IA con independencia de la tradición textual. Se registran como variables descriptivas del *charting* |
+| D13 | Definición de "texto antiguo" (2026-09-14) | Se adopta **Sommerschield et al. 2023, p. 705**, como referencia de autoridad: textos antiguos en lenguas antiguas, desde 3400 a. C. hasta finales del primer milenio d. C. **Se fecha el texto, no el soporte**: entran las copias posteriores de obras antiguas y no las obras compuestas después del corte. El quipu sale del corpus; queda como contraste y como ampliación doctoral. Consideradas y descartadas: fechar el soporte (Trismegistos) y fechar texto y soporte |
+| D14 | Corpus mixtos (2026-09-14) | Entran solo si trabajan **principalmente** con textos anteriores al corte. Provisional ("en principio"): revisar con los casos del cribado |
+| D15 | Quipu y cadena v1 (2026-09-14) | El quipu sale del TFM; queda solo como nota para el doctorado. ⚠️ Revierte parcialmente D5, que lo tenía como caso límite. Se quitan de la cadena `khipu`, `quipu` y `"palm leaf"` |
+| D16 | Cadena v1 (2026-09-14) | Se quita `"historical manuscript"`: de sus 143 registros exclusivos, casi todos son manuscritos medievales o modernos fuera de D13. Para no perder textos antiguos en copias o soportes que cubría, se añaden `palimpsest` y `"bamboo slip"`; el resto (p. ej., sánscrito o pali en copias tardías, hojas de palma) se cubre con *snowballing*. Resultado OpenAlex v1: 1.555 registros, 1.251 únicos (`busqueda/corridas/v1/`) |
+| D17 | Depuración de `palimpsest` (2026-09-14) | Se mantiene el término. De sus 53 registros en la fusión v1 (con los resúmenes de Scopus), se excluyen en el cribado 44 que lo usan en sentido metafórico o no textual; quedan 9 sobre palimpsestos o manuscritos dañados. Las exclusiones están en `busqueda/cribado/decisiones.csv` y la fusión las aplica automáticamente. Dos de las excluidas (proveniencia de modelos de IA, *Palimpsestic Membership Inference*) quedan anotadas como posible referencia para el marco teórico |
+| D18 | Cribado (2026-09-14) | Hoja de criterios C1–C4 más los códigos E5, E6 y R, aprobada por el autor (§5.6). **Cribado asistido por IA:** Claude propone decisión, código y motivo para cada registro; el autor revisa todas las inclusiones, los dudosos y los R, y una muestra aleatoria de exclusiones. Instrucciones: `busqueda/cribado/instrucciones-cribado-ia.md` |
+| D19 | Cierre del protocolo (2026-09-14) | `proyecto-tfm.md` pasa a **versión 1.0 congelada**, con copia de solo lectura en `proyecto-tfm-v1.0.md`. Desde aquí, los cambios se registran como enmiendas (§10). Ajustes de coherencia hechos al cerrar: criterios de §5.1 ampliados a 4 (alineados con C1–C4); quitadas las menciones residuales al quipu; corregido el soporte de DR-LIFT (inscripciones en piedra, no hoja de palma); **regla del seed set reformulada: valida la estrategia completa, bases de datos más *snowballing*** (resuelve V8); D8 queda resuelta porque la materialidad está incluida en C1 |
+| D20 | Enmiendas EN1–EN4 (2026-09-14) | Decididas por el autor ante inconsistencias del cribado asistido: **EN1**, C1 exige métodos basados en aprendizaje; **EN2**, escritura antigua sin material antiguo real → E3; **EN3**, tareas dirigidas al testimonio material posterior al corte (copistas, códice) → E3 aunque la obra sea antigua; **EN4**, retractados → E5. Registradas en §10 del protocolo; instrucciones del cribado en v1.1 |
+| D21 | Unidad de análisis (2026-10-13) | La unidad de análisis y de *charting* es el **proyecto** (sistema o aplicación identificable que produce salidas sobre textos antiguos); la referencia bibliográfica sigue siendo la unidad de recuperación y de cómputo PRISMA. Reglas de agrupación y separación, tipos de unidad (*sistema* / *estudio*) y tabla pública `busqueda/proyectos.csv` en §5.7 del documento de proyecto. Considerada y descartada: una fila por publicación, que sobrerrepresenta a los equipos que más publican |
+| D22 | Formulario de *charting* (2026-10-13) | Diez bloques, con el nivel de evidencia registrado en cada celda (§5.8). Los bloques 5 a 8 —enlace entrada-salida, incertidumbre, intervención humana e identidad del productor— concentran la pregunta de investigación. Se pilota con dos proyectos (uno con interfaz pública y otro sin ella) antes de aplicarlo |
+| D23 | Marco teórico (2026-10-13) | Se reorganiza en tres ejes más un punto de cruce: campo de la IA aplicada a textos antiguos, proveniencia de lo generado por máquinas (fichas de modelo, PROV-O, C2PA, CIDOC-CRM, ECCCH) y preservación digital (PREMIS, METS, ISO 23081). Motivo: el marco anterior se agotaba en PREMIS y quedaba por debajo del objetivo general |
+| D24 | Repositorio público y declaración de uso de IA (2026-10-13) | Los materiales auditables (scripts, cadenas, registros, instrucciones y propuesta del cribado, decisiones) se publican en GitHub: código con licencia MIT, datos y documentos con CC BY 4.0. **No se redistribuye la exportación en bruto de Scopus.** El uso de IA se declara por tarea en §8 del documento de proyecto |
+| D25 | Extensión y referencias (2026-10-13) | Memoria de 50 a 60 páginas con portada, índice y bibliografía; anexos y materiales extensos al repositorio. Entre 50 y 60 referencias: el corpus analizado va como **tabla en anexo** y en la lista de referencias solo entran los trabajos citados en el cuerpo |
+
+## Advertencias metodológicas activas
+
+1. **No confundir opacidad con ausencia.** Que un proyecto no sea auditable
+   públicamente no prueba que no documente proveniencia. La conclusión
+   defendible es "no es verificable públicamente que documenten", no "no
+   documentan".
+2. **Patrón detectado en el autor:** tendencia a saltar a la propuesta antes de
+   establecer la carencia. Ocurrió con la afirmación de vacío inicial y volvió a
+   ocurrir con "otras se podrían crear o proponer de no encontrarse".
+3. **"Confirmado empíricamente"** en el documento de contexto incluye al menos
+   una afirmación no verificada en esta máquina (Ithaca corriendo en local).

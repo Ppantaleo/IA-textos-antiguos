@@ -1,0 +1,83 @@
+{
+  "proposito": "v1 (2026-09-14). Aplica D13 (definición de Sommerschield), D15 y D16: sin khipu, quipu, \"palm leaf\" ni \"historical manuscript\"; se añaden palimpsest y \"bamboo slip\" para recuperar textos antiguos en soportes o copias que esos términos cubrían. Los casos restantes se cubren con snowballing.",
+  "desde": 2022,
+  "hasta": 2026,
+  "max_registros": 4000,
+  "bloques": [
+    {
+      "nombre": "IA",
+      "terminos": [
+        "\"artificial intelligence\"",
+        "\"machine learning\"",
+        "\"deep learning\"",
+        "\"neural network\"",
+        "\"computer vision\"",
+        "\"language model\""
+      ]
+    },
+    {
+      "nombre": "textos antiguos",
+      "terminos": [
+        "\"ancient text\"",
+        "\"ancient script\"",
+        "\"ancient language\"",
+        "\"ancient manuscript\"",
+        "epigraphy",
+        "inscription",
+        "papyrus",
+        "papyri",
+        "\"Dead Sea Scrolls\"",
+        "Herculaneum",
+        "cuneiform",
+        "\"Linear B\"",
+        "hieroglyph",
+        "palaeography",
+        "paleography",
+        "palimpsest",
+        "\"bamboo slip\""
+      ]
+    }
+  ],
+  "seed": {
+    "assael2022ithaca": {
+      "doi": "10.1038/s41586-022-04448-z",
+      "titulo": "Restoring and attributing ancient texts using deep neural networks"
+    },
+    "assael2025aeneas": {
+      "doi": "10.1038/s41586-025-09292-5",
+      "titulo": "Contextualizing ancient texts with generative neural networks"
+    },
+    "popovic2025enoch": {
+      "doi": "10.1371/journal.pone.0323185",
+      "titulo": "Dating ancient manuscripts using radiocarbon and AI-based writing style analysis"
+    },
+    "dhali2026binet": {
+      "doi": "10.1007/978-3-032-09371-4_11",
+      "titulo": "BiNet: A Deep Encoder-Decoder Network for Binarizing Degraded Ancient Manuscripts"
+    },
+    "murugan2024drlift": {
+      "doi": "10.1186/s40494-024-01522-9",
+      "titulo": "Ancient Tamil inscription recognition using detect, recognize and labelling, interpreter framework of text method"
+    },
+    "papavassileiou2023linearb": {
+      "doi": "10.1145/3593431",
+      "titulo": "A Generative Model for the Mycenaean Linear B Script and Its Application in Infilling Text from Ancient Tablets"
+    },
+    "gutherz2023akkadian": {
+      "doi": "10.1093/pnasnexus/pgad096",
+      "titulo": "Translating Akkadian to English with neural machine translation"
+    },
+    "levine2024lacuna": {
+      "doi": "10.18653/v1/2024.ml4al-1.8",
+      "titulo": "Lacuna Language Learning: Leveraging RNNs for Ranked Text Completion in Digitized Coptic Manuscripts"
+    },
+    "pinillabuitrago2022maya": {
+      "doi": "10.1016/j.eswa.2022.116983",
+      "titulo": "Encoding hieroglyph segments to represent hieroglyphs following the bag of visual word model for retrieval"
+    },
+    "sommerschield2023survey": {
+      "doi": "10.1162/coli_a_00481",
+      "titulo": "Machine Learning for Ancient Languages: A Survey"
+    }
+  }
+}

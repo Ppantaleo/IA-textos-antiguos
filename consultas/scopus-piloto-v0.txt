@@ -1,0 +1,10 @@
+# Scopus — traducción de la cadena piloto-v0 (OpenAlex)
+# Uso: Scopus > Advanced document search > pegar la línea de consulta.
+# Exportar: seleccionar todos > Export > CSV, marcando "Abstract & keywords".
+# Diferencias con OpenAlex: Scopus trata las comillas como frase flexible
+# (admite plurales) y busca también en palabras clave (KEY). Aquí se usa
+# comodín para papyr* (papyrus/papyri) y para hieroglyph*, palaeograph* y
+# paleograph*.
+# Fecha de ejecución y número de resultados: anotar al correr.
+
+TITLE-ABS-KEY ( ( "artificial intelligence" OR "machine learning" OR "deep learning" OR "neural network" OR "computer vision" OR "language model" ) AND ( "ancient text" OR "ancient script" OR "ancient language" OR "ancient manuscript" OR "historical manuscript" OR epigraphy OR inscription OR papyr* OR "Dead Sea Scrolls" OR herculaneum OR cuneiform OR "Linear B" OR hieroglyph* OR khipu OR quipu OR "palm leaf" OR palaeograph* OR paleograph* ) ) AND PUBYEAR > 2021 AND PUBYEAR < 2027

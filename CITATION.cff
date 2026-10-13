@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Materiales auditables del TFM sobre IA y textos antiguos"
+message: "Si usa estos materiales, cítelos así."
+type: dataset
+authors:
+  - family-names: Pantaleo
+    given-names: Patricio Iván
+    orcid: "https://orcid.org/0000-0002-8104-8975"
+abstract: >-
+  Scripts, cadenas de búsqueda, registros de corrida y tablas de cribado de una
+  revisión de alcance (PRISMA-ScR) sobre aplicaciones de inteligencia
+  artificial a la restauración e interpretación de textos antiguos.
+keywords:
+  - revisión de alcance
+  - PRISMA-ScR
+  - inteligencia artificial
+  - textos antiguos
+  - preservación digital
+  - PREMIS
+license: MIT

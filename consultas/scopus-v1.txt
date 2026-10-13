@@ -1,0 +1,8 @@
+# Scopus — traducción de la cadena v1 (OpenAlex)
+# Uso: Scopus > Advanced document search > pegar la línea de consulta.
+# Exportar: seleccionar todos > Export > CSV, marcando "Abstract & keywords".
+# Guardar el CSV en corridas/scopus-v1/. Anotar la fecha y el número de resultados.
+# Cambios respecto de scopus-piloto-v0: sin khipu, quipu, "palm leaf" ni
+# "historical manuscript"; se añaden palimpsest* y "bamboo slip*".
+
+TITLE-ABS-KEY ( ( "artificial intelligence" OR "machine learning" OR "deep learning" OR "neural network" OR "computer vision" OR "language model" ) AND ( "ancient text" OR "ancient script" OR "ancient language" OR "ancient manuscript" OR epigraphy OR inscription OR papyr* OR "Dead Sea Scrolls" OR herculaneum OR cuneiform OR "Linear B" OR hieroglyph* OR palaeograph* OR paleograph* OR palimpsest* OR "bamboo slip*" ) ) AND PUBYEAR > 2021 AND PUBYEAR < 2027
