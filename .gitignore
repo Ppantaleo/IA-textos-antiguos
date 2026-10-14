@@ -3,9 +3,3 @@ __pycache__/
 .Rhistory
 .DS_Store
 
-# Datos en bruto: no se versionan (se regeneran con los scripts)
-datos/crudo/
-*.jsonl
-
-# Exportaciones de Scopus: no redistribuibles
-*scopus_export*

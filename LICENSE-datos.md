@@ -9,10 +9,11 @@ distribuyen bajo **Creative Commons Atribución 4.0 Internacional (CC BY 4.0)**:
 ## Procedencia de los datos
 
 - Los metadatos bibliográficos proceden de **OpenAlex** (CC0) y de **Crossref**
-  (metadatos abiertos).
-- Los registros recuperados en **Scopus** (Elsevier) **no se redistribuyen en
-  bruto**. De esa fuente se publican la cadena de búsqueda, la fecha de
-  ejecución, las cifras y los identificadores (DOI y título) imprescindibles
-  para reconstruir la consulta con acceso institucional.
-- Por la misma razón, las tablas de cribado publicadas **no incluyen la columna
-  de resumen**.
+  (metadatos abiertos). La licencia CC BY 4.0 se aplica a la selección, la
+  organización y los datos propios (decisiones de cribado, motivos, claves).
+- `datos/bruto/scopus-v1.csv` procede de **Scopus** (Elsevier), base de
+  suscripción. Se publica como material de auditoría del relevamiento, no bajo
+  licencia CC BY: sobre ese archivo rigen las condiciones de uso de Elsevier.
+  Se retirará si el titular lo requiere, y en su lugar se publicará la lista de
+  identificadores necesaria para reconstruir la consulta con acceso
+  institucional.

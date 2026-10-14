@@ -519,10 +519,17 @@ metodología. Contiene:
   proyectos (§5.7);
 - el formulario de *charting* y la matriz resultante.
 
-El código se publica bajo licencia MIT y los datos y documentos bajo CC BY 4.0.
-**No se redistribuye la exportación en bruto de Scopus**, por las condiciones
-de uso de la base; de ella se publican la cadena, la fecha, las cifras y los
-identificadores (DOI) necesarios para reconstruirla con acceso institucional.
+El código se publica bajo licencia MIT y los datos y documentos propios bajo
+CC BY 4.0. **Se publican también los datos en bruto de las dos fuentes**: la
+respuesta de la API de OpenAlex y la exportación manual de Scopus. Sin ellos,
+la auditoría del relevamiento se detiene en la palabra del autor. La
+exportación de Scopus procede de una base de suscripción cuyas condiciones de
+uso no contemplan la redistribución: se publica como material de auditoría, en
+la cantidad mínima necesaria, y se sustituirá por la lista de identificadores
+si el titular lo requiere.
+
+Se publica solo la corrida en vigor. El piloto que sirvió para calibrar la
+cadena no sostiene ningún resultado y queda en la carpeta de trabajo.
 
 La memoria no incluye como anexo impreso lo que el repositorio ya contiene: los
 anexos del documento se limitan a la matriz comparativa y al diagrama

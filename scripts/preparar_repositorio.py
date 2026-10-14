@@ -2,15 +2,13 @@
 """Regenera el contenido público del repositorio desde la carpeta de trabajo.
 
 La carpeta de trabajo (`01-research/`) es la fuente única; este repositorio es
-su proyección auditable. El script copia los scripts, las cadenas de búsqueda y
-los registros de cada corrida, y reduce las tablas de cribado para no
-redistribuir resúmenes (ver LICENSE-datos.md).
+su proyección auditable. Se publica solo la corrida en vigor (v1): el piloto
+(v0) sirvió para calibrar la cadena y no sostiene ningún resultado.
 
 Uso:
   python3 scripts/preparar_repositorio.py [ruta a 01-research]
 """
 
-import csv
 import shutil
 import sys
 from pathlib import Path
@@ -19,28 +17,18 @@ REPO = Path(__file__).resolve().parent.parent
 TRABAJO = Path(sys.argv[1]) if len(sys.argv) > 1 else REPO.parent / "01-research"
 BUSQUEDA = TRABAJO / "busqueda"
 
-# Columnas que nunca se publican: provienen en parte de Scopus
-VETADAS = {"resumen", "abstract", "palabras_clave"}
+CORRIDA = "v1"          # corrida de OpenAlex en vigor
+SCOPUS = "scopus-v1"    # carpeta de la exportación de Scopus en vigor
+FUSION = "fusion-v1"    # fusión de ambas
 
 
 def copiar(origen, destino):
+    assert origen.exists(), f"No existe {origen}"
     destino.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(origen, destino)
-    print(f"  {destino.relative_to(REPO)}")
-
-
-def reducir_csv(origen, destino):
-    """Copia un CSV sin las columnas vetadas."""
-    with open(origen, newline="") as f:
-        filas = list(csv.DictReader(f))
-    campos = [c for c in filas[0] if c not in VETADAS]
-    destino.parent.mkdir(parents=True, exist_ok=True)
-    with open(destino, "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=campos, extrasaction="ignore")
-        w.writeheader()
-        w.writerows(filas)
-    print(f"  {destino.relative_to(REPO)}  ({len(filas)} filas, "
-          f"{len(filas[0]) - len(campos)} columnas omitidas)")
+    mb = destino.stat().st_size / 1e6
+    print(f"  {destino.relative_to(REPO)}  ({mb:.1f} MB)" if mb >= 1
+          else f"  {destino.relative_to(REPO)}")
 
 
 def main():
@@ -51,31 +39,37 @@ def main():
         copiar(BUSQUEDA / n, REPO / "scripts" / n)
 
     print("Cadenas de búsqueda:")
-    for p in sorted((BUSQUEDA / "consultas").iterdir()):
-        copiar(p, REPO / "consultas" / p.name)
+    copiar(BUSQUEDA / "consultas" / f"{CORRIDA}.json", REPO / "consultas" / f"{CORRIDA}.json")
+    copiar(BUSQUEDA / "consultas" / f"{SCOPUS}.txt", REPO / "consultas" / f"{SCOPUS}.txt")
 
     print("Registros de corrida:")
-    for p in sorted(BUSQUEDA.glob("corridas/*/registro.md")):
-        copiar(p, REPO / "registros" / f"{p.parent.name}.md")
+    copiar(BUSQUEDA / "corridas" / CORRIDA / "registro.md", REPO / "registros" / f"{CORRIDA}.md")
+    copiar(BUSQUEDA / "corridas" / FUSION / "registro.md", REPO / "registros" / f"{FUSION}.md")
+
+    print("Datos en bruto:")
+    copiar(BUSQUEDA / "corridas" / CORRIDA / "crudo.jsonl",
+           REPO / "datos" / "bruto" / "openalex-v1.jsonl")
+    exportaciones = list((BUSQUEDA / "corridas" / SCOPUS).glob("*.csv"))
+    assert len(exportaciones) == 1, exportaciones
+    copiar(exportaciones[0], REPO / "datos" / "bruto" / "scopus-v1.csv")
+
+    print("Corpus fusionado:")
+    copiar(BUSQUEDA / "corridas" / FUSION / "cribado.csv", REPO / "datos" / "corpus-v1.csv")
+    copiar(BUSQUEDA / "corridas" / FUSION / "cribado.bib", REPO / "datos" / "corpus-v1.bib")
 
     print("Cribado:")
-    copiar(BUSQUEDA / "cribado" / "instrucciones-cribado-ia.md",
-           REPO / "cribado" / "instrucciones-cribado-ia.md")
-    copiar(BUSQUEDA / "cribado" / "decisiones.csv", REPO / "cribado" / "decisiones.csv")
-    for n in ("propuesta-ia-v1.csv", "propuesta-ia-v1.1.csv"):
-        reducir_csv(BUSQUEDA / "cribado" / n, REPO / "cribado" / n)
-
-    print("Corpus:")
-    reducir_csv(BUSQUEDA / "corridas" / "fusion-v1" / "cribado.csv",
-                REPO / "datos" / "corpus-v1.csv")
+    for n in ("instrucciones-cribado-ia.md", "decisiones.csv",
+              "propuesta-ia-v1.csv", "propuesta-ia-v1.1.csv"):
+        copiar(BUSQUEDA / "cribado" / n, REPO / "cribado" / n)
 
     print("Documentación:")
     copiar(TRABAJO / "proyecto.qmd", REPO / "docs" / "proyecto.md")
-    copiar(TRABAJO / "decisiones.md", REPO / "docs" / "decisiones.md")
+    print("  docs/indice-tfm.md  (se mantiene a mano, no se regenera)")
 
-    for opcional, destino in (("proyectos.csv", "datos/proyectos.csv"),
-                              ("charting.csv", "datos/charting.csv")):
-        p = BUSQUEDA / opcional
+    print("Opcionales (si ya existen):")
+    for nombre, destino in (("proyectos.csv", "datos/proyectos.csv"),
+                            ("charting.csv", "datos/charting.csv")):
+        p = BUSQUEDA / nombre
         if p.exists():
             copiar(p, REPO / destino)
 
