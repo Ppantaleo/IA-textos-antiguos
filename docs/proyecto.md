@@ -167,7 +167,8 @@ conservarla con los instrumentos que ya usa, sin inventar un circuito aparte.
 | **ISO 23081** | Modelo entidad-relación (documentos, agentes, actividades, reglas). Puente conceptual con el contenido ya cursado; da la estructura de nivel superior de la rejilla |
 
 Ediciones que se analizan: PREMIS 3.0 (PREMIS Editorial Committee, 2015),
-cuyo esquema XML lleva fecha de enero de 2016;
+publicada en junio de 2015 y revisada en noviembre, con esquema XML de enero
+de 2016;
 **METS 2** (Library of Congress, 2025), la revisión mayor que simplifica el
 esquema y elimina la dependencia de XLink; ISO 23081-1:2017 e ISO 23081-2:2021.
 La rama METS 1 sigue soportada y en uso en los repositorios existentes, así que
@@ -191,11 +192,15 @@ rejilla (§5.4):
 1. **Determinismo frente a distribución.** PREMIS fue diseñado para eventos
    deterministas: una migración de formato se completa o falla. Un modelo emite
    un resultado probabilístico, y las alternativas descartadas también son
-   información. La inspección del esquema 3.0 lo confirma: de sus 188
-   elementos, ninguno nombra confianza, probabilidad ni certeza, y el
-   vocabulario de resultados de evento tiene tres términos —*success*, *fail*
-   y *warning*—. El grado de confianza solo cabe como texto libre en
-   `eventOutcomeDetailNote`, donde no es consultable ni comparable.
+   información. La inspección de la norma lo confirma: de las 196 unidades
+   semánticas del diccionario de datos —89 de objeto, 21 de evento, 18 de
+   agente y 68 de derechos—, ninguna nombra confianza, probabilidad ni
+   certeza, y el vocabulario de resultados de evento tiene tres términos:
+   *success*, *fail* y *warning*. La palabra *confidence* aparece dos veces en
+   las 283 páginas del diccionario, ambas en la discusión sobre fijeza y
+   autenticidad, nunca como unidad. El grado de confianza solo cabe entonces
+   como texto libre en `eventOutcomeDetailNote`, donde no es consultable ni
+   comparable.
 2. **Entidad intelectual frente a objeto.** PREMIS distingue la entidad
    intelectual del objeto digital que la representa. Una restauración obliga a
    decidir si la salida es una representación nueva del testimonio o una
@@ -207,10 +212,10 @@ rejilla (§5.4):
    texto no es una operación técnica sobre el objeto, sino un acto
    interpretativo que produce conocimiento nuevo.
 
-Las cifras de este apartado proceden de la inspección directa del esquema XML
-de PREMIS 3.0 y de los treinta vocabularios controlados que la Library of
-Congress publica para la norma (Library of Congress, s. f.), consultados el 15
-de octubre de 2026.
+Las cifras de este apartado proceden de la inspección directa del diccionario
+de datos de PREMIS 3.0, de su esquema XML —que declara 188 elementos— y de los
+treinta vocabularios controlados que la Library of Congress publica para la
+norma (Library of Congress, s. f.), consultados el 15 de octubre de 2026.
 
 ## 5. Metodología
 
@@ -731,8 +736,8 @@ analysis. *PLOS One*, *20*(6), e0323185.
 <https://doi.org/10.1371/journal.pone.0323185>
 
 PREMIS Editorial Committee. (2015). *PREMIS data dictionary for preservation
-metadata, version 3.0*. Library of Congress.
-<https://www.loc.gov/standards/premis/v3/>
+metadata, version 3.0* (junio de 2015, revisado en noviembre de 2015). Library
+of Congress. <https://www.loc.gov/standards/premis/v3/premis-3-0-final.pdf>
 
 Priem, J., Piwowar, H. y Orr, R. (2022). *OpenAlex: A fully-open index of
 scholarly works, authors, venues, institutions, and concepts* (arXiv:2205.01833).
