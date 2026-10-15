@@ -126,21 +126,48 @@ proponer nada nuevo.
 
 ### 4.3 La preservación digital como eje normativo
 
+**Qué significa preservar.** En archivística, preservar no es guardar. Un
+objeto digital está preservado cuando sigue siendo identificable, auténtico,
+íntegro, inteligible y utilizable con el paso del tiempo, y eso no depende solo
+del archivo que lo contiene: depende de que viaje con el registro de qué es, de
+dónde viene y qué le pasó. La proveniencia no es un adorno descriptivo del
+objeto, es la condición de su autenticidad. Un objeto sin ella puede leerse,
+pero no juzgarse.
+
+**Por qué esto importa aquí.** La salida de un modelo aplicado a un texto
+antiguo no es un dato más: es una aserción interpretativa sobre un bien
+patrimonial —esta laguna decía esto, esta inscripción es de allí y de tal
+fecha—, emitida con un grado de certeza y aceptada por alguien. Si se conserva
+sin ese registro, la aserción se aplana: dentro de veinte años la lectura
+restaurada será indistinguible de una lectura atestiguada, y la edición que la
+incorporó no permitirá saber cuál era cuál. La pérdida no es técnica sino
+epistémica, y es irreversible, porque reconstruir después qué modelo produjo
+qué y quién lo validó suele ser imposible. En un campo donde la evidencia
+material es escasa y las lecturas se acumulan unas sobre otras, esa confusión
+contamina el registro.
+
+**Por qué estos tres estándares.** La elección no es neutral y conviene
+declararla: PREMIS, METS e ISO 23081 son los instrumentos que efectivamente
+gobiernan la conservación a largo plazo en archivos y bibliotecas, que son el
+destinatario del trabajo. Que una salida de IA sea preservable significa, en
+términos prácticos, que una institución pueda ingestarla, describirla y
+conservarla con los instrumentos que ya usa, sin inventar un circuito aparte.
+
 | Estándar | Qué aporta al análisis |
 |---|---|
 | **PREMIS** | Modela `Object`, `Event`, `Agent` y `Rights`. Contempla que un *software* sea agente, con versión, ejecutando un evento fechado con un resultado sobre un objeto. Es el molde más directo para "qué modelo produjo esta salida" |
-| **METS** | Empaquetado y estructura. Pregunta algo que PREMIS no: si existe siquiera un objeto digital con envoltorio, o si el resultado circula como dato suelto sin metadatos adheridos |
+| **METS 2** | Empaquetado y estructura. Pregunta algo que PREMIS no: si existe siquiera un objeto digital con envoltorio, o si el resultado circula como dato suelto sin metadatos adheridos |
 | **ISO 23081** | Modelo entidad-relación (documentos, agentes, actividades, reglas). Puente conceptual con el contenido ya cursado; da la estructura de nivel superior de la rejilla |
 
-Ediciones que se citan: PREMIS 3.0 (PREMIS Editorial Committee, 2015);
-METS 1.12.1, con la versión 2 ya publicada (Library of Congress, 2025);
-ISO 23081-1:2017 e ISO 23081-2:2021.
+Ediciones que se analizan: PREMIS 3.0 (PREMIS Editorial Committee, 2015);
+**METS 2** (Library of Congress, 2025), la revisión mayor que simplifica el
+esquema y elimina la dependencia de XLink; ISO 23081-1:2017 e ISO 23081-2:2021.
+La rama METS 1 sigue soportada y en uso en los repositorios existentes, así que
+se la menciona cuando el contraste lo pida, pero el marco se construye sobre la
+versión vigente.
 
-La elección no es neutral y conviene declararla: estos tres estándares son los
-que efectivamente gobiernan la conservación a largo plazo en las instituciones
-de memoria, que son el destinatario del trabajo. Que una salida de IA sea
-preservable significa, en términos prácticos, que una institución pueda
-ingestarla, describirla y conservarla con los instrumentos que ya usa.
+El apartado siguiente lleva estos tres instrumentos al caso que nos ocupa: qué
+ocurre cuando lo que hay que preservar es una aserción probabilística.
 
 ### 4.4 Punto de cruce: la salida como objeto a preservar
 
