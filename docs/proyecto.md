@@ -126,13 +126,20 @@ proponer nada nuevo.
 
 ### 4.3 La preservación digital como eje normativo
 
-**Qué significa preservar.** En archivística, preservar no es guardar. Un
-objeto digital está preservado cuando sigue siendo identificable, auténtico,
-íntegro, inteligible y utilizable con el paso del tiempo, y eso no depende solo
-del archivo que lo contiene: depende de que viaje con el registro de qué es, de
-dónde viene y qué le pasó. La proveniencia no es un adorno descriptivo del
-objeto, es la condición de su autenticidad. Un objeto sin ella puede leerse,
-pero no juzgarse.
+**Qué significa preservar.** En archivística, preservar no es guardar. El
+modelo de referencia OAIS fija el criterio: la información preservada debe
+seguir siendo **independientemente inteligible** para una comunidad designada,
+sin depender de quien la produjo, y para lograrlo exige acompañarla de
+información de descripción de la preservación, en la que la **proveniencia** es
+una de las cuatro categorías obligatorias, junto con la referencia, el contexto
+y la fijeza (Lavoie, 2014). La proveniencia no es entonces un adorno
+descriptivo del objeto: es parte de lo que lo mantiene preservable.
+
+Es además la condición de su autenticidad. La autenticidad de un documento
+digital no se verifica mirándolo —no hay sello ni soporte que la sostenga—:
+se infiere de su identidad y su integridad declaradas y del control documentado
+sobre su custodia a lo largo del tiempo (Duranti y Rogers, 2012). Un objeto
+digital sin ese registro puede leerse, pero no juzgarse.
 
 **Por qué esto importa aquí.** La salida de un modelo aplicado a un texto
 antiguo no es un dato más: es una aserción interpretativa sobre un bien
@@ -645,6 +652,10 @@ encoder-decoder network for binarizing degraded ancient manuscripts. En
 *Document Analysis and Recognition – ICDAR 2025 Workshops* (pp. 166–193).
 Springer. <https://doi.org/10.1007/978-3-032-09371-4_11>
 
+Duranti, L. y Rogers, C. (2012). Trust in digital records: An increasingly
+cloudy legal area. *Computer Law & Security Review*, *28*(5), 522–531.
+<https://doi.org/10.1016/j.clsr.2012.07.009>
+
 ECHOES. (2024). *European Collaborative Cloud for Cultural Heritage (ECCCH)*.
 Proyecto Horizon Europe coordinado por el CNRS, 2024–2029.
 <https://www.echoes-eccch.eu/>
@@ -668,6 +679,10 @@ records – Part 1: Principles*.
 International Organization for Standardization. (2021). *ISO 23081-2:2021.
 Information and documentation – Metadata for managing records – Part 2:
 Conceptual and implementation issues*.
+
+Lavoie, B. (2014). *The Open Archival Information System (OAIS) reference
+model: Introductory guide* (2.ª ed.). Digital Preservation Coalition.
+<https://doi.org/10.7207/twr14-02>
 
 Lebo, T., Sahoo, S. y McGuinness, D. (Eds.). (2013). *PROV-O: The PROV
 ontology*. W3C Recommendation. <https://www.w3.org/TR/prov-o/>
