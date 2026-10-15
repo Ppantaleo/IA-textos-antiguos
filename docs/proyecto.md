@@ -75,7 +75,7 @@ El campo tiene ya un mapa propio: el *survey* de Sommerschield et al. (2023)
 ordena las tareas —restauración de lagunas, atribución geográfica y temporal,
 transcripción y HTR, traducción automática, desciframiento, búsqueda y
 alineamiento de paralelos— y fija la delimitación del objeto que este trabajo
-adopta en §7.1.
+adopta en §5.1.
 
 Lo que ese campo documenta de sí mismo está bien establecido: arquitectura del
 modelo, composición del corpus de entrenamiento, procedimiento de evaluación y
@@ -187,7 +187,7 @@ grado de certeza, producida por un sistema concreto y aceptada por alguien—, y
 no un dato más dentro de una edición.
 
 Tres tensiones conceptuales organizan ese cruce y guían la capa normativa del
-análisis (§5.4):
+análisis (§6.4):
 
 1. **Determinismo frente a distribución.** PREMIS fue diseñado para eventos
    deterministas: una migración de formato se completa o falla. Un modelo emite
@@ -217,7 +217,40 @@ de datos de PREMIS 3.0, de su esquema XML —que declara 188 elementos— y de l
 treinta vocabularios controlados que la Library of Congress publica para la
 norma (Library of Congress, s. f.), consultados el 15 de octubre de 2026.
 
-## 5. Metodología
+## 5. Objeto de estudio
+
+**"Textos antiguos"**, no "manuscritos". Es el término que cubre a la vez la
+inscripción epigráfica (Ithaca, Aeneas: piedra y bronce; DR-LIFT: inscripciones
+tamiles en piedra), el rollo y el papiro (DRI, Enoch), la tablilla (acadio,
+lineal B) y el manuscrito (Lacuna). Las particularidades de cada soporte se
+detallan dentro del trabajo.
+
+### 5.1 Definición operativa de "texto antiguo"
+
+Se adopta la delimitación de Sommerschield et al. (2023, p. 705), por ser la
+referencia de autoridad del campo:
+
+> "ancient texts written in ancient languages [...] all languages in use across
+> the world, written on any medium and in any script, between the birth of
+> writing systems in ancient Mesopotamia (3400 BCE) up until the conventional
+> end of 'ancient history' in the late first millennium CE."
+
+**Qué se fecha: el texto (la obra), no el soporte conservado.** Consecuencias
+para el cribado:
+
+- **Entran** las copias posteriores de obras antiguas. Por ejemplo, una
+  aplicación sobre manuscritos medievales de la *Ilíada*.
+- **No entran** las obras compuestas después del corte, aunque retomen textos
+  antiguos (adaptaciones, paráfrasis) o usen una lengua de origen antiguo que
+  siguió escribiéndose (latín medieval, chino literario tardío).
+- La lengua y la escritura siguen sin ser criterio. El criterio es la
+  época del texto.
+
+**Corpus mixtos** (modelos entrenados con textos anteriores y posteriores al
+corte): entran **solo si trabajan principalmente con textos anteriores al
+corte**. Criterio provisional, a revisar con los casos reales del cribado.
+
+## 6. Metodología
 
 **Diseño: scoping review conforme a PRISMA-ScR (Tricco et al., 2018), con
 análisis de artefacto embebido sobre el subconjunto inspeccionable.**
@@ -227,9 +260,9 @@ practica valoración de calidad de evidencia. Es un mapeo de la extensión, el
 rango y la naturaleza de una práctica. Su paso de *data charting* produce la
 matriz comparativa, que es a la vez instrumento y producto.
 
-### 5.1 Criterios de inclusión
+### 6.1 Criterios de inclusión
 
-Un proyecto entra si cumple **todas** estas condiciones (en §5.6 se
+Un proyecto entra si cumple **todas** estas condiciones (en §6.6 se
 operacionalizan como C1–C4):
 
 1. Existe un proceso de IA en la lectura o interpretación del material —
@@ -237,17 +270,17 @@ operacionalizan como C1–C4):
 2. Existe un producto digital resultante de esa acción sobre el cual evaluar
    metadatos. No es necesario que sea una imagen: puede ser texto, dato
    estructurado o modelo.
-3. El material son **textos antiguos** según la definición de §7.1.
+3. El material son **textos antiguos** según la definición de §5.1.
 4. Si el corpus mezcla épocas, trabaja **principalmente** con textos anteriores
-   al corte (§7.1).
+   al corte (§5.1).
 
 **Lengua y escritura no son criterio de selección.** Entra una aplicación a
 cualquier lengua o sistema de escritura antiguo (griego, latín, hebreo, acadio,
 chino clásico, tamil, maya, etc.) si cumple las condiciones anteriores. Lo que
 se evalúa es la aplicación de IA, no la tradición textual. La lengua y la
-escritura se registran como variables descriptivas (§5.4).
+escritura se registran como variables descriptivas (§6.4).
 
-### 5.2 Ventana temporal
+### 6.2 Ventana temporal
 
 **Corte: 2022**, con capítulo de antecedentes.
 
@@ -264,7 +297,7 @@ publicaciones desde 2022, sin que su fecha de inicio los excluya. Así el DRI
 —fundacional en 2016, con la lectura virtual del rollo de En-Gedi (Seales et
 al., 2016)— permanece en el corpus.
 
-### 5.3 Jerarquía de fuentes de evidencia
+### 6.3 Jerarquía de fuentes de evidencia
 
 De mayor a menor peso probatorio:
 
@@ -285,7 +318,7 @@ contraste (nivel 2).
 > verificable públicamente que documente", no "no documenta". Esa opacidad es en
 > sí misma un hallazgo, y se lee en clave de prácticas FAIR.
 
-### 5.4 Instrumento de análisis: dos capas
+### 6.4 Instrumento de análisis: dos capas
 
 | Capa | Qué hace | Por qué |
 |---|---|---|
@@ -299,7 +332,7 @@ fue diseñado para esto.
 
 **Dónde se miran los metadatos.** La pregunta no se responde leyendo lo que
 los proyectos dicen de sí mismos, sino mirando lo que entregan. Para cada
-proyecto se recorren cuatro lugares, en el orden de peso probatorio de §5.3:
+proyecto se recorren cuatro lugares, en el orden de peso probatorio de §6.3:
 
 | Lugar | Qué se examina | Qué se obtiene |
 |---|---|---|
@@ -313,9 +346,9 @@ encontrado, el nivel de evidencia con que se obtuvo (1 a 4), la dirección
 consultada y la fecha de consulta. Cuando un dato no aparece, se distingue
 entre **no se registra** —se examinó la salida y el campo no existe— y **no es
 verificable públicamente** —no hay salida accesible que examinar—, conforme a
-la advertencia de §5.3.
+la advertencia de §6.3.
 
-No se ejecutan los modelos para producir salidas nuevas (§5.3): se observa lo
+No se ejecutan los modelos para producir salidas nuevas (§6.3): se observa lo
 que cada proyecto ya publica. La lectura del código y la ejecución local, donde
 sea posible, quedan como evidencia de contraste.
 
@@ -325,26 +358,26 @@ sirven para seleccionar):
 - Lengua y sistema de escritura
 - Soporte (piedra, bronce, arcilla, papiro, pergamino, bambú, hoja de palma…)
 
-La unidad sobre la que se aplica el formulario se define en §5.7 y el
-formulario completo de preguntas, en §5.8.
+La unidad sobre la que se aplica el formulario se define en §6.7 y el
+formulario completo de preguntas, en §6.8.
 
-### 5.5 Fuentes y estrategia de búsqueda bibliográfica
+### 6.5 Fuentes y estrategia de búsqueda bibliográfica
 
 Lo que se busca en estas bases son **publicaciones**, no proyectos: ninguna
 base indiza sistemas de IA. Los proyectos se derivan de la literatura que los
 describe, y recién en la lectura de texto completo se reconstruye, a partir de
-las publicaciones incluidas, qué proyecto hay detrás de cada una (§5.7).
+las publicaciones incluidas, qué proyecto hay detrás de cada una (§6.7).
 
 | Fuente | Función | Justificación |
 |---|---|---|
 | **OpenAlex** (Priem et al., 2022) | Base principal | Cobertura amplia y abierta, que incluye preprints (arXiv) y actas de ACL. Admite búsqueda booleana en título y resumen con filtro temporal. La consulta por API es reproducible y deja registro automático. |
 | **Scopus** (acceso institucional UC3M) | Base complementaria | Cubre el punto débil de OpenAlex: en el piloto, el 16 % de los registros no tenía resumen, sobre todo de editoriales como Elsevier. Busca también en palabras clave de autor e indexadas (`TITLE-ABS-KEY`). |
-| ***Snowballing*** | Complemento | Hacia atrás (referencias) y hacia adelante (citas) desde el seed set y los estudios incluidos, con `referenced_works` y `cited_by` de OpenAlex. Recupera casos que la cadena no capta, sea por falta de términos generales de IA (Lacuna) o por términos quitados para reducir ruido (D16). Los registros encontrados así se cuentan aparte en el diagrama PRISMA ("otros métodos"). |
+| ***Snowballing*** | Complemento | Hacia atrás (referencias) y hacia adelante (citas) desde el conjunto semilla y los estudios incluidos, con `referenced_works` y `cited_by` de OpenAlex. Recupera casos que la cadena no capta, sea por falta de términos generales de IA (Lacuna) o por términos quitados para reducir ruido (D16). Los registros encontrados así se cuentan aparte en el diagrama PRISMA ("otros métodos"). |
 
 **Cadena.** Dos bloques unidos por AND: (1) términos generales de IA y (2)
 términos de textos antiguos, soportes y escrituras. **No se incluyen nombres de
 técnicas o arquitecturas** (CNN, RNN, transformer…), porque suben la cobertura a
-costa de mucho ruido (decisión D11). Cada versión de la cadena se guarda en
+costa de mucho ruido. Cada versión de la cadena se guarda en
 `busqueda/consultas/` y no se sobrescribe. La sintaxis de OpenAlex y la de
 Scopus no son idénticas; su equivalencia se documenta en el registro de cada
 corrida.
@@ -361,7 +394,7 @@ el repositorio (§9), y lo que no, queda declarado como manual:
 | Consulta a OpenAlex | `scripts/buscar_openalex.py` | Respuesta en bruto, BibTeX, conteos por término, recuperación del conjunto semilla y `registro.md` de la corrida |
 | Consulta a Scopus | **Manual.** *Advanced document search* y exportación en CSV con resumen y palabras clave | Cadena literal, fecha de ejecución y el CSV exportado |
 | Fusión y deduplicación | `scripts/fusionar.py` | Corpus único por DOI y, si falta, por título normalizado; cifras de identificación para el diagrama PRISMA |
-| Cribado por título y resumen | Instrucciones fijas a la IA, decisiones del autor (§5.6) | Propuesta sin modificar, decisiones y motivos |
+| Cribado por título y resumen | Instrucciones fijas a la IA, decisiones del autor (§6.6) | Propuesta sin modificar, decisiones y motivos |
 | Metadatos y BibTeX desde Crossref | `scripts/verificar_crossref.py` | Informe de verificación de cada DOI contra Crossref: coincidencia de título, año, publicación y páginas |
 | *Snowballing* | Pendiente, con `referenced_works` y `cited_by` de OpenAlex | Se publicará con su corrida |
 
@@ -379,16 +412,16 @@ son los que llevan de la referencia al sistema. La limitación se declara en los
 resultados: el corpus describe los proyectos **con presencia en la literatura
 académica**, que no son todos los que existen.
 
-### 5.6 Cribado por título y resumen
+### 6.6 Cribado por título y resumen
 
 **Hoja de criterios.** Cada registro se evalúa con cuatro preguntas derivadas
-de §5.1, §7.1 y D14:
+de §6.1 y §5.1:
 
 | # | Pregunta | Si la respuesta es "no" |
 |---|---|---|
 | C1 | ¿Hay un proceso de IA (aprendizaje automático, redes neuronales, visión por computador, modelos de lenguaje) aplicado a la lectura o interpretación del material, incluida su materialidad? | Excluir, E1 |
 | C2 | ¿Hay un producto digital resultante (texto restaurado, transcripción, atribución, modelo, dataset, imagen procesada…)? | Excluir, E2 |
-| C3 | ¿El material son textos antiguos según §7.1 (obra compuesta antes de finales del primer milenio d. C., en cualquier lengua, escritura o soporte)? | Excluir, E3 |
+| C3 | ¿El material son textos antiguos según §5.1 (obra compuesta antes de finales del primer milenio d. C., en cualquier lengua, escritura o soporte)? | Excluir, E3 |
 | C4 | Si el corpus mezcla épocas, ¿trabaja principalmente con textos anteriores al corte? | Excluir, E4 |
 
 Códigos de exclusión adicionales:
@@ -419,7 +452,7 @@ registros tocaron en la muestra y cuáles no. Solo las decisiones revisadas pasa
 proveniencia (V2) no forma parte del corpus de proyectos y necesita su propia
 búsqueda dirigida.
 
-### 5.7 Unidad de análisis: el proyecto
+### 6.7 Unidad de análisis: el proyecto
 
 El trabajo usa dos unidades distintas y no intercambiables:
 
@@ -469,11 +502,11 @@ matriz distingue el tipo de unidad en un campo explícito:
 
 | Tipo de unidad | Qué es | Qué se espera del *charting* |
 |---|---|---|
-| **Sistema** | Tiene nombre, interfaz o repositorio; la salida circula de forma identificable | Se puede evaluar hasta el nivel 1 de evidencia (§5.3) |
+| **Sistema** | Tiene nombre, interfaz o repositorio; la salida circula de forma identificable | Se puede evaluar hasta el nivel 1 de evidencia (§6.3) |
 | **Estudio** | Experimento publicado sin sistema identificable ni salida circulante | El análisis suele detenerse en los niveles 2 a 4; la ausencia de salida auditable se registra como dato, no como carencia del estudio |
 
 **La accesibilidad pública no es criterio de inclusión.** Un proyecto entra si
-cumple C1–C4 (§5.1), tenga o no interfaz abierta, repositorio o demostración en
+cumple C1–C4 (§6.1), tenga o no interfaz abierta, repositorio o demostración en
 línea. Muchos sistemas descritos en la literatura no son accesibles: los hay
 internos de un equipo, de una empresa, restringidos por licencia del corpus o
 simplemente nunca publicados como servicio. Todos ellos entran en el corpus si
@@ -481,7 +514,7 @@ cumplen los criterios, y entran como unidad de tipo *sistema* cuando tienen
 identidad reconocible, aunque esa identidad solo conste en la publicación.
 
 Lo que cambia con la accesibilidad no es la inclusión, es **hasta qué nivel de
-evidencia puede llegar el análisis** (§5.3) y, por tanto, qué puede afirmarse:
+evidencia puede llegar el análisis** (§6.3) y, por tanto, qué puede afirmarse:
 de un proyecto sin salida accesible se registra *no es verificable
 públicamente*, nunca *no documenta*. Esa asimetría es un hallazgo del
 relevamiento, no una carencia del corpus, y por eso cada celda guarda el nivel
@@ -494,11 +527,11 @@ informe final declara ambas cifras: estudios incluidos tras la lectura de texto
 completo y proyectos resultantes. La agrupación es una decisión del autor, no
 un cálculo: por eso se publica, para que sea discutible.
 
-### 5.8 Formulario de extracción de datos
+### 6.8 Formulario de extracción de datos
 
-Las dos capas de §5.4 se operacionalizan como una guía de preguntas aplicada a
+Las dos capas de §6.4 se operacionalizan como una guía de preguntas aplicada a
 cada proyecto, que es el *data charting* de PRISMA-ScR. **Cada celda registra, además del hallazgo, el nivel de evidencia con
-que se obtuvo** (§5.3), de modo que la asimetría entre proyectos auditables y
+que se obtuvo** (§6.3), de modo que la asimetría entre proyectos auditables y
 opacos quede visible en los datos.
 
 | Bloque | Preguntas | Parámetros registrados |
@@ -524,62 +557,38 @@ pública y otro sin ella— y se ajusta antes de aplicarlo al resto. Esa versió
 de prueba y la definitiva se conservan ambas en el repositorio de materiales
 (§9).
 
-## 6. Corpus semilla
+## 7. Corpus semilla
 
-Los proyectos del documento inicial **no son la muestra**: son el conjunto
-semilla con el que se valida la estrategia de búsqueda. El corpus final lo
-determina el protocolo, y puede resultar mayor o menor.
+Un **conjunto semilla** es un grupo pequeño de trabajos que se sabe de
+antemano que deberían estar en el corpus. Sirve para poner a prueba la
+estrategia de búsqueda antes de confiar en ella: si la cadena no los recupera,
+el problema está en la cadena y no en la literatura. Es la comprobación mínima
+de que una revisión no está midiendo su propio punto ciego.
 
-**Seed set operativo** (10 trabajos con publicación desde 2022, en
+Los proyectos del documento inicial **no son la muestra**: son ese conjunto de
+control. El corpus final lo determina el protocolo, y puede resultar mayor o
+menor.
+
+**Composición** (10 trabajos con publicación desde 2022, en
 `busqueda/consultas/v1.json`): Ithaca (Assael et al., 2022), Aeneas (Assael et
 al., 2025), Enoch (Popović et al., 2025), BiNet (Dhali et al., 2026), DR-LIFT
 (Murugan y Visalakshi, 2024), lineal B (Papavassileiou et al., 2023), acadio
 NMT (Gutherz et al., 2023), Lacuna (Levine et al., 2024), glifos mayas
 (Pinilla-Buitrago et al., 2022) y el *survey* de Sommerschield et al. (2023).
 
-**Regla de validación.** El seed set valida la **estrategia completa**
+**Regla de validación.** El conjunto semilla valida la **estrategia completa**
 (bases de datos más *snowballing*), no solo la cadena. Se informan por
 separado los trabajos recuperados por la cadena en cada base y los que se
 recuperan por *snowballing*. Un trabajo semilla que no aparezca por ninguna vía
-indica un fallo de la estrategia. Resultado de la cadena v1: 8/10 (faltan
-Lacuna y Pinilla-Buitrago, que deben aparecer por *snowballing*; ver V8).
+indica un fallo de la estrategia.
 
+**Resultado de la comprobación.** Ya se ejecutó, con la cadena v1 del 14 de
+septiembre de 2026: las bases recuperaron **8 de los 10** trabajos. Faltan
+Lacuna, publicado en las actas de un taller que OpenAlex indiza sin resumen y
+Scopus no cubre, y Pinilla-Buitrago, que la cadena no alcanza por no nombrar
+técnicas de visión por computador. Los dos deben aparecer por *snowballing*, y
+si no aparecieran, la estrategia tendría un fallo que habría que declarar.
 
-## 7. Objeto de estudio
-
-**"Textos antiguos"**, no "manuscritos". Es el término que cubre a la vez la
-inscripción epigráfica (Ithaca, Aeneas: piedra y bronce; DR-LIFT: inscripciones
-tamiles en piedra), el rollo y el papiro (DRI, Enoch), la tablilla (acadio,
-lineal B) y el manuscrito (Lacuna). Las particularidades de cada soporte se
-detallan dentro del trabajo.
-
-### 7.1 Definición operativa de "texto antiguo" (D13)
-
-Se adopta la delimitación de Sommerschield et al. (2023, p. 705), por ser la
-referencia de autoridad del campo:
-
-> "ancient texts written in ancient languages [...] all languages in use across
-> the world, written on any medium and in any script, between the birth of
-> writing systems in ancient Mesopotamia (3400 BCE) up until the conventional
-> end of 'ancient history' in the late first millennium CE."
-
-**Qué se fecha: el texto (la obra), no el soporte conservado.** Consecuencias
-para el cribado:
-
-- **Entran** las copias posteriores de obras antiguas. Por ejemplo, una
-  aplicación sobre manuscritos medievales de la *Ilíada*.
-- **No entran** las obras compuestas después del corte, aunque retomen textos
-  antiguos (adaptaciones, paráfrasis) o usen una lengua de origen antiguo que
-  siguió escribiéndose (latín medieval, chino literario tardío).
-- La lengua y la escritura siguen sin ser criterio (D12). El criterio es la
-  época del texto.
-
-**Corpus mixtos** (modelos entrenados con textos anteriores y posteriores al
-corte): entran **solo si trabajan principalmente con textos anteriores al
-corte**. Criterio provisional (D14), a revisar con los casos reales del cribado.
-
-**Quipu:** queda fuera del TFM (D15). Sus registros conservados son incaicos
-(siglos XV–XVI; Urton y Brezine, 2005). Solo se conserva esta nota por si se retoma en el doctorado.
 
 ## 8. Declaración de uso de inteligencia artificial
 
@@ -635,7 +644,7 @@ metodología. Contiene:
 - las instrucciones del cribado asistido, la propuesta de la IA sin modificar y
   el *script* que genera el cuaderno de revisión del autor, con su muestreo;
 - las decisiones del autor y la tabla de correspondencia entre referencias y
-  proyectos (§5.7);
+  proyectos (§6.7);
 - el formulario de *charting* y la matriz resultante.
 
 El código se publica bajo licencia MIT y los datos y documentos propios bajo
