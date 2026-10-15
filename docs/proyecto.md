@@ -166,7 +166,8 @@ conservarla con los instrumentos que ya usa, sin inventar un circuito aparte.
 | **METS 2** | Empaquetado y estructura. Pregunta algo que PREMIS no: si existe siquiera un objeto digital con envoltorio, o si el resultado circula como dato suelto sin metadatos adheridos |
 | **ISO 23081** | Modelo entidad-relación (documentos, agentes, actividades, reglas). Puente conceptual con el contenido ya cursado; da la estructura de nivel superior de la rejilla |
 
-Ediciones que se analizan: PREMIS 3.0 (PREMIS Editorial Committee, 2015);
+Ediciones que se analizan: PREMIS 3.0 (PREMIS Editorial Committee, 2015),
+cuyo esquema XML lleva fecha de enero de 2016;
 **METS 2** (Library of Congress, 2025), la revisión mayor que simplifica el
 esquema y elimina la dependencia de XLink; ISO 23081-1:2017 e ISO 23081-2:2021.
 La rama METS 1 sigue soportada y en uso en los repositorios existentes, así que
@@ -190,22 +191,26 @@ rejilla (§5.4):
 1. **Determinismo frente a distribución.** PREMIS fue diseñado para eventos
    deterministas: una migración de formato se completa o falla. Un modelo emite
    un resultado probabilístico, y las alternativas descartadas también son
-   información. No se ha identificado en PREMIS una unidad semántica que aloje
-   el grado de confianza sin recurrir a texto libre en
-   `eventOutcomeDetailNote`. **Antes de afirmar la carencia hay que verificar si
-   ya existe una extensión propuesta** (V2 del protocolo de trabajo).
+   información. La inspección del esquema 3.0 lo confirma: de sus 188
+   elementos, ninguno nombra confianza, probabilidad ni certeza, y el
+   vocabulario de resultados de evento tiene tres términos —*success*, *fail*
+   y *warning*—. El grado de confianza solo cabe como texto libre en
+   `eventOutcomeDetailNote`, donde no es consultable ni comparable.
 2. **Entidad intelectual frente a objeto.** PREMIS distingue la entidad
    intelectual del objeto digital que la representa. Una restauración obliga a
    decidir si la salida es una representación nueva del testimonio o una
    aserción sobre él; la respuesta cambia dónde se ancla la proveniencia.
-3. **Evento de preservación frente a evento de interpretación.** El vocabulario
-   de eventos de PREMIS está poblado de operaciones técnicas. Una inferencia que
-   propone texto no es una operación técnica sobre el objeto, sino un acto
-   interpretativo que produce conocimiento nuevo. Si entra en el mismo
-   vocabulario, hay que justificarlo; si no entra, el desajuste es un hallazgo.
+3. **Evento de preservación frente a evento de interpretación.** El
+   vocabulario de tipos de evento de PREMIS tiene 50 términos y todos designan
+   operaciones técnicas: migración, normalización, comprobación de fijeza,
+   extracción de metadatos, validación, cifrado. Una inferencia que propone
+   texto no es una operación técnica sobre el objeto, sino un acto
+   interpretativo que produce conocimiento nuevo.
 
-Estas tensiones son hipótesis de trabajo, no premisas: el relevamiento puede
-confirmarlas, matizarlas o refutarlas.
+Las cifras de este apartado proceden de la inspección directa del esquema XML
+de PREMIS 3.0 y de los treinta vocabularios controlados que la Library of
+Congress publica para la norma (Library of Congress, s. f.), consultados el 15
+de octubre de 2026.
 
 ## 5. Metodología
 
@@ -696,6 +701,9 @@ Learning for Ancient Languages (ML4AL 2024)*, 61–70.
 Library of Congress. (2025). *METS: Metadata Encoding and Transmission
 Standard* (esquema 1.12.1; versión 2 publicada en 2025).
 <https://www.loc.gov/standards/mets/>
+
+Library of Congress. (s. f.). *PREMIS preservation vocabularies*.
+<https://id.loc.gov/vocabulary/preservation.html>
 
 Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B.,
 Spitzer, E., Raji, I. D. y Gebru, T. (2019). Model cards for model reporting.
