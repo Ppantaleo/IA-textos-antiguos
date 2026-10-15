@@ -11,13 +11,7 @@ author: |
 Versión tentativa, 15 de octubre de 2026. Sigue la estructura exigida por la
 memoria de verificación del máster —diseño de la investigación (objeto,
 objetivos, hipótesis, metodología, fuentes), resultados, discusión,
-conclusiones y referencias— y el reparto de extensión del apartado 10 del
-proyecto: **56 páginas**, dentro del margen de 50 a 60 con portada, índice y
-bibliografía.
-
-Los apartados del capítulo 5 están condicionados al resultado del cribado y de
-la lectura de textos completos: hasta entonces, su número y su orden son
-provisionales.
+conclusiones y referencias.
 
 ---
 

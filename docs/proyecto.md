@@ -635,7 +635,7 @@ produjo, con qué instrucciones y quién la validó.
 
 Los materiales que permiten auditar y reproducir el relevamiento se publican en
 un repositorio de código abierto, al que la memoria remite desde la
-metodología. Contiene:
+metodología: <https://github.com/Ppantaleo/IA-textos-antiguos>. Contiene:
 
 - los *scripts* de búsqueda en OpenAlex, de fusión con la exportación de
   Scopus, de deduplicación y de verificación de la bibliografía contra

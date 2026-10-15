@@ -13,6 +13,8 @@ repositorio existe para que cualquier lector pueda comprobar cómo se
 construyó el corpus: con qué cadenas, en qué fechas, con qué criterios y con
 qué decisiones. El protocolo completo está en [`docs/proyecto.md`](docs/proyecto.md), con su versión para imprimir en [`docs/proyecto.pdf`](docs/proyecto.pdf).
 
+Repositorio: <https://github.com/Ppantaleo/IA-textos-antiguos>
+
 ## Contenido
 
 | Carpeta | Qué hay |
