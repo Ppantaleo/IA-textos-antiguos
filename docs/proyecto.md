@@ -42,12 +42,6 @@ Subpreguntas:
 - **SQ4** *(condicional al hallazgo)*. Si se confirma una carencia, ¿qué
   extensión mínima la cubriría?
 
-**Naturaleza del diseño.** Es un estudio diagnóstico. Si los proyectos documentan, se releva y se contrasta; si no
-documentan, se releva igual y además se esboza una propuesta. La consecuencia
-metodológica es que **la defensa del trabajo no descansa en el resultado sino en
-el protocolo**: sus puntos vulnerables son la cadena de búsqueda, los criterios
-de inclusión y la rejilla de análisis, no las conclusiones.
-
 ## 3. Objetivos
 
 **General.** Relevar qué metadatos de proveniencia y preservación se registran
@@ -105,20 +99,24 @@ Fuera del patrimonio documental el problema tiene instrumentos en circulación,
 que se reseñan como estado del arte y no como base del marco:
 
 - Las **fichas de modelo** y las **hojas de datos** (*model cards*,
-  *datasheets for datasets*) documentan el modelo y el conjunto de
-  entrenamiento, no cada salida producida con ellos.
-- **PROV-O** (W3C) modela de forma genérica entidad, actividad y agente; es el
+  *datasheets for datasets*: Mitchell et al., 2019; Gebru et al., 2021)
+  documentan el modelo y el conjunto de entrenamiento, no cada salida
+  producida con ellos.
+- **PROV-O** (Lebo et al., 2013) modela de forma genérica entidad, actividad
+  y agente; es el
   vocabulario de procedencia más extendido en la web de datos, pero no define
   obligaciones de preservación ni se integra en los paquetes de información de
   los repositorios.
-- **C2PA** adhiere credenciales de contenido al archivo e identifica
+- **C2PA** (Coalition for Content Provenance and Authenticity, 2026) adhiere
+  credenciales de contenido al archivo e identifica
   intervención algorítmica; está pensado para fotografía y medios, con
   infraestructura de firma propia.
-- **CIDOC-CRM** y su extensión **CRMdig** modelan el proceso de digitalización
-  y la cadena de derivación en el ámbito museístico.
-- El proyecto europeo **ECCCH / EDEN-FIDELIS** se cita como evidencia de que el
-  problema está en la agenda institucional (referencia pendiente de
-  verificación).
+- **CIDOC-CRM** (CIDOC CRM Special Interest Group, 2023) y su extensión
+  **CRMdig** modelan el proceso de digitalización y la cadena de derivación en
+  el ámbito museístico.
+- La **nube colaborativa europea para el patrimonio cultural** (ECCCH), que
+  construye el proyecto ECHOES entre 2024 y 2029 (ECHOES, 2024), se cita como
+  evidencia de que el problema está en la agenda institucional.
 
 Ninguno de estos instrumentos pertenece al contenido curricular del máster ni
 es el vehículo habitual de la preservación en archivos y bibliotecas. Su
@@ -133,6 +131,10 @@ proponer nada nuevo.
 | **PREMIS** | Modela `Object`, `Event`, `Agent` y `Rights`. Contempla que un *software* sea agente, con versión, ejecutando un evento fechado con un resultado sobre un objeto. Es el molde más directo para "qué modelo produjo esta salida" |
 | **METS** | Empaquetado y estructura. Pregunta algo que PREMIS no: si existe siquiera un objeto digital con envoltorio, o si el resultado circula como dato suelto sin metadatos adheridos |
 | **ISO 23081** | Modelo entidad-relación (documentos, agentes, actividades, reglas). Puente conceptual con el contenido ya cursado; da la estructura de nivel superior de la rejilla |
+
+Ediciones que se citan: PREMIS 3.0 (PREMIS Editorial Committee, 2015);
+METS 1.12.1, con la versión 2 ya publicada (Library of Congress, 2025);
+ISO 23081-1:2017 e ISO 23081-2:2021.
 
 La elección no es neutral y conviene declararla: estos tres estándares son los
 que efectivamente gobiernan la conservación a largo plazo en las instituciones
@@ -173,8 +175,8 @@ confirmarlas, matizarlas o refutarlas.
 
 ## 5. Metodología
 
-**Diseño: scoping review conforme a PRISMA-ScR, con análisis de artefacto
-embebido sobre el subconjunto inspeccionable.**
+**Diseño: scoping review conforme a PRISMA-ScR (Tricco et al., 2018), con
+análisis de artefacto embebido sobre el subconjunto inspeccionable.**
 
 No es una revisión sistemática: no responde una pregunta de efectividad ni
 practica valoración de calidad de evidencia. Es un mapeo de la extensión, el
@@ -211,14 +213,16 @@ escritura se registran como variables descriptivas (§5.4).
 
 *Fundamento:* el corte no marca la aparición de la IA aplicada a textos antiguos
 —que es anterior— sino el momento en que el problema de proveniencia se vuelve
-efectivo. Pythia (2019) restauraba y nada más; Ithaca (2022) restaura, atribuye
+efectivo. Pythia (Assael et al., 2019) restauraba y nada más; Ithaca (Assael
+et al., 2022) restaura, atribuye
 geográficamente y data, con interfaz pública. Es el punto en que estos sistemas
 pasan a emitir múltiples clases de aserción, cada una con su incertidumbre, y a
 circular fuera del laboratorio.
 
 *Regla complementaria:* los proyectos activos de larga data entran por sus
 publicaciones desde 2022, sin que su fecha de inicio los excluya. Así el DRI
-—fundacional en 2016— permanece en el corpus.
+—fundacional en 2016, con la lectura virtual del rollo de En-Gedi (Seales et
+al., 2016)— permanece en el corpus.
 
 ### 5.3 Jerarquía de fuentes de evidencia
 
@@ -266,7 +270,7 @@ completo de preguntas, en §5.8.
 
 | Fuente | Función | Justificación |
 |---|---|---|
-| **OpenAlex** | Base principal | Cobertura amplia y abierta, que incluye preprints (arXiv) y actas de ACL. Admite búsqueda booleana en título y resumen con filtro temporal. La consulta por API es reproducible y deja registro automático. |
+| **OpenAlex** (Priem et al., 2022) | Base principal | Cobertura amplia y abierta, que incluye preprints (arXiv) y actas de ACL. Admite búsqueda booleana en título y resumen con filtro temporal. La consulta por API es reproducible y deja registro automático. |
 | **Scopus** (acceso institucional UC3M) | Base complementaria | Cubre el punto débil de OpenAlex: en el piloto, el 16 % de los registros no tenía resumen, sobre todo de editoriales como Elsevier. Busca también en palabras clave de autor e indexadas (`TITLE-ABS-KEY`). |
 | ***Snowballing*** | Complemento | Hacia atrás (referencias) y hacia adelante (citas) desde el seed set y los estudios incluidos, con `referenced_works` y `cited_by` de OpenAlex. Recupera casos que la cadena no capta, sea por falta de términos generales de IA (Lacuna) o por términos quitados para reducir ruido (D16). Los registros encontrados así se cuentan aparte en el diagrama PRISMA ("otros métodos"). |
 
@@ -284,8 +288,8 @@ por título normalizado) y registros que pasan al cribado. OpenAlex se consulta
 con `busqueda/buscar_openalex.py`. Scopus se consulta a mano en *Advanced
 document search*, se exporta en CSV con resumen y se fusiona con OpenAlex por
 DOI. **Crossref** no es fuente de búsqueda —no admite operadores
-booleanos— y se usa solo como servicio de metadatos: completa los registros y
-genera el BibTeX a partir del DOI.
+booleanos— y se usa solo como servicio de metadatos (Hendricks et al., 2020):
+completa los registros y genera el BibTeX a partir del DOI.
 
 ### 5.6 Cribado por título y resumen
 
@@ -421,9 +425,11 @@ semilla con el que se valida la estrategia de búsqueda. El corpus final lo
 determina el protocolo, y puede resultar mayor o menor.
 
 **Seed set operativo** (10 trabajos con publicación desde 2022, en
-`busqueda/consultas/v1.json`): Ithaca, Aeneas, Enoch, BiNet, DR-LIFT, lineal B
-(Papavassileiou et al.), acadio NMT (Gutherz et al.), Lacuna, glifos mayas
-(Pinilla-Buitrago et al.) y el *survey* de Sommerschield et al.
+`busqueda/consultas/v1.json`): Ithaca (Assael et al., 2022), Aeneas (Assael et
+al., 2025), Enoch (Popović et al., 2025), BiNet (Dhali et al., 2026), DR-LIFT
+(Murugan y Visalakshi, 2024), lineal B (Papavassileiou et al., 2023), acadio
+NMT (Gutherz et al., 2023), Lacuna (Levine et al., 2024), glifos mayas
+(Pinilla-Buitrago et al., 2022) y el *survey* de Sommerschield et al. (2023).
 
 **Regla de validación.** El seed set valida la **estrategia completa**
 (bases de datos más *snowballing*), no solo la cadena. Se informan por
@@ -467,7 +473,7 @@ corte): entran **solo si trabajan principalmente con textos anteriores al
 corte**. Criterio provisional (D14), a revisar con los casos reales del cribado.
 
 **Quipu:** queda fuera del TFM (D15). Sus registros conservados son incaicos
-(siglos XV–XVI). Solo se conserva esta nota por si se retoma en el doctorado.
+(siglos XV–XVI; Urton y Brezine, 2005). Solo se conserva esta nota por si se retoma en el doctorado.
 
 ## 8. Declaración de uso de inteligencia artificial
 
@@ -475,7 +481,8 @@ El trabajo usa un asistente de IA (Claude, de Anthropic, modelo Opus 5, a
 través de Claude Code) como herramienta instrumental. Se declara aquí el
 alcance exacto de ese uso, por coherencia con el objeto del propio trabajo —la
 proveniencia de lo producido con ayuda de máquinas— y con la Guía de buenas
-prácticas de la Universidad Carlos III de Madrid (2012, apartado 2.H).
+prácticas de los estudiantes de la Universidad Carlos III de Madrid (2012,
+apartado 2.H).
 
 **En qué se usa.**
 
@@ -541,8 +548,8 @@ PRISMA-ScR, y el resto se cita por referencia al repositorio.
 
 ## 10. Plan de la memoria
 
-**Estructura.** La exigida por la memoria de verificación del máster para el
-TFM: diseño de la investigación (objeto, objetivos, hipótesis, metodología,
+**Estructura.** La exigida por la memoria de verificación del máster
+(Universidad Carlos III de Madrid, s. f.) para el TFM: diseño de la investigación (objeto, objetivos, hipótesis, metodología,
 fuentes), resultados, discusión, conclusiones y referencias.
 
 **Extensión: 50 a 60 páginas**, incluidas portada, índice y bibliografía. Los
@@ -575,3 +582,136 @@ y preservación digital y archivística (8).
 **Calendario.** Pendiente de acordar con el director: fecha de entrega del
 proyecto, fecha de cierre del cribado y lectura de textos completos, fecha de
 entrega del borrador completo y convocatoria de defensa.
+
+## Referencias
+
+Solo las obras citadas en este documento. El estilo sigue APA 7.ª edición, a
+confirmar con el director. La bibliografía completa del trabajo, con el corpus
+analizado, se construye en el repositorio (`bibliografia.bib`).
+
+Assael, Y., Sommerschield, T. y Prag, J. (2019). Restoring ancient text using
+deep learning: A case study on Greek epigraphy. *Proceedings of the 2019
+Conference on Empirical Methods in Natural Language Processing (EMNLP-IJCNLP)*,
+6367–6374. <https://doi.org/10.18653/v1/D19-1668>
+
+Assael, Y., Sommerschield, T., Shillingford, B., Bordbar, M., Pavlopoulos, J.,
+Chatzipanagiotou, M., Androutsopoulos, I., Prag, J. y de Freitas, N. (2022).
+Restoring and attributing ancient texts using deep neural networks. *Nature*,
+*603*(7900), 280–283. <https://doi.org/10.1038/s41586-022-04448-z>
+
+Assael, Y., Sommerschield, T., Cooley, A., Shillingford, B., Pavlopoulos, J.,
+Suresh, P., Herms, B., Grayston, J., Maynard, B., Dietrich, N., Wulgaert, R.,
+Prag, J., Mullen, A. y Mohamed, S. (2025). Contextualizing ancient texts with
+generative neural networks. *Nature*, *645*(8079), 141–147.
+<https://doi.org/10.1038/s41586-025-09292-5>
+
+CIDOC CRM Special Interest Group. (2023). *Definition of the CIDOC Conceptual
+Reference Model, version 7.2.3* (versión oficial en correspondencia con ISO
+21127). <https://cidoc-crm.org/versions-of-the-cidoc-crm>
+
+Coalition for Content Provenance and Authenticity. (2026). *Content
+Credentials: C2PA technical specification, version 2.4*.
+<https://spec.c2pa.org/specifications/specifications/2.4/>
+
+Dhali, M. A., de Wit, J. W. y Schomaker, L. (2026). BiNet: A deep
+encoder-decoder network for binarizing degraded ancient manuscripts. En
+*Document Analysis and Recognition – ICDAR 2025 Workshops* (pp. 166–193).
+Springer. <https://doi.org/10.1007/978-3-032-09371-4_11>
+
+ECHOES. (2024). *European Collaborative Cloud for Cultural Heritage (ECCCH)*.
+Proyecto Horizon Europe coordinado por el CNRS, 2024–2029.
+<https://www.echoes-eccch.eu/>
+
+Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé
+III, H. y Crawford, K. (2021). Datasheets for datasets. *Communications of the
+ACM*, *64*(12), 86–92. <https://doi.org/10.1145/3458723>
+
+Gutherz, G., Gordin, S., Sáenz, L., Levy, O. y Berant, J. (2023). Translating
+Akkadian to English with neural machine translation. *PNAS Nexus*, *2*(5).
+<https://doi.org/10.1093/pnasnexus/pgad096>
+
+Hendricks, G., Tkaczyk, D., Lin, J. y Feeney, P. (2020). Crossref: The
+sustainable source of community-owned scholarly metadata. *Quantitative Science
+Studies*, *1*(1), 414–427. <https://doi.org/10.1162/qss_a_00022>
+
+International Organization for Standardization. (2017). *ISO 23081-1:2017.
+Information and documentation – Records management processes – Metadata for
+records – Part 1: Principles*.
+
+International Organization for Standardization. (2021). *ISO 23081-2:2021.
+Information and documentation – Metadata for managing records – Part 2:
+Conceptual and implementation issues*.
+
+Lebo, T., Sahoo, S. y McGuinness, D. (Eds.). (2013). *PROV-O: The PROV
+ontology*. W3C Recommendation. <https://www.w3.org/TR/prov-o/>
+
+Levine, L., Li, C. T., Bremer-McCollum, L., Wagner, N. y Zeldes, A. (2024).
+Lacuna Language Learning: Leveraging RNNs for ranked text completion in
+digitized Coptic manuscripts. *Proceedings of the 1st Workshop on Machine
+Learning for Ancient Languages (ML4AL 2024)*, 61–70.
+<https://doi.org/10.18653/v1/2024.ml4al-1.8>
+
+Library of Congress. (2025). *METS: Metadata Encoding and Transmission
+Standard* (esquema 1.12.1; versión 2 publicada en 2025).
+<https://www.loc.gov/standards/mets/>
+
+Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B.,
+Spitzer, E., Raji, I. D. y Gebru, T. (2019). Model cards for model reporting.
+*Proceedings of the Conference on Fairness, Accountability, and Transparency
+(FAT\* '19)*, 220–229. <https://doi.org/10.1145/3287560.3287596>
+
+Murugan, B. y Visalakshi, P. (2024). Ancient Tamil inscription recognition
+using detect, recognize and labelling, interpreter framework of text method.
+*Heritage Science*, *12*(1). <https://doi.org/10.1186/s40494-024-01522-9>
+
+Papavassileiou, K., Kosmopoulos, D. I. y Owens, G. (2023). A generative model
+for the Mycenaean Linear B script and its application in infilling text from
+ancient tablets. *Journal on Computing and Cultural Heritage*, *16*(3), 1–25.
+<https://doi.org/10.1145/3593431>
+
+Pinilla-Buitrago, L. A., Martínez-Trinidad, J. F. y Carrasco-Ochoa, J. A.
+(2022). Encoding hieroglyph segments to represent hieroglyphs following the bag
+of visual word model for retrieval. *Expert Systems with Applications*, *201*,
+116983. <https://doi.org/10.1016/j.eswa.2022.116983>
+
+Popović, M., Dhali, M. A., Schomaker, L., van der Plicht, J., Lund Rasmussen,
+K., La Nasa, J., Degano, I., Perla Colombini, M. y Tigchelaar, E. (2025).
+Dating ancient manuscripts using radiocarbon and AI-based writing style
+analysis. *PLOS One*, *20*(6), e0323185.
+<https://doi.org/10.1371/journal.pone.0323185>
+
+PREMIS Editorial Committee. (2015). *PREMIS data dictionary for preservation
+metadata, version 3.0*. Library of Congress.
+<https://www.loc.gov/standards/premis/v3/>
+
+Priem, J., Piwowar, H. y Orr, R. (2022). *OpenAlex: A fully-open index of
+scholarly works, authors, venues, institutions, and concepts* (arXiv:2205.01833).
+<https://arxiv.org/abs/2205.01833>
+
+Seales, W. B., Parker, C. S., Segal, M., Tov, E., Shor, P. y Porath, Y. (2016).
+From damage to discovery via virtual unwrapping: Reading the scroll from
+En-Gedi. *Science Advances*, *2*(9).
+<https://doi.org/10.1126/sciadv.1601247>
+
+Sommerschield, T., Assael, Y., Pavlopoulos, J., Stefanak, V., Senior, A., Dyer,
+C., Bodel, J., Prag, J., Androutsopoulos, I. y de Freitas, N. (2023). Machine
+learning for ancient languages: A survey. *Computational Linguistics*, *49*(3),
+703–747. <https://doi.org/10.1162/coli_a_00481>
+
+Tricco, A. C., Lillie, E., Zarin, W., O'Brien, K. K., Colquhoun, H., Levac, D.,
+Moher, D., Peters, M. D. J., Horsley, T., Weeks, L., Hempel, S., Akl, E. A.,
+Chang, C., McGowan, J., Stewart, L., Hartling, L., Aldcroft, A., Wilson, M. G.,
+Garritty, C., … Straus, S. E. (2018). PRISMA extension for scoping reviews
+(PRISMA-ScR): Checklist and explanation. *Annals of Internal Medicine*,
+*169*(7), 467–473. <https://doi.org/10.7326/M18-0850>
+
+Universidad Carlos III de Madrid. (2012). *Guía de buenas prácticas de los
+estudiantes de la Universidad Carlos III de Madrid* (aprobada por el Consejo de
+Gobierno el 29 de noviembre de 2012).
+
+Universidad Carlos III de Madrid. (s. f.). *Memoria para la verificación del
+Máster Universitario en Bibliotecas, Archivos y Continuidad Digital* (Real
+Decreto 822/2021; plan vigente a partir del curso 2023-2024).
+
+Urton, G. y Brezine, C. J. (2005). Khipu accounting in ancient Peru. *Science*,
+*309*(5737), 1065–1067. <https://doi.org/10.1126/science.1113426>
