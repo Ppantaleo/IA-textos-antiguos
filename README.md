@@ -1,9 +1,8 @@
 # Materiales auditables del TFM sobre IA y textos antiguos
 
-Repositorio de código y datos del trabajo de fin de máster **"Relevamiento de
-aplicaciones con inteligencia artificial en la restauración e interpretación de
-textos antiguos: hacia un marco de metadatos y preservación digital de sus
-resultados"**.
+Repositorio de código y datos del trabajo de fin de máster **"Aplicaciones de
+inteligencia artificial a la restauración e interpretación de textos antiguos:
+hacia un marco de metadatos y preservación digital de sus resultados"**.
 
 Autor: Patricio Iván Pantaleo ([ORCID 0000-0002-8104-8975](https://orcid.org/0000-0002-8104-8975)).
 Máster Universitario en Bibliotecas, Archivos y Continuidad Digital,

@@ -1,6 +1,6 @@
 ---
 title: "Índice tentativo de la memoria"
-subtitle: "Relevamiento de aplicaciones con inteligencia artificial en la restauración e interpretación de textos antiguos"
+subtitle: "Aplicaciones de inteligencia artificial a la restauración e interpretación de textos antiguos"
 author: |
   Patricio Iván Pantaleo  
   Máster Universitario en Bibliotecas, Archivos y Continuidad Digital  

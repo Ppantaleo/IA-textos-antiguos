@@ -1,10 +1,14 @@
-# Proyecto de TFM
-
-## Título 
-
-**Relevamiento de aplicaciones con inteligencia artificial en la
-restauración e interpretación de textos antiguos: hacia un marco de metadatos y
-preservación digital de sus resultados**
+---
+title: "Aplicaciones de inteligencia artificial a la restauración e interpretación de textos antiguos"
+subtitle: |
+  Hacia un marco de metadatos y preservación digital de sus resultados  
+  Proyecto de trabajo de fin de máster
+author: |
+  Patricio Iván Pantaleo  
+  Máster Universitario en Bibliotecas, Archivos y Continuidad Digital  
+  Universidad Carlos III de Madrid  
+  Director: Ricardo Eito Brun
+---
 
 ## 1. Problema
 
