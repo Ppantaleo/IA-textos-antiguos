@@ -8,14 +8,14 @@ author: |
   Director: Ricardo Eito Brun
 ---
 
-Versión tentativa, 14 de octubre de 2026. Sigue la estructura exigida por la
+Versión tentativa, 15 de octubre de 2026. Sigue la estructura exigida por la
 memoria de verificación del máster —diseño de la investigación (objeto,
 objetivos, hipótesis, metodología, fuentes), resultados, discusión,
 conclusiones y referencias— y el reparto de extensión del apartado 10 del
 proyecto: **56 páginas**, dentro del margen de 50 a 60 con portada, índice y
 bibliografía.
 
-Los apartados del capítulo 4 están condicionados al resultado del cribado y de
+Los apartados del capítulo 5 están condicionados al resultado del cribado y de
 la lectura de textos completos: hasta entonces, su número y su orden son
 provisionales.
 
@@ -49,42 +49,52 @@ figuras** · 4 pp.
   - 2.4.2 Entidad intelectual frente a objeto
   - 2.4.3 Evento de preservación frente a evento de interpretación
 
-## 3. Metodología · 8 pp.
+## 3. Objeto de estudio · 2 pp.
 
-- 3.1 Diseño: revisión de alcance conforme a PRISMA-ScR
-- 3.2 Definición operativa de "texto antiguo" y ventana temporal
-- 3.3 Fuentes y estrategia de búsqueda
-- 3.4 Criterios de inclusión y cribado
-- 3.5 Unidad de análisis: el proyecto
-- 3.6 Formulario de *charting* y jerarquía de fuentes de evidencia
-- 3.7 Declaración de uso de inteligencia artificial y materiales auditables
+- 3.1 "Textos antiguos", no "manuscritos": por qué el término
+- 3.2 Definición operativa: la delimitación de Sommerschield et al. (2023)
+- 3.3 Qué se fecha: el texto, no el soporte
+- 3.4 Corpus mixtos y casos límite
 
-## 4. Resultados del relevamiento · 15 pp.
+## 4. Metodología · 7 pp.
 
-- 4.1 Flujo PRISMA-ScR: de los registros recuperados a los proyectos analizados
-- 4.2 Panorama del corpus: tareas, lenguas, escrituras, soportes y tipos de unidad
-- 4.3 Capa inductiva: qué documenta cada proyecto
-  - 4.3.1 Material de entrada y procedencia del corpus
-  - 4.3.2 Proceso: modelo, versión y entrenamiento
-  - 4.3.3 Salida: forma, canal de circulación e identificador
-- 4.4 El núcleo de la pregunta
-  - 4.4.1 Enlace entre la salida y el testimonio de origen
-  - 4.4.2 Expresión de la incertidumbre y destino de las alternativas
-  - 4.4.3 Constancia de la revisión humana
-  - 4.4.4 Identidad del productor: versión del modelo y fecha de la inferencia
-- 4.5 Capa normativa: mapeo sobre PREMIS, METS e ISO 23081
-- 4.6 Casos en detalle (dos o tres proyectos, uno con interfaz pública y otro sin ella)
+- 4.1 Diseño: revisión de alcance conforme a PRISMA-ScR
+- 4.2 Ventana temporal y criterios de inclusión
+- 4.3 Jerarquía de fuentes de evidencia
+- 4.4 Fuentes y estrategia de búsqueda bibliográfica
+  - 4.4.1 Bases, cadenas y registro de cada corrida
+  - 4.4.2 Conjunto semilla: validación de la estrategia
+- 4.5 Cribado por título y resumen
+- 4.6 Unidad de análisis: el proyecto
+- 4.7 Formulario de extracción de datos
+- 4.8 Declaración de uso de inteligencia artificial y materiales auditables
 
-## 5. Discusión · 6 pp.
+## 5. Resultados del relevamiento · 15 pp.
 
-- 5.1 El desajuste en las dos direcciones
-- 5.2 Opacidad y ausencia: qué puede afirmarse y qué no
-- 5.3 Esbozo de extensión mínima *(condicional al hallazgo)*
-- 5.4 Limitaciones del estudio
+- 5.1 Flujo PRISMA-ScR: de los registros recuperados a los proyectos analizados
+- 5.2 Panorama del corpus: tareas, lenguas, escrituras, soportes y tipos de unidad
+- 5.3 Capa inductiva: qué documenta cada proyecto
+  - 5.3.1 Material de entrada y procedencia del corpus
+  - 5.3.2 Proceso: modelo, versión y entrenamiento
+  - 5.3.3 Salida: forma, canal de circulación e identificador
+- 5.4 El núcleo de la pregunta
+  - 5.4.1 Enlace entre la salida y el testimonio de origen
+  - 5.4.2 Expresión de la incertidumbre y destino de las alternativas
+  - 5.4.3 Constancia de la revisión humana
+  - 5.4.4 Identidad del productor: versión del modelo y fecha de la inferencia
+- 5.5 Capa normativa: mapeo sobre PREMIS, METS e ISO 23081
+- 5.6 Casos en detalle (dos o tres proyectos, uno con interfaz pública y otro sin ella)
 
-## 6. Conclusiones y líneas abiertas · 3 pp.
+## 6. Discusión · 6 pp.
 
-## Referencias · 5 pp.
+- 6.1 El desajuste en las dos direcciones
+- 6.2 Opacidad y ausencia: qué puede afirmarse y qué no
+- 6.3 Esbozo de extensión mínima *(condicional al hallazgo)*
+- 6.4 Limitaciones del estudio
+
+## 7. Conclusiones y líneas abiertas · 3 pp.
+
+## Referencias · 4 pp.
 
 Entre 50 y 60 entradas. Solo los trabajos citados en el cuerpo del texto; el
 corpus analizado se presenta como tabla en el anexo A.
@@ -95,10 +105,21 @@ corpus analizado se presenta como tabla en el anexo A.
 |---|---|---|
 | A | Corpus analizado: autor, año, proyecto y DOI | Memoria (tabla) |
 | B | Diagrama de flujo PRISMA-ScR | Memoria (figura) |
-| C | Formulario de *charting* | Memoria (tabla) |
+| C | Formulario de extracción de datos | Memoria (tabla) |
 | D | Matriz comparativa completa | Repositorio |
 | E | Correspondencia entre referencias y proyectos | Repositorio |
 | F | Cadenas de búsqueda, registros de corrida y cribado | Repositorio |
 
 Los anexos pueden exceder la extensión de la memoria. Lo que ya está en el
 repositorio no se reimprime: se cita por referencia.
+
+## Calendario
+
+| Hito | Fecha prevista |
+|---|---|
+| Revisión del cribado, lectura de texto completo, *snowballing* y extracción de datos | octubre y noviembre de 2026 |
+| Capítulos 1 a 4 | fines de noviembre de 2026 |
+| Capítulo 5 | fines de diciembre de 2026 o primeros días de enero de 2027 |
+| Capítulos 6 y 7, resúmenes y anexos: borrador completo | primeros días de febrero de 2027 |
+| Revisión del director, correcciones y entrega | a acordar |
+| Defensa | según convocatoria |

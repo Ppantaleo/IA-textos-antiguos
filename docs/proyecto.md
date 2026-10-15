@@ -609,6 +609,8 @@ apartado 2.H).
 | Verificación | Detección de inconsistencias internas del protocolo y de los criterios aplicados | Registro de decisiones y de enmiendas |
 | Redacción | Formulación y pulido de secciones a partir de decisiones tomadas por el autor en diálogo | El autor revisa, corrige y asume cada párrafo |
 
+La IA no figura como autora ni como coautora, y no se la cita como fuente. El criterio sigue a los marcos vigentes de autoría y contribución —ICMJE y CRediT—, que reservan la autoría a quien puede responder por el trabajo (Pantaleo, 2025).
+
 **En qué no se usa.** No se delegan las decisiones metodológicas, la definición
 del objeto y de los criterios, la lectura de los textos completos, la
 cumplimentación del formulario de *charting*, la interpretación de los
@@ -677,12 +679,17 @@ anexos pueden excederla; los materiales extensos van al repositorio (§9).
 | Portada, índice, resúmenes (ES/EN) | 4 |
 | 1. Introducción y problema | 5 |
 | 2. Marco teórico | 10 |
-| 3. Metodología | 8 |
-| 4. Resultados del relevamiento | 15 |
-| 5. Discusión y análisis del desajuste | 6 |
-| 6. Conclusiones y líneas abiertas | 3 |
-| Referencias | 5 |
+| 3. Objeto de estudio | 2 |
+| 4. Metodología | 7 |
+| 5. Resultados del relevamiento | 15 |
+| 6. Discusión y análisis del desajuste | 6 |
+| 7. Conclusiones y líneas abiertas | 3 |
+| Referencias | 4 |
 | **Total** | **56** |
+
+El reparto sigue el orden de este proyecto: el objeto de estudio se define
+antes del método, porque el método lo aplica. El índice tentativo completo, con
+los apartados de cada capítulo, está en el repositorio (§9).
 
 **Referencias: entre 50 y 60**, conforme a la orientación del director. Reparto
 previsto: estándares y normativa (8), campo de la IA aplicada a textos antiguos
@@ -696,9 +703,20 @@ y preservación digital y archivística (8).
 > citados en el cuerpo del texto**. Es la práctica habitual en revisiones de
 > alcance y mantiene legible la bibliografía sin ocultar el corpus.
 
-**Calendario.** Pendiente de acordar con el director: fecha de entrega del
-proyecto, fecha de cierre del cribado y lectura de textos completos, fecha de
-entrega del borrador completo y convocatoria de defensa.
+**Calendario.**
+
+| Hito | Fecha prevista |
+|---|---|
+| Revisión del cribado, lectura de texto completo, *snowballing* y extracción de datos | octubre y noviembre de 2026 |
+| Capítulos 1 a 4: introducción, marco teórico, objeto de estudio y metodología | fines de noviembre de 2026 |
+| Capítulo 5: resultados del relevamiento | fines de diciembre de 2026 o primeros días de enero de 2027 |
+| Capítulos 6 y 7, resúmenes y anexos: **borrador completo** | primeros días de febrero de 2027 |
+| Revisión del director, correcciones y entrega | a acordar |
+| Defensa | según convocatoria |
+
+Los dos primeros hitos van encadenados: el capítulo 5 no puede escribirse antes
+de cerrar la extracción de datos, así que cualquier retraso en la revisión del
+cribado se traslada entero al resto del calendario.
 
 ## Referencias
 
@@ -792,6 +810,10 @@ Spitzer, E., Raji, I. D. y Gebru, T. (2019). Model cards for model reporting.
 Murugan, B. y Visalakshi, P. (2024). Ancient Tamil inscription recognition
 using detect, recognize and labelling, interpreter framework of text method.
 *Heritage Science*, *12*(1). <https://doi.org/10.1186/s40494-024-01522-9>
+
+Pantaleo, P. (2025, 19 de junio). *Authorship and contribution in the age of
+AI: Notes on the current debate*. Paideia Studio.
+<https://doi.org/10.62059/9x4p2w>
 
 Papavassileiou, K., Kosmopoulos, D. I. y Owens, G. (2023). A generative model
 for the Mycenaean Linear B script and its application in infilling text from
