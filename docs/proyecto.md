@@ -328,7 +328,12 @@ sirven para seleccionar):
 La unidad sobre la que se aplica el formulario se define en §5.7 y el
 formulario completo de preguntas, en §5.8.
 
-### 5.5 Fuentes y estrategia de búsqueda
+### 5.5 Fuentes y estrategia de búsqueda bibliográfica
+
+Lo que se busca en estas bases son **publicaciones**, no proyectos: ninguna
+base indiza sistemas de IA. Los proyectos se derivan de la literatura que los
+describe, y recién en la lectura de texto completo se reconstruye, a partir de
+las publicaciones incluidas, qué proyecto hay detrás de cada una (§5.7).
 
 | Fuente | Función | Justificación |
 |---|---|---|
@@ -352,6 +357,15 @@ document search*, se exporta en CSV con resumen y se fusiona con OpenAlex por
 DOI. **Crossref** no es fuente de búsqueda —no admite operadores
 booleanos— y se usa solo como servicio de metadatos (Hendricks et al., 2020):
 completa los registros y genera el BibTeX a partir del DOI.
+
+**Qué deja fuera esta estrategia.** Un proyecto que nunca haya publicado en la
+literatura indizada no aparece por esta vía, aunque tenga interfaz pública y
+sus salidas circulen: es el punto ciego de buscar proyectos a través de
+artículos. Lo corrigen en parte el *snowballing* y, dentro de cada publicación
+incluida, los enlaces al repositorio, a la interfaz y al depósito de datos, que
+son los que llevan de la referencia al sistema. La limitación se declara en los
+resultados: el corpus describe los proyectos **con presencia en la literatura
+académica**, que no son todos los que existen.
 
 ### 5.6 Cribado por título y resumen
 
