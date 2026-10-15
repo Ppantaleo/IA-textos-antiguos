@@ -1,9 +1,9 @@
 # Verificación de la bibliografía contra Crossref
 
 - **Fecha:** 2026-10-15
-- **Archivo:** `bibliografia.bib`, 42 entradas
-- **Con DOI:** 26 · **sin DOI:** 16
-- **Coinciden:** 21 · **con discrepancias:** 5 · **no resueltas:** 0
+- **Archivo:** `bibliografia.bib`, 43 entradas
+- **Con DOI:** 27 · **sin DOI:** 16
+- **Coinciden:** 22 · **con discrepancias:** 5 · **no resueltas:** 0
 
 Se comparan título, año, publicación, volumen y páginas. Un campo ausente
 en cualquiera de los dos lados no cuenta como discrepancia.
@@ -44,5 +44,5 @@ y queda anotada en el campo `note` de cada entrada.
 
 ## Entradas verificadas sin discrepancias
 
-`assael2022ithaca`, `assael2025aeneas`, `popovic2025enoch`, `popovic2021isaiah`, `seales2016engedi`, `parker2019herculaneum`, `murugan2024drlift`, `papavassileiou2023linearb`, `gutherz2023akkadian`, `levine2024lacuna`, `romanrangel2015maya`, `pinillabuitrago2022maya`, `urton2005khipu`, `assael2019pythia`, `sommerschield2023survey`, `arksey2005scoping`, `tricco2018prismascr`, `peters2020scoping`, `gebru2021datasheets`, `hendricks2020crossref`, `duranti2012trust`
+`assael2022ithaca`, `assael2025aeneas`, `popovic2025enoch`, `popovic2021isaiah`, `seales2016engedi`, `parker2019herculaneum`, `murugan2024drlift`, `papavassileiou2023linearb`, `gutherz2023akkadian`, `levine2024lacuna`, `romanrangel2015maya`, `pinillabuitrago2022maya`, `urton2005khipu`, `assael2019pythia`, `sommerschield2023survey`, `arksey2005scoping`, `tricco2018prismascr`, `peters2020scoping`, `gebru2021datasheets`, `hendricks2020crossref`, `duranti2012trust`, `pantaleo2025autoria`
 
