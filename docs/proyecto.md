@@ -408,8 +408,11 @@ Opus 5) propone para cada registro una decisión (incluir, excluir, dudoso o R),
 un código y un motivo breve, siguiendo las instrucciones de
 `busqueda/cribado/instrucciones-cribado-ia.md`. La propuesta se guarda sin
 modificar (`busqueda/cribado/propuesta-ia-v1.csv`). **El autor revisa todas las
-inclusiones, los dudosos y los R, y una muestra aleatoria de las exclusiones
-para estimar el acuerdo.** Solo las decisiones revisadas pasan a
+inclusiones, los dudosos y los R, y una muestra aleatoria estratificada del
+10 % de cada código de exclusión, con la que se estima el acuerdo.** El
+muestreo tiene semilla fija y se regenera con
+`scripts/preparar_revision.py`, de modo que cualquiera puede comprobar qué
+registros tocaron en la muestra y cuáles no. Solo las decisiones revisadas pasan a
 `busqueda/cribado/decisiones.csv`.
 
 **Fuera de esta búsqueda:** la literatura archivística sobre PREMIS y
@@ -468,6 +471,21 @@ matriz distingue el tipo de unidad en un campo explícito:
 |---|---|---|
 | **Sistema** | Tiene nombre, interfaz o repositorio; la salida circula de forma identificable | Se puede evaluar hasta el nivel 1 de evidencia (§5.3) |
 | **Estudio** | Experimento publicado sin sistema identificable ni salida circulante | El análisis suele detenerse en los niveles 2 a 4; la ausencia de salida auditable se registra como dato, no como carencia del estudio |
+
+**La accesibilidad pública no es criterio de inclusión.** Un proyecto entra si
+cumple C1–C4 (§5.1), tenga o no interfaz abierta, repositorio o demostración en
+línea. Muchos sistemas descritos en la literatura no son accesibles: los hay
+internos de un equipo, de una empresa, restringidos por licencia del corpus o
+simplemente nunca publicados como servicio. Todos ellos entran en el corpus si
+cumplen los criterios, y entran como unidad de tipo *sistema* cuando tienen
+identidad reconocible, aunque esa identidad solo conste en la publicación.
+
+Lo que cambia con la accesibilidad no es la inclusión, es **hasta qué nivel de
+evidencia puede llegar el análisis** (§5.3) y, por tanto, qué puede afirmarse:
+de un proyecto sin salida accesible se registra *no es verificable
+públicamente*, nunca *no documenta*. Esa asimetría es un hallazgo del
+relevamiento, no una carencia del corpus, y por eso cada celda guarda el nivel
+de evidencia con el que se obtuvo.
 
 **Trazabilidad del paso de una unidad a otra.** La correspondencia entre
 referencias y proyectos se publica como tabla (`busqueda/proyectos.csv`), con
@@ -614,7 +632,8 @@ metodología. Contiene:
 - las cadenas de búsqueda de cada versión, en su formato literal para cada
   fuente;
 - el registro de cada corrida, con fecha, cifras y cómputo de duplicados;
-- las instrucciones del cribado asistido y la propuesta de la IA sin modificar;
+- las instrucciones del cribado asistido, la propuesta de la IA sin modificar y
+  el *script* que genera el cuaderno de revisión del autor, con su muestreo;
 - las decisiones del autor y la tabla de correspondencia entre referencias y
   proyectos (§5.7);
 - el formulario de *charting* y la matriz resultante.

@@ -17,7 +17,7 @@ qué decisiones. El protocolo completo está en [`docs/proyecto.md`](docs/proyec
 
 | Carpeta | Qué hay |
 |---|---|
-| `scripts/` | Búsqueda en OpenAlex, fusión con Scopus, deduplicación, verificación de la bibliografía contra Crossref y preparación de este repositorio |
+| `scripts/` | Búsqueda en OpenAlex, fusión con Scopus, deduplicación, cuaderno de revisión del cribado, verificación de la bibliografía contra Crossref y preparación de este repositorio |
 | `consultas/` | Las cadenas de búsqueda en vigor, una por fuente |
 | `registros/` | Registro de la corrida de OpenAlex y de la fusión: fecha, cifras, duplicados, recuperación del conjunto semilla. Y el informe de verificación de la bibliografía |
 | `datos/bruto/` | Lo recuperado tal como lo devolvió cada fuente, sin tocar |
@@ -44,7 +44,13 @@ estándar.
 python3 scripts/buscar_openalex.py v1          # consulta la API y escribe la corrida
 python3 scripts/fusionar.py v1 scopus-v1 fusion-v1 "2026-09-14"
 python3 scripts/verificar_crossref.py          # comprueba la bibliografía contra Crossref
+python3 scripts/preparar_revision.py           # rehace el cuaderno de revisión del cribado
 ```
+
+`preparar_revision.py` requiere openpyxl y reproduce el cuaderno en blanco:
+las mismas 803 filas, con la muestra del 10 % de exclusiones sorteada con
+semilla fija. La copia que el autor rellena no se publica; sus decisiones
+acaban en `cribado/decisiones.csv`.
 
 Los *scripts* de `scripts/` son copia literal de los que se ejecutan en la
 carpeta de trabajo y esperan su estructura (`consultas/`, `corridas/<nombre>/`)
