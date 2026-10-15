@@ -115,11 +115,16 @@ repositorio no se reimprime: se cita por referencia.
 
 ## Calendario
 
-| Hito | Fecha prevista |
+Convocatoria de **febrero de 2027**: entrega el 1 de febrero, matrícula
+antes del 30 de noviembre de 2026.
+
+| Hito | Fecha |
 |---|---|
+| **Matrícula del TFM, curso 26/27** (convocatoria de febrero) | antes del **30 de noviembre de 2026** |
 | Revisión del cribado, lectura de texto completo, *snowballing* y extracción de datos | octubre y noviembre de 2026 |
-| Capítulos 1 a 4 | fines de noviembre de 2026 |
-| Capítulo 5 | fines de diciembre de 2026 o primeros días de enero de 2027 |
-| Capítulos 6 y 7, resúmenes y anexos: borrador completo | primeros días de febrero de 2027 |
-| Revisión del director, correcciones y entrega | a acordar |
-| Defensa | según convocatoria |
+| Capítulos 1 a 4: introducción, marco teórico, objeto de estudio y metodología | fines de noviembre de 2026 |
+| Capítulo 5: resultados del relevamiento | antes del 23 de diciembre de 2026 |
+| Capítulos 6 y 7, resúmenes y anexos: **borrador completo al director** | 12 de enero de 2027 |
+| Revisión del director y correcciones | del 12 al 27 de enero de 2027 |
+| **Entrega del TFM** | **1 de febrero de 2027**, fecha límite de la convocatoria |
+| Defensa | febrero o marzo de 2027 |

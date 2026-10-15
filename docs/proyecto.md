@@ -703,20 +703,31 @@ y preservación digital y archivística (8).
 > citados en el cuerpo del texto**. Es la práctica habitual en revisiones de
 > alcance y mantiene legible la bibliografía sin ocultar el corpus.
 
-**Calendario.**
+**Calendario.** La convocatoria elegida es la de **febrero de 2027**, cuya
+fecha límite de entrega es el **1 de febrero de 2027** y cuya matrícula vence
+el 30 de noviembre de 2026.
 
-| Hito | Fecha prevista |
+| Hito | Fecha |
 |---|---|
+| **Matrícula del TFM, curso 26/27** (convocatoria de febrero) | antes del **30 de noviembre de 2026** |
 | Revisión del cribado, lectura de texto completo, *snowballing* y extracción de datos | octubre y noviembre de 2026 |
 | Capítulos 1 a 4: introducción, marco teórico, objeto de estudio y metodología | fines de noviembre de 2026 |
-| Capítulo 5: resultados del relevamiento | fines de diciembre de 2026 o primeros días de enero de 2027 |
-| Capítulos 6 y 7, resúmenes y anexos: **borrador completo** | primeros días de febrero de 2027 |
-| Revisión del director, correcciones y entrega | a acordar |
-| Defensa | según convocatoria |
+| Capítulo 5: resultados del relevamiento | antes del 23 de diciembre de 2026 |
+| Capítulos 6 y 7, resúmenes y anexos: **borrador completo al director** | 12 de enero de 2027 |
+| Revisión del director y correcciones | del 12 al 27 de enero de 2027 |
+| **Entrega del TFM** | **1 de febrero de 2027**, fecha límite de la convocatoria |
+| Defensa | febrero o marzo de 2027 |
 
-Los dos primeros hitos van encadenados: el capítulo 5 no puede escribirse antes
-de cerrar la extracción de datos, así que cualquier retraso en la revisión del
-cribado se traslada entero al resto del calendario.
+Dos avisos sobre este calendario. El primero: la entrega es una fecha
+administrativa y no admite prórroga, de modo que el borrador tiene que estar
+cerrado tres semanas antes para dejar margen a la revisión del director y al
+informe de tutoría. El segundo: los hitos van encadenados y el capítulo 5 no
+puede escribirse antes de cerrar la extracción de datos, así que un retraso en
+la revisión del cribado se traslada entero a lo que sigue.
+
+Si el calendario no se cumpliera, las convocatorias siguientes del mismo curso
+entregan el 21 de junio y el 13 de septiembre de 2027, ambas con matrícula
+hasta el 31 de enero de 2027.
 
 ## Referencias
 
