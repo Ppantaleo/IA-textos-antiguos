@@ -2,8 +2,12 @@
 """Regenera el contenido público del repositorio desde la carpeta de trabajo.
 
 La carpeta de trabajo (`01-research/`) es la fuente única; este repositorio es
-su proyección auditable. Se publica solo la corrida en vigor (v1): el piloto
-(v0) sirvió para calibrar la cadena y no sostiene ningún resultado.
+su proyección auditable para los datos y los scripts. Se publica solo la
+corrida en vigor (v1): el piloto (v0) sirvió para calibrar la cadena y no
+sostiene ningún resultado.
+
+`docs/` no se toca desde aquí: el documento de proyecto y el índice se editan
+en este repositorio y son la versión viva.
 
 Uso:
   python3 scripts/preparar_repositorio.py [ruta a 01-research]
@@ -61,10 +65,6 @@ def main():
     for n in ("instrucciones-cribado-ia.md", "decisiones.csv",
               "propuesta-ia-v1.csv", "propuesta-ia-v1.1.csv"):
         copiar(BUSQUEDA / "cribado" / n, REPO / "cribado" / n)
-
-    print("Documentación:")
-    copiar(TRABAJO / "proyecto.qmd", REPO / "docs" / "proyecto.md")
-    print("  docs/indice-tfm.md  (se mantiene a mano, no se regenera)")
 
     print("Opcionales (si ya existen):")
     for nombre, destino in (("proyectos.csv", "datos/proyectos.csv"),

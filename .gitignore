@@ -3,3 +3,10 @@ __pycache__/
 .Rhistory
 .DS_Store
 
+
+# Intermedios de composición
+*.aux
+*.log
+*.out
+*.toc
+impresion/*.tex

@@ -11,7 +11,7 @@ Universidad Carlos III de Madrid. Director: Ricardo Eito Brun.
 El trabajo es una **revisión de alcance** conforme a PRISMA-ScR. Este
 repositorio existe para que cualquier lector pueda comprobar cómo se
 construyó el corpus: con qué cadenas, en qué fechas, con qué criterios y con
-qué decisiones. El protocolo completo está en [`docs/proyecto.md`](docs/proyecto.md).
+qué decisiones. El protocolo completo está en [`docs/proyecto.md`](docs/proyecto.md), con su versión para imprimir en [`docs/proyecto.pdf`](docs/proyecto.pdf).
 
 ## Contenido
 
@@ -23,7 +23,8 @@ qué decisiones. El protocolo completo está en [`docs/proyecto.md`](docs/proyec
 | `datos/bruto/` | Lo recuperado tal como lo devolvió cada fuente, sin tocar |
 | `datos/` | Corpus único tras la deduplicación, en CSV y en BibTeX |
 | `cribado/` | Instrucciones del cribado asistido, propuesta de la IA sin modificar y decisiones del autor |
-| `docs/` | Protocolo e índice tentativo de la memoria |
+| `docs/` | Documento de proyecto e índice tentativo de la memoria, en Markdown y en PDF. Es la versión viva: se edita aquí |
+| `impresion/` | Plantilla LaTeX y guion de composición de los PDF de `docs/` |
 
 Se publica **solo la corrida en vigor (v1)**. El piloto (v0) sirvió para
 calibrar la cadena de búsqueda y no sostiene ningún resultado; queda en la
@@ -44,10 +45,11 @@ python3 scripts/buscar_openalex.py v1          # consulta la API y escribe la co
 python3 scripts/fusionar.py v1 scopus-v1 fusion-v1 "2026-09-14"
 ```
 
-Los *scripts* son copia literal de los que se ejecutan en la carpeta de
-trabajo y esperan su estructura (`consultas/`, `corridas/<nombre>/`) junto al
-archivo. Para reejecutarlos, basta con copiarlos a un directorio que tenga
-`consultas/` al lado.
+Los *scripts* de `scripts/` son copia literal de los que se ejecutan en la
+carpeta de trabajo y esperan su estructura (`consultas/`, `corridas/<nombre>/`)
+junto al archivo. Para reejecutarlos, basta con copiarlos a un directorio que
+tenga `consultas/` al lado. Los documentos de `docs/`, en cambio, se editan
+aquí; `bash impresion/compilar.sh` rehace sus PDF cuando hace falta.
 
 La consulta a OpenAlex es reproducible y gratuita; las cifras pueden variar
 ligeramente respecto de las registradas, porque la base se actualiza a diario.
