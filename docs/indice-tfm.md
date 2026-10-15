@@ -1,8 +1,12 @@
-# Índice tentativo de la memoria
-
-**Relevamiento de aplicaciones con inteligencia artificial en la restauración e
-interpretación de textos antiguos: hacia un marco de metadatos y preservación
-digital de sus resultados**
+---
+title: "Índice tentativo de la memoria"
+subtitle: "Relevamiento de aplicaciones con inteligencia artificial en la restauración e interpretación de textos antiguos"
+author: |
+  Patricio Iván Pantaleo  
+  Máster Universitario en Bibliotecas, Archivos y Continuidad Digital  
+  Universidad Carlos III de Madrid  
+  Director: Ricardo Eito Brun
+---
 
 Versión tentativa, 14 de octubre de 2026. Sigue la estructura exigida por la
 memoria de verificación del máster —diseño de la investigación (objeto,
