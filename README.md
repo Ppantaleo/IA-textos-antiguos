@@ -17,13 +17,13 @@ qué decisiones. El protocolo completo está en [`docs/proyecto.md`](docs/proyec
 
 | Carpeta | Qué hay |
 |---|---|
-| `scripts/` | Búsqueda en OpenAlex, fusión con Scopus, deduplicación y preparación de este repositorio |
+| `scripts/` | Búsqueda en OpenAlex, fusión con Scopus, deduplicación, verificación de la bibliografía contra Crossref y preparación de este repositorio |
 | `consultas/` | Las cadenas de búsqueda en vigor, una por fuente |
-| `registros/` | Registro de la corrida de OpenAlex y de la fusión: fecha, cifras, duplicados, recuperación del conjunto semilla |
+| `registros/` | Registro de la corrida de OpenAlex y de la fusión: fecha, cifras, duplicados, recuperación del conjunto semilla. Y el informe de verificación de la bibliografía |
 | `datos/bruto/` | Lo recuperado tal como lo devolvió cada fuente, sin tocar |
 | `datos/` | Corpus único tras la deduplicación, en CSV y en BibTeX |
 | `cribado/` | Instrucciones del cribado asistido, propuesta de la IA sin modificar y decisiones del autor |
-| `docs/` | Documento de proyecto e índice tentativo de la memoria, en Markdown y en PDF. Es la versión viva: se edita aquí |
+| `docs/` | Documento de proyecto, índice tentativo de la memoria y bibliografía. Es la versión viva: se edita aquí |
 | `impresion/` | Plantilla LaTeX y guion de composición de los PDF de `docs/` |
 
 Se publica **solo la corrida en vigor (v1)**. El piloto (v0) sirvió para
@@ -43,6 +43,7 @@ estándar.
 ```bash
 python3 scripts/buscar_openalex.py v1          # consulta la API y escribe la corrida
 python3 scripts/fusionar.py v1 scopus-v1 fusion-v1 "2026-09-14"
+python3 scripts/verificar_crossref.py          # comprueba la bibliografía contra Crossref
 ```
 
 Los *scripts* de `scripts/` son copia literal de los que se ejecutan en la

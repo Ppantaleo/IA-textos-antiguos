@@ -351,12 +351,24 @@ corrida.
 
 **Registro para PRISMA-ScR.** Para cada fuente: fecha de ejecución, cadena
 literal, registros recuperados, duplicados eliminados (por DOI y, si falta,
-por título normalizado) y registros que pasan al cribado. OpenAlex se consulta
-con `busqueda/buscar_openalex.py`. Scopus se consulta a mano en *Advanced
-document search*, se exporta en CSV con resumen y se fusiona con OpenAlex por
-DOI. **Crossref** no es fuente de búsqueda —no admite operadores
-booleanos— y se usa solo como servicio de metadatos (Hendricks et al., 2020):
-completa los registros y genera el BibTeX a partir del DOI.
+por título normalizado) y registros que pasan al cribado.
+
+**Herramientas.** Todo lo que puede automatizarse deja un *script* publicado en
+el repositorio (§9), y lo que no, queda declarado como manual:
+
+| Paso | Herramienta | Qué deja |
+|---|---|---|
+| Consulta a OpenAlex | `scripts/buscar_openalex.py` | Respuesta en bruto, BibTeX, conteos por término, recuperación del conjunto semilla y `registro.md` de la corrida |
+| Consulta a Scopus | **Manual.** *Advanced document search* y exportación en CSV con resumen y palabras clave | Cadena literal, fecha de ejecución y el CSV exportado |
+| Fusión y deduplicación | `scripts/fusionar.py` | Corpus único por DOI y, si falta, por título normalizado; cifras de identificación para el diagrama PRISMA |
+| Cribado por título y resumen | Instrucciones fijas a la IA, decisiones del autor (§5.6) | Propuesta sin modificar, decisiones y motivos |
+| Metadatos y BibTeX desde Crossref | `scripts/verificar_crossref.py` | Informe de verificación de cada DOI contra Crossref: coincidencia de título, año, publicación y páginas |
+| *Snowballing* | Pendiente, con `referenced_works` y `cited_by` de OpenAlex | Se publicará con su corrida |
+
+**Crossref** no es fuente de búsqueda —no admite operadores booleanos— y se usa
+solo como servicio de metadatos (Hendricks et al., 2020): completa los
+registros, genera el BibTeX a partir del DOI y permite comprobar que cada
+referencia de la bibliografía existe y coincide con lo que el registro dice.
 
 **Qué deja fuera esta estrategia.** Un proyecto que nunca haya publicado en la
 literatura indizada no aparece por esta vía, aunque tenga interfaz pública y
@@ -596,8 +608,9 @@ Los materiales que permiten auditar y reproducir el relevamiento se publican en
 un repositorio de código abierto, al que la memoria remite desde la
 metodología. Contiene:
 
-- los *scripts* de búsqueda en OpenAlex, de fusión con la exportación de Scopus
-  y de deduplicación;
+- los *scripts* de búsqueda en OpenAlex, de fusión con la exportación de
+  Scopus, de deduplicación y de verificación de la bibliografía contra
+  Crossref, con su informe;
 - las cadenas de búsqueda de cada versión, en su formato literal para cada
   fuente;
 - el registro de cada corrida, con fecha, cifras y cómputo de duplicados;
@@ -662,8 +675,9 @@ entrega del borrador completo y convocatoria de defensa.
 ## Referencias
 
 Solo las obras citadas en este documento. El estilo sigue APA 7.ª edición, a
-confirmar con el director. La bibliografía completa del trabajo, con el corpus
-analizado, se construye en el repositorio (`bibliografia.bib`).
+confirmar con el director. La bibliografía completa del trabajo se mantiene en el
+repositorio (`docs/bibliografia.bib`) y se verifica contra Crossref
+(`registros/verificacion-bibliografia.md`).
 
 Assael, Y., Sommerschield, T. y Prag, J. (2019). Restoring ancient text using
 deep learning: A case study on Greek epigraphy. *Proceedings of the 2019
