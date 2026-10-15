@@ -164,7 +164,7 @@ conservarla con los instrumentos que ya usa, sin inventar un circuito aparte.
 |---|---|
 | **PREMIS** | Modela `Object`, `Event`, `Agent` y `Rights`. Contempla que un *software* sea agente, con versión, ejecutando un evento fechado con un resultado sobre un objeto. Es el molde más directo para "qué modelo produjo esta salida" |
 | **METS 2** | Empaquetado y estructura. Pregunta algo que PREMIS no: si existe siquiera un objeto digital con envoltorio, o si el resultado circula como dato suelto sin metadatos adheridos |
-| **ISO 23081** | Modelo entidad-relación (documentos, agentes, actividades, reglas). Puente conceptual con el contenido ya cursado; da la estructura de nivel superior de la rejilla |
+| **ISO 23081** | Modelo entidad-relación (documentos, agentes, actividades, reglas). Puente conceptual con el contenido ya cursado; da la estructura de nivel superior de la matriz |
 
 Ediciones que se analizan: PREMIS 3.0 (PREMIS Editorial Committee, 2015),
 publicada en junio de 2015 y revisada en noviembre, con esquema XML de enero
@@ -186,8 +186,8 @@ veinte años, siga siendo interpretable como lo que es —una propuesta con un
 grado de certeza, producida por un sistema concreto y aceptada por alguien—, y
 no un dato más dentro de una edición.
 
-Tres tensiones conceptuales organizan ese cruce y guían la capa normativa de la
-rejilla (§5.4):
+Tres tensiones conceptuales organizan ese cruce y guían la capa normativa del
+análisis (§5.4):
 
 1. **Determinismo frente a distribución.** PREMIS fue diseñado para eventos
    deterministas: una migración de formato se completa o falla. Un modelo emite
@@ -241,10 +241,6 @@ operacionalizan como C1–C4):
 4. Si el corpus mezcla épocas, trabaja **principalmente** con textos anteriores
    al corte (§7.1).
 
-**Exclusiones que estos criterios producen:** el Khipu Database Project de Urton
-y el Proyecto Digital de Manuscritos del Mar Muerto (digitalización y
-catalogación sin IA).
-
 **Lengua y escritura no son criterio de selección.** Entra una aplicación a
 cualquier lengua o sistema de escritura antiguo (griego, latín, hebreo, acadio,
 chino clásico, tamil, maya, etc.) si cumple las condiciones anteriores. Lo que
@@ -289,11 +285,11 @@ contraste (nivel 2).
 > verificable públicamente que documente", no "no documenta". Esa opacidad es en
 > sí misma un hallazgo, y se lee en clave de prácticas FAIR.
 
-### 5.4 Rejilla de análisis: dos capas
+### 5.4 Instrumento de análisis: dos capas
 
 | Capa | Qué hace | Por qué |
 |---|---|---|
-| **A — Inductiva** | Registra qué documenta cada proyecto sin categorías previas | Una rejilla derivada solo de PREMIS sería ciega a lo que los proyectos sí registran —corpus de entrenamiento, arquitectura, hiperparámetros, procedencia del material— que PREMIS no contempla |
+| **A — Inductiva** | Registra qué documenta cada proyecto sin categorías previas | Un formulario derivado solo de PREMIS sería ciego a lo que los proyectos sí registran —corpus de entrenamiento, arquitectura, hiperparámetros, procedencia del material— que PREMIS no contempla |
 | **B — Normativa** | Ubica lo relevado en PREMIS / METS / ISO 23081 | Deriva las categorías del estándar y no de la intuición del autor |
 
 El análisis del vacío se lee **en las dos direcciones**: lo que el estándar exige
@@ -301,14 +297,36 @@ y no está, y lo que está y el estándar no puede alojar. La segunda dirección
 la más original: no dice que los proyectos estén mal, dice que el instrumento no
 fue diseñado para esto.
 
+**Dónde se miran los metadatos.** La pregunta no se responde leyendo lo que
+los proyectos dicen de sí mismos, sino mirando lo que entregan. Para cada
+proyecto se recorren cuatro lugares, en el orden de peso probatorio de §5.3:
+
+| Lugar | Qué se examina | Qué se obtiene |
+|---|---|---|
+| **1. La salida que circula** | Se pide al sistema una salida por su interfaz pública y se examina lo que devuelve: la página de resultado, el archivo descargable (JSON, CSV, XML, TEI, imagen) y sus campos. Si el resultado ya está incorporado a una edición o a una base, se examina el registro tal como esa base lo publica | Qué acompaña de hecho al resultado cuando circula: identificadores, versión del modelo, fecha, confianza, alternativas, enlace al testimonio de origen |
+| **2. Documentación y repositorio** | README, ficha de modelo, esquema de respuesta de la API, estructura del objeto de salida en el código, metadatos del depósito (Zenodo, Hugging Face), licencia | Qué declara el proyecto que registra, aunque no se vea en la salida |
+| **3. Material suplementario y datos depositados** | Tablas de resultados, conjuntos de datos publicados, apéndices | Campos presentes en los datos que acompañan a la publicación |
+| **4. Artículo** | Apartado de métodos y declaraciones de los autores | Lo que el equipo afirma que hace |
+
+**Cómo se registra.** Cada celda del formulario guarda cuatro cosas: el valor
+encontrado, el nivel de evidencia con que se obtuvo (1 a 4), la dirección
+consultada y la fecha de consulta. Cuando un dato no aparece, se distingue
+entre **no se registra** —se examinó la salida y el campo no existe— y **no es
+verificable públicamente** —no hay salida accesible que examinar—, conforme a
+la advertencia de §5.3.
+
+No se ejecutan los modelos para producir salidas nuevas (§5.3): se observa lo
+que cada proyecto ya publica. La lectura del código y la ejecución local, donde
+sea posible, quedan como evidencia de contraste.
+
 **Variables descriptivas del *data charting*** (caracterizan cada caso; no
 sirven para seleccionar):
 
 - Lengua y sistema de escritura
 - Soporte (piedra, bronce, arcilla, papiro, pergamino, bambú, hoja de palma…)
 
-La unidad sobre la que se aplica la rejilla se define en §5.7 y el formulario
-completo de preguntas, en §5.8.
+La unidad sobre la que se aplica el formulario se define en §5.7 y el
+formulario completo de preguntas, en §5.8.
 
 ### 5.5 Fuentes y estrategia de búsqueda
 
@@ -432,10 +450,10 @@ informe final declara ambas cifras: estudios incluidos tras la lectura de texto
 completo y proyectos resultantes. La agrupación es una decisión del autor, no
 un cálculo: por eso se publica, para que sea discutible.
 
-### 5.8 Formulario de *charting*
+### 5.8 Formulario de extracción de datos
 
-La rejilla de §5.4 se operacionaliza como una guía de preguntas aplicada a cada
-proyecto. **Cada celda registra, además del hallazgo, el nivel de evidencia con
+Las dos capas de §5.4 se operacionalizan como una guía de preguntas aplicada a
+cada proyecto, que es el *data charting* de PRISMA-ScR. **Cada celda registra, además del hallazgo, el nivel de evidencia con
 que se obtuvo** (§5.3), de modo que la asimetría entre proyectos auditables y
 opacos quede visible en los datos.
 
