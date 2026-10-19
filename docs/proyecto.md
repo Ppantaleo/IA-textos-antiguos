@@ -95,27 +95,35 @@ necesariamente inscrito en ella.
 
 ### 4.2 La proveniencia de lo generado por máquinas
 
-Fuera del patrimonio documental el problema tiene instrumentos en circulación,
-que se reseñan como estado del arte y no como base del marco:
+Fuera del patrimonio documental hay instrumentos en circulación que abordan
+partes del problema. Las **fichas de modelo** y las **hojas de datos**
+(Mitchell et al., 2019; Gebru et al., 2021) documentan el modelo y el conjunto
+de entrenamiento, no cada salida producida con ellos. **PROV-O** (Lebo et al.,
+2013) es un vocabulario genérico de procedencia para la web de datos, no un
+esquema de preservación. **C2PA** (Coalition for Content Provenance and
+Authenticity, 2026) adhiere credenciales al archivo e identifica intervención
+algorítmica, con la fotografía y los medios como dominio de origen.
+**CIDOC-CRM** y **CRMdig** (CIDOC CRM Special Interest Group, 2023) modelan la
+digitalización y la cadena de derivación en el ámbito museístico. Y la **nube
+colaborativa europea para el patrimonio cultural** (ECCCH), que construye el
+proyecto ECHOES entre 2024 y 2029 (ECHOES, 2024), muestra que el problema está
+en la agenda institucional.
 
-Las **fichas de modelo** y las **hojas de datos** (Mitchell et al., 2019;
-Gebru et al., 2021) documentan el modelo y el conjunto de entrenamiento, no
-cada salida producida con ellos. **PROV-O** (Lebo et al., 2013) modela entidad,
-actividad y agente de forma genérica, pero no define obligaciones de
-preservación ni se integra en los paquetes de información de los repositorios.
-**C2PA** (Coalition for Content Provenance and Authenticity, 2026) adhiere
-credenciales al archivo e identifica intervención algorítmica, pensado para
-fotografía y medios. **CIDOC-CRM** y **CRMdig** (CIDOC CRM Special Interest
-Group, 2023) modelan la digitalización y la cadena de derivación en el ámbito
-museístico. Y la **nube colaborativa europea para el patrimonio cultural**
-(ECCCH), que construye el proyecto ECHOES entre 2024 y 2029 (ECHOES, 2024),
-muestra que el problema está en la agenda institucional.
+> **De dónde sale esta lista y qué estatuto tiene.** No procede de la búsqueda
+> sistemática: el protocolo de §6.5 rastrea aplicaciones de IA a textos
+> antiguos, no estándares de proveniencia. Se reunió por lectura dirigida
+> durante el encuadre del trabajo, y de cada instrumento se verificó la versión
+> vigente antes de citarlo. Es, por tanto, **horizonte de comparación y no
+> hallazgo**: delimita el espacio del problema y obliga a comprobar si alguna
+> pieza ya resuelta puede reutilizarse antes de proponer nada nuevo. **Qué
+> instrumentos usan de hecho los proyectos es una pregunta del relevamiento**,
+> no de este apartado: se responde con el bloque 9 del formulario de extracción
+> y se informa en los resultados. Si la respuesta fuera que ninguno de estos
+> nombres aparece en la práctica, eso también sería un resultado.
 
-Ninguno de estos instrumentos pertenece al contenido curricular del máster ni
-es el vehículo habitual de la preservación en archivos y bibliotecas. Su
-función en el trabajo es doble: situar el problema en un debate más amplio y
-comprobar si alguna pieza ya resuelta en ellos puede reutilizarse antes de
-proponer nada nuevo.
+Ninguno de ellos pertenece al contenido curricular del máster ni es el vehículo
+habitual de la preservación en archivos y bibliotecas, y por eso ninguno sirve
+de base al marco.
 
 ### 4.3 La preservación digital como eje normativo
 
