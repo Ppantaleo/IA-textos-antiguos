@@ -513,15 +513,35 @@ de prueba y la definitiva se conservan ambas en el repositorio de materiales
 
 ### 6.9 Lectura de texto completo y extracción
 
-El cribado deja alrededor de setecientos registros para texto completo. Leerlos
-todos con la atención que exige el formulario no es viable en el plazo de un
-TFM, y fingir que sí lo sería comprometería la calidad de lo que se afirme
-después. La fase se organiza entonces en dos vías, con reparto declarado:
+El cribado deja alrededor de setecientos registros para texto completo.
+Aplicarles a todos el formulario completo no es viable en el plazo de un TFM, y
+fingir que sí lo sería comprometería la calidad de lo que se afirme después. La
+fase se organiza en dos vías y con un orden de prioridad, ambos declarados:
 
 | Vía | Qué cubre | Quién la ejecuta |
 |---|---|---|
 | **Lectura directa** | Los trabajos que sostienen el marco teórico y la definición del objeto; los proyectos que entran en la matriz como unidad de tipo *sistema*; los dos casos del pilotaje del formulario y los casos tratados en detalle | El autor |
 | **Extracción asistida** | El resto del corpus, sobre todo la cola larga de estudios puntuales, para los que basta caracterizar qué documentan | La IA, con verificación del autor |
+
+**Prioridad y cierre.** La restricción no afecta a la inclusión sino a la
+profundidad: todos los estudios incluidos siguen contados en el diagrama
+PRISMA-ScR y listados en el anexo del corpus; lo que se acota es a cuáles se
+aplica el formulario completo. El orden de prioridad es:
+
+1. **Unidades de tipo *sistema*** (§6.7): tienen identidad reconocible y, por
+   tanto, algo que examinar. Son el objeto natural del trabajo.
+2. **Estudios con producto digital circulante**, aunque el sistema no tenga
+   nombre propio.
+3. **El resto**, que se caracteriza de forma agregada —tarea, lengua, soporte,
+   época, tipo de salida— a partir del título, el resumen y los metadatos, sin
+   formulario completo.
+
+El análisis a fondo **se cierra por saturación**: se detiene cuando una
+secuencia de casos deja de aportar categorías nuevas al formulario, y la
+memoria informa en qué número ocurrió y qué quedó fuera. El criterio se fija
+aquí, antes de empezar; la cifra sale del trabajo y no se decide de antemano.
+Es la diferencia entre acotar con un criterio declarado y acotar cuando se
+acaba el tiempo.
 
 **Condiciones de la extracción asistida.** Son las mismas que gobiernan el
 cribado (§8), endurecidas por tratarse de datos y no de decisiones:
