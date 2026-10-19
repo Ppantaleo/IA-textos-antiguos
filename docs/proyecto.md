@@ -511,6 +511,38 @@ pública y otro sin ella— y se ajusta antes de aplicarlo al resto. Esa versió
 de prueba y la definitiva se conservan ambas en el repositorio de materiales
 (§9).
 
+### 6.9 Lectura de texto completo y extracción
+
+El cribado deja alrededor de setecientos registros para texto completo. Leerlos
+todos con la atención que exige el formulario no es viable en el plazo de un
+TFM, y fingir que sí lo sería comprometería la calidad de lo que se afirme
+después. La fase se organiza entonces en dos vías, con reparto declarado:
+
+| Vía | Qué cubre | Quién la ejecuta |
+|---|---|---|
+| **Lectura directa** | Los trabajos que sostienen el marco teórico y la definición del objeto; los proyectos que entran en la matriz como unidad de tipo *sistema*; los dos casos del pilotaje del formulario y los casos tratados en detalle | El autor |
+| **Extracción asistida** | El resto del corpus, sobre todo la cola larga de estudios puntuales, para los que basta caracterizar qué documentan | La IA, con verificación del autor |
+
+**Condiciones de la extracción asistida.** Son las mismas que gobiernan el
+cribado (§8), endurecidas por tratarse de datos y no de decisiones:
+
+1. **Hoja de instrucciones fija y publicada**, como la del cribado.
+2. **Cada celda viaja con su respaldo**: la cita textual del fragmento del que
+   se extrae y el nivel de evidencia (§6.3). Sin fragmento, la celda es *no
+   consta*; no se infiere ni se completa por verosimilitud.
+3. **Verificación del autor** sobre una muestra aleatoria, con el acuerdo
+   informado en la memoria, y sobre **todos** los bloques 5 a 8 —enlace
+   entrada-salida, incertidumbre, revisión humana e identidad del productor— de
+   los casos que entren en la discusión, porque son el núcleo de la pregunta.
+4. **Origen declarado en el dato**: cada fila de la matriz indica si procede de
+   lectura directa o de extracción asistida verificada. Ninguna celda sin
+   verificar sostiene una afirmación del trabajo.
+
+La memoria informa qué proporción de la matriz procede de cada vía. Es una
+limitación del diseño y se declara como tal: la extracción asistida describe lo
+que un texto dice de sí mismo con menos finura que una lectura atenta, y por
+eso no se la usa para los casos sobre los que se argumenta.
+
 ## 7. Corpus semilla
 
 Un **conjunto semilla** es un grupo pequeño de trabajos que se sabe de
@@ -560,24 +592,26 @@ apartado 2.H).
 | Consulta de APIs | Construcción y ejecución de las consultas a OpenAlex y de la recuperación de metadatos por DOI en Crossref | Scripts y registro de cada corrida |
 | Programación | Escritura de los *scripts* de búsqueda, fusión, deduplicación y preparación del cribado, en Python | Código completo en el repositorio público (§9) |
 | Cribado por título y resumen | Propuesta de decisión, código y motivo para cada registro, según una hoja de instrucciones fija | Instrucciones literales, propuesta sin modificar y revisión del autor |
+| Extracción de datos | Cumplimentación del formulario para la parte del corpus que no se lee directamente, con cita textual de respaldo en cada celda (§6.9) | Instrucciones, salida sin modificar, verificación del autor y origen declarado en cada fila |
 | Verificación | Detección de inconsistencias internas del protocolo y de los criterios aplicados | Registro de decisiones y de enmiendas |
 | Redacción | Formulación y pulido de secciones a partir de decisiones tomadas por el autor en diálogo | El autor revisa, corrige y asume cada párrafo |
 
 La IA no figura como autora ni como coautora, y no se la cita como fuente. El criterio sigue a los marcos vigentes de autoría y contribución —ICMJE y CRediT—, que reservan la autoría a quien puede responder por el trabajo (Pantaleo, 2025).
 
 **En qué no se usa.** No se delegan las decisiones metodológicas, la definición
-del objeto y de los criterios, la lectura de los textos completos, la
-cumplimentación del formulario de *charting*, la interpretación de los
-resultados ni las conclusiones. La IA no es fuente: nada se afirma en el
-trabajo porque un modelo lo haya dicho, y las referencias se verifican una a
-una contra Crossref o contra la publicación.
+del objeto y de los criterios, la lectura de los trabajos que sostienen el
+marco teórico, el análisis de los casos sobre los que se argumenta, la
+interpretación de los resultados ni las conclusiones. La IA no es fuente: nada
+se afirma en el trabajo porque un modelo lo haya dicho. Las referencias se
+verifican contra Crossref o contra la publicación, y los datos extraídos con
+asistencia, contra el texto que los respalda (§6.9).
 
-**Condición del cribado asistido.** La propuesta de la IA no es una decisión.
-Es una capa previa, equivalente a la de un segundo cribador, sobre la que el
-autor decide: revisa todas las inclusiones, los dudosos y los *surveys*, y una
-muestra aleatoria estratificada de las exclusiones, con la que se estima el
-acuerdo. La cifra de acuerdo se informa en la memoria. Las propuestas sin
-revisar no entran en el corpus.
+**Condición del uso asistido.** Ni en el cribado ni en la extracción la salida
+de la IA es una decisión ni un dato: es una capa previa que el autor verifica
+antes de que entre en el trabajo. En el cribado equivale a un segundo cribador,
+sobre el que el autor decide; en la extracción, a un amanuense que señala dónde
+dice cada cosa. En ambos casos se estima el acuerdo sobre una muestra aleatoria
+y la cifra se informa en la memoria. Lo que no se verifica, no entra.
 
 **Trazabilidad.** Las instrucciones que recibió el modelo, su propuesta sin
 modificar y las decisiones del autor se conservan por separado y se publican
