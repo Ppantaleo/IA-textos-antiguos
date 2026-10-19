@@ -86,37 +86,30 @@ la de la comunidad archivística —qué es, de dónde viene y qué garantías t
 cada resultado concreto que el modelo produjo—. La distancia entre ambas
 preguntas es el espacio del trabajo.
 
-El rasgo que vuelve el problema específico es el estatuto de la salida. Un
+El rasgo que vuelve específico el problema es el estatuto de la salida: un
 modelo de restauración no devuelve una lectura sino un conjunto ordenado de
-lecturas posibles con sus probabilidades. Lo que se publica después suele ser
-una de ellas, elegida por un especialista: la aserción que circula es el
-producto conjunto de un modelo y de un juicio humano, y ninguno de los dos
-queda necesariamente inscrito en ella.
+lecturas posibles con sus probabilidades, y lo que se publica suele ser una de
+ellas, elegida por un especialista. La aserción que circula es el producto
+conjunto de un modelo y de un juicio humano, y ninguno de los dos queda
+necesariamente inscrito en ella.
 
 ### 4.2 La proveniencia de lo generado por máquinas
 
 Fuera del patrimonio documental el problema tiene instrumentos en circulación,
 que se reseñan como estado del arte y no como base del marco:
 
-- Las **fichas de modelo** y las **hojas de datos** (*model cards*,
-  *datasheets for datasets*: Mitchell et al., 2019; Gebru et al., 2021)
-  documentan el modelo y el conjunto de entrenamiento, no cada salida
-  producida con ellos.
-- **PROV-O** (Lebo et al., 2013) modela de forma genérica entidad, actividad
-  y agente; es el
-  vocabulario de procedencia más extendido en la web de datos, pero no define
-  obligaciones de preservación ni se integra en los paquetes de información de
-  los repositorios.
-- **C2PA** (Coalition for Content Provenance and Authenticity, 2026) adhiere
-  credenciales de contenido al archivo e identifica
-  intervención algorítmica; está pensado para fotografía y medios, con
-  infraestructura de firma propia.
-- **CIDOC-CRM** (CIDOC CRM Special Interest Group, 2023) y su extensión
-  **CRMdig** modelan el proceso de digitalización y la cadena de derivación en
-  el ámbito museístico.
-- La **nube colaborativa europea para el patrimonio cultural** (ECCCH), que
-  construye el proyecto ECHOES entre 2024 y 2029 (ECHOES, 2024), se cita como
-  evidencia de que el problema está en la agenda institucional.
+Las **fichas de modelo** y las **hojas de datos** (Mitchell et al., 2019;
+Gebru et al., 2021) documentan el modelo y el conjunto de entrenamiento, no
+cada salida producida con ellos. **PROV-O** (Lebo et al., 2013) modela entidad,
+actividad y agente de forma genérica, pero no define obligaciones de
+preservación ni se integra en los paquetes de información de los repositorios.
+**C2PA** (Coalition for Content Provenance and Authenticity, 2026) adhiere
+credenciales al archivo e identifica intervención algorítmica, pensado para
+fotografía y medios. **CIDOC-CRM** y **CRMdig** (CIDOC CRM Special Interest
+Group, 2023) modelan la digitalización y la cadena de derivación en el ámbito
+museístico. Y la **nube colaborativa europea para el patrimonio cultural**
+(ECCCH), que construye el proyecto ECHOES entre 2024 y 2029 (ECHOES, 2024),
+muestra que el problema está en la agenda institucional.
 
 Ninguno de estos instrumentos pertenece al contenido curricular del máster ni
 es el vehículo habitual de la preservación en archivos y bibliotecas. Su
@@ -153,12 +146,11 @@ qué y quién lo validó suele ser imposible. En un campo donde la evidencia
 material es escasa y las lecturas se acumulan unas sobre otras, esa confusión
 contamina el registro.
 
-**Por qué estos tres estándares.** La elección no es neutral y conviene
-declararla: PREMIS, METS e ISO 23081 son los instrumentos que efectivamente
-gobiernan la conservación a largo plazo en archivos y bibliotecas, que son el
-destinatario del trabajo. Que una salida de IA sea preservable significa, en
-términos prácticos, que una institución pueda ingestarla, describirla y
-conservarla con los instrumentos que ya usa, sin inventar un circuito aparte.
+**Por qué estos tres estándares.** Son los que gobiernan la conservación a
+largo plazo en archivos y bibliotecas, que son el destinatario del trabajo. Que
+una salida de IA sea preservable significa, en términos prácticos, que una
+institución pueda ingestarla, describirla y conservarla con los instrumentos
+que ya usa, sin inventar un circuito aparte.
 
 | Estándar | Qué aporta al análisis |
 |---|---|
@@ -212,10 +204,9 @@ análisis (§6.4):
    texto no es una operación técnica sobre el objeto, sino un acto
    interpretativo que produce conocimiento nuevo.
 
-Las cifras de este apartado proceden de la inspección directa del diccionario
-de datos de PREMIS 3.0, de su esquema XML —que declara 188 elementos— y de los
-treinta vocabularios controlados que la Library of Congress publica para la
-norma (Library of Congress, s. f.), consultados el 15 de octubre de 2026.
+Las cifras proceden de la inspección directa del diccionario de PREMIS 3.0, de
+su esquema XML y de los treinta vocabularios de la Library of Congress
+(s. f.), consultados el 15 de octubre de 2026.
 
 ## 5. Objeto de estudio
 
@@ -330,36 +321,25 @@ y no está, y lo que está y el estándar no puede alojar. La segunda dirección
 la más original: no dice que los proyectos estén mal, dice que el instrumento no
 fue diseñado para esto.
 
-**Dónde se miran los metadatos.** La pregunta no se responde leyendo lo que
-los proyectos dicen de sí mismos, sino mirando lo que entregan. Para cada
-proyecto se recorren cuatro lugares, en el orden de peso probatorio de §6.3:
+**Dónde se miran los metadatos.** No se responde leyendo lo que los proyectos
+dicen de sí mismos, sino mirando lo que entregan. Se recorren cuatro lugares en
+el orden de peso probatorio de §6.3: la salida tal como circula, la
+documentación y el repositorio, el material suplementario y los datos
+depositados, y por último el artículo. Qué se examina en cada uno y qué se
+obtiene, en el anexo B.
 
-| Lugar | Qué se examina | Qué se obtiene |
-|---|---|---|
-| **1. La salida que circula** | Se pide al sistema una salida por su interfaz pública y se examina lo que devuelve: la página de resultado, el archivo descargable (JSON, CSV, XML, TEI, imagen) y sus campos. Si el resultado ya está incorporado a una edición o a una base, se examina el registro tal como esa base lo publica | Qué acompaña de hecho al resultado cuando circula: identificadores, versión del modelo, fecha, confianza, alternativas, enlace al testimonio de origen |
-| **2. Documentación y repositorio** | README, ficha de modelo, esquema de respuesta de la API, estructura del objeto de salida en el código, metadatos del depósito (Zenodo, Hugging Face), licencia | Qué declara el proyecto que registra, aunque no se vea en la salida |
-| **3. Material suplementario y datos depositados** | Tablas de resultados, conjuntos de datos publicados, apéndices | Campos presentes en los datos que acompañan a la publicación |
-| **4. Artículo** | Apartado de métodos y declaraciones de los autores | Lo que el equipo afirma que hace |
+**Cómo se registra.** Cada celda guarda el valor encontrado, el nivel de
+evidencia (1 a 4), la dirección consultada y la fecha. Cuando un dato no
+aparece se distingue **no se registra** —se examinó la salida y el campo no
+existe— de **no es verificable públicamente** —no hay salida que examinar—,
+conforme a §6.3. No se ejecutan los modelos para producir salidas nuevas: se
+observa lo que cada proyecto ya publica, y la lectura del código queda como
+evidencia de contraste.
 
-**Cómo se registra.** Cada celda del formulario guarda cuatro cosas: el valor
-encontrado, el nivel de evidencia con que se obtuvo (1 a 4), la dirección
-consultada y la fecha de consulta. Cuando un dato no aparece, se distingue
-entre **no se registra** —se examinó la salida y el campo no existe— y **no es
-verificable públicamente** —no hay salida accesible que examinar—, conforme a
-la advertencia de §6.3.
-
-No se ejecutan los modelos para producir salidas nuevas (§6.3): se observa lo
-que cada proyecto ya publica. La lectura del código y la ejecución local, donde
-sea posible, quedan como evidencia de contraste.
-
-**Variables descriptivas del *data charting*** (caracterizan cada caso; no
-sirven para seleccionar):
-
-- Lengua y sistema de escritura
-- Soporte (piedra, bronce, arcilla, papiro, pergamino, bambú, hoja de palma…)
-
-La unidad sobre la que se aplica el formulario se define en §6.7 y el
-formulario completo de preguntas, en §6.8.
+**Variables descriptivas** que caracterizan cada caso sin servir para
+seleccionarlo: lengua, sistema de escritura y soporte (piedra, bronce, arcilla,
+papiro, pergamino, bambú…). La unidad sobre la que se aplica el formulario se
+define en §6.7.
 
 ### 6.5 Fuentes y estrategia de búsqueda bibliográfica
 
@@ -370,9 +350,9 @@ las publicaciones incluidas, qué proyecto hay detrás de cada una (§6.7).
 
 | Fuente | Función | Justificación |
 |---|---|---|
-| **OpenAlex** (Priem et al., 2022) | Base principal | Cobertura amplia y abierta, que incluye preprints (arXiv) y actas de ACL. Admite búsqueda booleana en título y resumen con filtro temporal. La consulta por API es reproducible y deja registro automático. |
-| **Scopus** (acceso institucional UC3M) | Base complementaria | Cubre el punto débil de OpenAlex: en el piloto, el 16 % de los registros no tenía resumen, sobre todo de editoriales como Elsevier. Busca también en palabras clave de autor e indexadas (`TITLE-ABS-KEY`). |
-| ***Snowballing*** | Complemento | Hacia atrás (referencias) y hacia adelante (citas) desde el conjunto semilla y los estudios incluidos, con `referenced_works` y `cited_by` de OpenAlex. Recupera casos que la cadena no capta, sea por falta de términos generales de IA (Lacuna) o por términos quitados para reducir ruido (D16). Los registros encontrados así se cuentan aparte en el diagrama PRISMA ("otros métodos"). |
+| **OpenAlex** (Priem et al., 2022) | Base principal | Cobertura amplia y abierta, con preprints y actas. Admite búsqueda booleana con filtro temporal y su API deja registro reproducible |
+| **Scopus** (acceso UC3M) | Base complementaria | Cubre el punto débil de OpenAlex: en el piloto, el 16 % de los registros no tenía resumen. Busca también en palabras clave (`TITLE-ABS-KEY`) |
+| ***Snowballing*** | Complemento | Hacia atrás y hacia adelante desde el conjunto semilla y los estudios incluidos, con `referenced_works` y `cited_by`. Recupera lo que la cadena no capta y se cuenta aparte en el diagrama PRISMA |
 
 **Cadena.** Dos bloques unidos por AND: (1) términos generales de IA y (2)
 términos de textos antiguos, soportes y escrituras. **No se incluyen nombres de
@@ -386,17 +366,11 @@ corrida.
 literal, registros recuperados, duplicados eliminados (por DOI y, si falta,
 por título normalizado) y registros que pasan al cribado.
 
-**Herramientas.** Todo lo que puede automatizarse deja un *script* publicado en
-el repositorio (§9), y lo que no, queda declarado como manual:
-
-| Paso | Herramienta | Qué deja |
-|---|---|---|
-| Consulta a OpenAlex | `scripts/buscar_openalex.py` | Respuesta en bruto, BibTeX, conteos por término, recuperación del conjunto semilla y `registro.md` de la corrida |
-| Consulta a Scopus | **Manual.** *Advanced document search* y exportación en CSV con resumen y palabras clave | Cadena literal, fecha de ejecución y el CSV exportado |
-| Fusión y deduplicación | `scripts/fusionar.py` | Corpus único por DOI y, si falta, por título normalizado; cifras de identificación para el diagrama PRISMA |
-| Cribado por título y resumen | Instrucciones fijas a la IA, decisiones del autor (§6.6) | Propuesta sin modificar, decisiones y motivos |
-| Metadatos y BibTeX desde Crossref | `scripts/verificar_crossref.py` | Informe de verificación de cada DOI contra Crossref: coincidencia de título, año, publicación y páginas |
-| *Snowballing* | Pendiente, con `referenced_works` y `cited_by` de OpenAlex | Se publicará con su corrida |
+**Herramientas.** Todo lo automatizable deja un *script* publicado (§9) y lo
+que no, queda declarado como manual: la consulta a OpenAlex, la fusión y
+deduplicación, la verificación de la bibliografía y el cuaderno de revisión del
+cribado tienen *script*; la consulta a Scopus se hace a mano. El detalle, en el
+anexo C.
 
 **Crossref** no es fuente de búsqueda —no admite operadores booleanos— y se usa
 solo como servicio de metadatos (Hendricks et al., 2020): completa los
@@ -436,20 +410,14 @@ Códigos de exclusión adicionales:
 **dudoso** y el registro pasa a lectura de texto completo. Solo se excluye
 cuando el título y el resumen permiten afirmarlo.
 
-**Cribado asistido por IA (declaración de uso).** Claude (Anthropic, modelo
-Opus 5) propone para cada registro una decisión (incluir, excluir, dudoso o R),
-un código y un motivo breve, siguiendo las instrucciones de
-`busqueda/cribado/instrucciones-cribado-ia.md`. La propuesta se guarda sin
-modificar (`busqueda/cribado/propuesta-ia-v1.csv`). **El autor revisa todas las
-inclusiones, los dudosos y los R, y una muestra aleatoria estratificada del
-10 % de cada código de exclusión, con la que se estima el acuerdo.** El
-muestreo tiene semilla fija y se regenera con
-`scripts/preparar_revision.py`, de modo que cualquiera puede comprobar qué
-registros tocaron en la muestra y cuáles no. Solo las decisiones revisadas pasan a
-`busqueda/cribado/decisiones.csv`.
+**Cribado asistido por IA.** La IA propone decisión, código y motivo para cada
+registro; el autor revisa todas las inclusiones, los dudosos y las revisiones, y
+una muestra aleatoria estratificada del 10 % de cada código de exclusión, con la
+que se estima el acuerdo. Solo las decisiones revisadas entran en el corpus. El
+alcance y las garantías de ese uso están en §8.
 
 **Fuera de esta búsqueda:** la literatura archivística sobre PREMIS y
-proveniencia (V2) no forma parte del corpus de proyectos y necesita su propia
+proveniencia no forma parte del corpus de proyectos y necesita su propia
 búsqueda dirigida.
 
 ### 6.7 Unidad de análisis: el proyecto
@@ -464,41 +432,30 @@ El trabajo usa dos unidades distintas y no intercambiables:
   documenta un artículo, los documenta —o no— el sistema que produce las
   salidas.
 
-Esta distinción es necesaria: un mismo proyecto puede tener cuatro
-publicaciones y una sola política de documentación, y contarlo cuatro veces
-sobrerrepresentaría a los equipos que más publican, que son también los que más
-recursos tienen. Contar proyectos, y no artículos, es lo que hace que la matriz
-describa prácticas y no volumen editorial.
+La distinción importa: un proyecto puede tener cuatro publicaciones y una sola
+política de documentación, y contarlo cuatro veces sobrerrepresentaría a los
+equipos que más publican. Contar proyectos hace que la matriz describa
+prácticas y no volumen editorial.
 
 **Definición.** Un **proyecto** es un sistema o aplicación identificable que
-produce salidas sobre un corpus de textos antiguos. Se considera una sola
-unidad cuando coinciden los cuatro rasgos siguientes:
+produce salidas sobre un corpus de textos antiguos. Es una sola unidad cuando
+coinciden cuatro rasgos: un modelo o sistema identificable (nombre propio,
+repositorio o interfaz), un equipo responsable con continuidad, una tarea y un
+corpus estables, y una salida que circula bajo una identidad reconocible.
 
-1. un modelo o sistema identificable (nombre propio, repositorio de código o
-   interfaz pública);
-2. un equipo o institución responsable con continuidad;
-3. una tarea y un corpus sustancialmente estables;
-4. una salida que circula bajo una identidad reconocible.
+**Reglas de agrupación y separación.** Varias publicaciones del mismo sistema
+—artículo original, versión ampliada, evaluación posterior, descripción del
+conjunto de datos— forman **una** unidad, y las posteriores aportan datos a la
+misma fila. Un **modelo nuevo con salida propia** es unidad propia aunque lo
+firme el mismo equipo: Pythia, Ithaca y Aeneas son tres unidades, y el linaje
+se registra en un campo de la matriz. No crean unidad un ajuste de
+hiperparámetros, una reimplementación ni una evaluación añadida; sí la crean
+dos sistemas homónimos de equipos distintos.
 
-**Reglas de agrupación y separación.**
-
-- Varias publicaciones del mismo sistema —artículo original, versión ampliada,
-  evaluación posterior, descripción del conjunto de datos— forman **una**
-  unidad. Las publicaciones posteriores aportan datos a la misma fila.
-- Un **modelo nuevo con salida propia** es unidad propia aunque lo firme el
-  mismo equipo y herede del anterior. Pythia, Ithaca y Aeneas son tres
-  unidades, no una. Se registra el linaje en un campo de la matriz, de modo que
-  la familia siga siendo visible.
-- Un ajuste de hiperparámetros, una reimplementación, una traducción a otro
-  marco de trabajo o una evaluación añadida **no** crean unidad.
-- Dos sistemas con el mismo nombre y equipos distintos son dos unidades.
-
-**Estudios sin sistema identificable.** Buena parte de la literatura recuperada
-son experimentos puntuales, sin nombre propio, sin código publicado y sin
-interfaz. Excluirlos sesgaría el relevamiento hacia los proyectos de alta
-visibilidad, que es justamente la práctica que se quiere describir sin
-idealizar. Entran como unidad, con la publicación como identificador, y la
-matriz distingue el tipo de unidad en un campo explícito:
+**Estudios sin sistema identificable.** Buena parte de la literatura son
+experimentos puntuales, sin nombre, sin código y sin interfaz. Excluirlos
+sesgaría el relevamiento hacia los proyectos de alta visibilidad. Entran como
+unidad, con la publicación como identificador, y la matriz distingue el tipo:
 
 | Tipo de unidad | Qué es | Qué se espera del *charting* |
 |---|---|---|
@@ -534,18 +491,7 @@ cada proyecto, que es el *data charting* de PRISMA-ScR. **Cada celda registra, a
 que se obtuvo** (§6.3), de modo que la asimetría entre proyectos auditables y
 opacos quede visible en los datos.
 
-| Bloque | Preguntas | Parámetros registrados |
-|---|---|---|
-| **1. Identificación** | ¿Qué sistema es, quién lo sostiene, desde cuándo? | Nombre, equipo, institución, años de actividad, referencias asociadas, tipo de unidad, linaje |
-| **2. Material de entrada** | ¿Sobre qué trabaja y de dónde viene? | Lengua, escritura, soporte, época del texto, corpus de origen, licencia, identificador de los testimonios procesados |
-| **3. Proceso** | ¿Qué hace y con qué? | Tarea (restauración, atribución, datación, transcripción, traducción…), familia de modelo, versión, datos de entrenamiento, dependencia de servicios externos |
-| **4. Salida** | ¿Qué produce y dónde circula? | Forma del resultado, canal (interfaz, repositorio, publicación, base de datos), formato, licencia, identificador persistente |
-| **5. Enlace entrada–salida** | ¿La salida permite volver al testimonio del que procede? | Presencia de identificador del material de origen en la salida; granularidad del enlace |
-| **6. Incertidumbre** | ¿Se expresa el grado de certeza y las alternativas? | Forma (probabilidad, *top-k*, intervalo, ninguna), persistencia de las alternativas descartadas |
-| **7. Intervención humana** | ¿Consta que alguien revisó y aceptó el resultado? | Existencia de revisión, identificación del revisor, fecha, efecto sobre la salida |
-| **8. Identidad del productor** | ¿La salida dice qué la produjo? | Versión del modelo, fecha de la inferencia, versión del software, parámetros |
-| **9. Empaquetado y preservación** | ¿Hay un objeto digital con metadatos adheridos y un plan? | Esquema declarado, repositorio de depósito, política de preservación, versionado |
-| **10. Capa normativa** | ¿Dónde se aloja cada hallazgo en PREMIS, METS e ISO 23081, y qué no tiene alojamiento? | Entidad y elemento del estándar, o anotación de desajuste en una u otra dirección |
+El formulario tiene diez bloques y está en el anexo A.
 
 Los bloques 1 a 9 forman la capa inductiva y el bloque 10, la normativa. Los
 bloques 5 a 8 concentran el núcleo de la pregunta de investigación: son los que
@@ -626,10 +572,9 @@ acuerdo. La cifra de acuerdo se informa en la memoria. Las propuestas sin
 revisar no entran en el corpus.
 
 **Trazabilidad.** Las instrucciones que recibió el modelo, su propuesta sin
-modificar y las decisiones del autor se conservan por separado y se publican en
-el repositorio (§9). El criterio es el mismo que el trabajo exige a los
-proyectos que estudia: que la salida de un modelo viaje acompañada de qué la
-produjo, con qué instrucciones y quién la validó.
+modificar y las decisiones del autor se conservan por separado y se publican
+(§9), por el mismo criterio que el trabajo exige a los proyectos que estudia:
+que la salida viaje con el registro de qué la produjo y quién la validó.
 
 ## 9. Repositorio de materiales
 
@@ -637,17 +582,12 @@ Los materiales que permiten auditar y reproducir el relevamiento se publican en
 un repositorio de código abierto, al que la memoria remite desde la
 metodología: <https://github.com/Ppantaleo/IA-textos-antiguos>. Contiene:
 
-- los *scripts* de búsqueda en OpenAlex, de fusión con la exportación de
-  Scopus, de deduplicación y de verificación de la bibliografía contra
-  Crossref, con su informe;
-- las cadenas de búsqueda de cada versión, en su formato literal para cada
-  fuente;
-- el registro de cada corrida, con fecha, cifras y cómputo de duplicados;
-- las instrucciones del cribado asistido, la propuesta de la IA sin modificar y
-  el *script* que genera el cuaderno de revisión del autor, con su muestreo;
-- las decisiones del autor y la tabla de correspondencia entre referencias y
-  proyectos (§6.7);
-- el formulario de *charting* y la matriz resultante.
+los *scripts* de búsqueda, fusión, deduplicación y verificación de la
+bibliografía, con sus informes; las cadenas de cada versión en su formato
+literal; el registro de cada corrida; las instrucciones del cribado asistido,
+la propuesta de la IA sin modificar y el *script* que genera el cuaderno de
+revisión; las decisiones del autor y la correspondencia entre referencias y
+proyectos (§6.7); y el formulario de extracción con la matriz resultante.
 
 El código se publica bajo licencia MIT y los datos y documentos propios bajo
 CC BY 4.0. **Se publican también los datos en bruto de las dos fuentes**: la
@@ -661,9 +601,8 @@ si el titular lo requiere.
 Se publica solo la corrida en vigor. El piloto que sirvió para calibrar la
 cadena no sostiene ningún resultado y queda en la carpeta de trabajo.
 
-La memoria no incluye como anexo impreso lo que el repositorio ya contiene: los
-anexos del documento se limitan a la matriz comparativa y al diagrama
-PRISMA-ScR, y el resto se cita por referencia al repositorio.
+La memoria no reimprime lo que el repositorio ya contiene: sus anexos se
+limitan a la matriz comparativa y al diagrama PRISMA-ScR.
 
 ## 10. Plan de la memoria
 
@@ -696,12 +635,11 @@ previsto: estándares y normativa (8), campo de la IA aplicada a textos antiguos
 (25), proveniencia y documentación de modelos (8), metodología de revisión (5)
 y preservación digital y archivística (8).
 
-> **Cómo se concilia ese límite con una revisión de alcance.** El corpus
-> analizado puede superar las sesenta referencias. Para que no infle la
-> bibliografía, **el corpus se presenta como tabla en anexo** —con autor, año,
-> proyecto y DOI— y **en la lista de referencias solo entran los trabajos
-> citados en el cuerpo del texto**. Es la práctica habitual en revisiones de
-> alcance y mantiene legible la bibliografía sin ocultar el corpus.
+> **Cómo se concilia ese límite con una revisión de alcance.** El corpus puede
+> superar las sesenta referencias, así que se presenta **como tabla en anexo**
+> —autor, año, proyecto y DOI— y en la lista de referencias solo entran los
+> trabajos citados en el cuerpo. Es la práctica habitual y mantiene legible la
+> bibliografía sin ocultar el corpus.
 
 **Calendario.** La convocatoria elegida es la de **febrero de 2027**, cuya
 fecha límite de entrega es el **1 de febrero de 2027** y cuya matrícula vence
@@ -730,6 +668,8 @@ entregan el 21 de junio y el 13 de septiembre de 2027, ambas con matrícula
 hasta el 31 de enero de 2027.
 
 ## Referencias
+
+\begingroup\small
 
 Solo las obras citadas en este documento. El estilo sigue APA 7.ª edición, a
 confirmar con el director. La bibliografía completa del trabajo se mantiene en el
@@ -875,5 +815,41 @@ Universidad Carlos III de Madrid. (s. f.). *Memoria para la verificación del
 Máster Universitario en Bibliotecas, Archivos y Continuidad Digital* (Real
 Decreto 822/2021; plan vigente a partir del curso 2023-2024).
 
-Urton, G. y Brezine, C. J. (2005). Khipu accounting in ancient Peru. *Science*,
-*309*(5737), 1065–1067. <https://doi.org/10.1126/science.1113426>
+\endgroup
+
+## Anexos
+
+### Anexo A · Formulario de extracción de datos
+
+| Bloque | Preguntas | Parámetros registrados |
+|---|---|---|
+| **1. Identificación** | ¿Qué sistema es, quién lo sostiene, desde cuándo? | Nombre, equipo, institución, años, referencias, tipo de unidad, linaje |
+| **2. Material de entrada** | ¿Sobre qué trabaja y de dónde viene? | Lengua, escritura, soporte, época, corpus de origen, licencia, identificador de los testimonios |
+| **3. Proceso** | ¿Qué hace y con qué? | Tarea, familia de modelo, versión, datos de entrenamiento, dependencia de servicios externos |
+| **4. Salida** | ¿Qué produce y dónde circula? | Forma del resultado, canal (interfaz, repositorio, publicación, base de datos), formato, licencia, identificador persistente |
+| **5. Enlace entrada–salida** | ¿La salida permite volver al testimonio del que procede? | Presencia de identificador del material de origen en la salida; granularidad del enlace |
+| **6. Incertidumbre** | ¿Se expresa el grado de certeza y las alternativas? | Forma (probabilidad, *top-k*, intervalo, ninguna), persistencia de las alternativas descartadas |
+| **7. Intervención humana** | ¿Consta que alguien revisó y aceptó el resultado? | Existencia de revisión, identificación del revisor, fecha, efecto sobre la salida |
+| **8. Identidad del productor** | ¿La salida dice qué la produjo? | Versión del modelo, fecha de la inferencia, versión del software, parámetros |
+| **9. Empaquetado y preservación** | ¿Hay objeto digital con metadatos adheridos y plan? | Esquema, repositorio de depósito, política de preservación, versionado |
+| **10. Capa normativa** | ¿Dónde se aloja cada hallazgo en PREMIS, METS e ISO 23081? | Entidad y elemento del estándar, o anotación de desajuste |
+
+### Anexo B · Dónde se miran los metadatos
+
+| Lugar | Qué se examina | Qué se obtiene |
+|---|---|---|
+| **1. La salida que circula** | Se pide al sistema una salida por su interfaz pública y se examina lo que devuelve: la página de resultado, el archivo descargable (JSON, CSV, XML, TEI, imagen) y sus campos. Si el resultado ya está incorporado a una edición o a una base, se examina el registro tal como esa base lo publica | Qué acompaña de hecho al resultado cuando circula: identificadores, versión del modelo, fecha, confianza, alternativas, enlace al testimonio de origen |
+| **2. Documentación y repositorio** | README, ficha de modelo, esquema de respuesta de la API, estructura del objeto de salida en el código, metadatos del depósito (Zenodo, Hugging Face), licencia | Qué declara el proyecto que registra, aunque no se vea en la salida |
+| **3. Material suplementario y datos depositados** | Tablas de resultados, conjuntos de datos publicados, apéndices | Campos presentes en los datos que acompañan a la publicación |
+| **4. Artículo** | Apartado de métodos y declaraciones de los autores | Lo que el equipo afirma que hace |
+
+### Anexo C · Herramienta de cada paso
+
+| Paso | Herramienta | Qué deja |
+|---|---|---|
+| Consulta a OpenAlex | `scripts/buscar_openalex.py` | Respuesta en bruto, BibTeX, conteos por término, recuperación del conjunto semilla y `registro.md` de la corrida |
+| Consulta a Scopus | **Manual.** *Advanced document search* y exportación en CSV con resumen y palabras clave | Cadena literal, fecha de ejecución y el CSV exportado |
+| Fusión y deduplicación | `scripts/fusionar.py` | Corpus único por DOI y, si falta, por título normalizado; cifras de identificación para el diagrama PRISMA |
+| Cribado por título y resumen | Instrucciones fijas a la IA, decisiones del autor (§6.6) | Propuesta sin modificar, decisiones y motivos |
+| Metadatos y BibTeX desde Crossref | `scripts/verificar_crossref.py` | Informe de verificación de cada DOI contra Crossref: coincidencia de título, año, publicación y páginas |
+| *Snowballing* | Pendiente, con `referenced_works` y `cited_by` de OpenAlex | Se publicará con su corrida |

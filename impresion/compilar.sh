@@ -15,10 +15,10 @@ comun=(
   --standalone
   -V documentclass=article
   -V papersize=a4
-  -V geometry:margin=2.6cm
+  -V geometry:margin=2.4cm
   -V fontsize=11pt
   -V lang=es
-  -V linestretch=1.12
+  -V linestretch=1.06
   -V colorlinks=true
   -V linkcolor=acento
   -V urlcolor=acento
@@ -47,7 +47,7 @@ componer() {
     !sec && !par' "$origen" > "$cuerpo"
 
   local opciones=("${comun[@]}" --include-in-header="$cabecera")
-  [[ $indice == si ]] && opciones+=(--toc --toc-depth=3)
+  [[ $indice == si ]] && opciones+=(--toc --toc-depth=2)
 
   pandoc "$cuerpo" "${opciones[@]}" -o "$destino"
   rm -f "$cabecera" "$cuerpo"
