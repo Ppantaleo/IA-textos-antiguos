@@ -71,7 +71,7 @@ sitúa la pregunta.
 
 ### 4.1 La IA aplicada a textos antiguos
 
-El campo tiene ya un mapa propio: el *survey* de Sommerschield et al. (2023)
+El campo tiene ya un mapa propio: la revisión de Sommerschield et al. (2023)
 ordena las tareas —restauración de lagunas, atribución geográfica y temporal,
 transcripción y HTR, traducción automática, desciframiento, búsqueda y
 alineamiento de paralelos— y fija la delimitación del objeto que este trabajo
@@ -170,8 +170,8 @@ Ediciones que se analizan: PREMIS 3.0 (PREMIS Editorial Committee, 2015),
 publicada en junio de 2015 y revisada en noviembre, con esquema XML de enero
 de 2016;
 **METS 2** (Library of Congress, 2025), la revisión mayor que simplifica el
-esquema y elimina la dependencia de XLink; ISO 23081-1:2017 e ISO 23081-2:2021.
-La rama METS 1 sigue soportada y en uso en los repositorios existentes, así que
+esquema y elimina la dependencia de XLink; ISO 23081-1:2017 e ISO 23081-2:2021 (International Organization for
+Standardization, 2017, 2021). La rama METS 1 sigue soportada y en uso en los repositorios existentes, así que
 se la menciona cuando el contraste lo pida, pero el marco se construye sobre la
 versión vigente.
 
@@ -411,7 +411,7 @@ Códigos de exclusión adicionales:
 - **E5:** tipo documental sin estudio primario (editorial, fe de erratas,
   retractación, presentación de volumen de actas, índice).
 - **E6:** tema ajeno, cuando el registro entró por coincidencia léxica.
-- **R:** revisión o *survey* pertinente. No entra en el corpus, pero se usa
+- **R:** artículo de revisión o estado de la cuestión pertinente. No entra en el corpus, pero se usa
   como fuente de *snowballing*.
 
 **Regla de duda.** En esta fase, ante información insuficiente se marca
@@ -580,7 +580,7 @@ menor.
 al., 2025), Enoch (Popović et al., 2025), BiNet (Dhali et al., 2026), DR-LIFT
 (Murugan y Visalakshi, 2024), lineal B (Papavassileiou et al., 2023), acadio
 NMT (Gutherz et al., 2023), Lacuna (Levine et al., 2024), glifos mayas
-(Pinilla-Buitrago et al., 2022) y el *survey* de Sommerschield et al. (2023).
+(Pinilla-Buitrago et al., 2022) y la revisión de Sommerschield et al. (2023).
 
 **Regla de validación.** El conjunto semilla valida la **estrategia completa**
 (bases de datos más *snowballing*), no solo la cadena. Se informan por
@@ -825,7 +825,7 @@ using detect, recognize and labelling, interpreter framework of text method.
 *Heritage Science*, *12*(1). <https://doi.org/10.1186/s40494-024-01522-9>
 
 Pantaleo, P. (2025, 19 de junio). *Authorship and contribution in the age of
-AI: Notes on the current debate*. Paideia Studio.
+AI: Notes on the current debate* [entrada de blog]. Patricio Pantaleo's Blog.
 <https://doi.org/10.62059/9x4p2w>
 
 Papavassileiou, K., Kosmopoulos, D. I. y Owens, G. (2023). A generative model

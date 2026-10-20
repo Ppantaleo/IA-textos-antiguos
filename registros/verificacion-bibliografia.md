@@ -1,6 +1,6 @@
 # Verificación de la bibliografía contra Crossref
 
-- **Fecha:** 2026-10-15
+- **Fecha:** 2026-10-20
 - **Archivo:** `bibliografia.bib`, 43 entradas
 - **Con DOI:** 27 · **sin DOI:** 16
 - **Coinciden:** 22 · **con discrepancias:** 5 · **no resueltas:** 0
