@@ -708,11 +708,6 @@ el 30 de noviembre de 2026.
 
 \begingroup\small
 
-Solo las obras citadas en este documento. El estilo sigue APA 7.ª edición, a
-confirmar con el director. La bibliografía completa del trabajo se mantiene en el
-repositorio (`docs/bibliografia.bib`) y se verifica contra Crossref
-(`registros/verificacion-bibliografia.md`).
-
 Arksey, H. y O'Malley, L. (2005). Scoping studies: Towards a methodological
 framework. *International Journal of Social Research Methodology*, *8*(1),
 19–32. <https://doi.org/10.1080/1364557032000119616>
